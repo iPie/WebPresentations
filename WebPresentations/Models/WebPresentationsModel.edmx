@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebPresentationsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="WebPresentationsModelStoreContainer">
+          <EntitySet Name="Presentation" EntityType="WebPresentationsModel.Store.Presentation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PresentationTag" EntityType="WebPresentationsModel.Store.PresentationTag" store:Type="Tables" store:Schema="dbo" store:Name="PresentationTag">
+            <DefiningQuery>SELECT 
+      [PresentationTag].[PresentationId] AS [PresentationId], 
+      [PresentationTag].[TagId] AS [TagId]
+      FROM [dbo].[PresentationTag] AS [PresentationTag]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tag" EntityType="WebPresentationsModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_PresentationTag_Presentation" Association="WebPresentationsModel.Store.FK_PresentationTag_Presentation">
+            <End Role="Presentation" EntitySet="Presentation" />
+            <End Role="PresentationTag" EntitySet="PresentationTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PresentationTag_Tag" Association="WebPresentationsModel.Store.FK_PresentationTag_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="PresentationTag" EntitySet="PresentationTag" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Presentation">
+          <Key>
+            <PropertyRef Name="PresentationId" />
+          </Key>
+          <Property Name="PresentationId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="JsonString" Type="text" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\CSHARP\PROJECTS\WEBPRESENTATIONS\WEBPRESENTATIONS\APP_DATA\WEBPRESENTATIONS.MDF.dbo.PresentationTag' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PresentationTag">
+          <Key>
+            <PropertyRef Name="PresentationId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="PresentationId" Type="int" Nullable="false" />
+          <Property Name="TagId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_PresentationTag_Presentation">
+          <End Role="Presentation" Type="WebPresentationsModel.Store.Presentation" Multiplicity="1" />
+          <End Role="PresentationTag" Type="WebPresentationsModel.Store.PresentationTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentation">
+              <PropertyRef Name="PresentationId" />
+            </Principal>
+            <Dependent Role="PresentationTag">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PresentationTag_Tag">
+          <End Role="Tag" Type="WebPresentationsModel.Store.Tag" Multiplicity="1" />
+          <End Role="PresentationTag" Type="WebPresentationsModel.Store.PresentationTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="PresentationTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebPresentationsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="WebPresentationsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Presentations" EntityType="WebPresentationsModel.Presentation" />
+          <EntitySet Name="Tags" EntityType="WebPresentationsModel.Tag" />
+          <AssociationSet Name="PresentationTag" Association="WebPresentationsModel.PresentationTag">
+            <End Role="Presentation" EntitySet="Presentations" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Presentation">
+          <Key>
+            <PropertyRef Name="PresentationId" />
+          </Key>
+          <Property Name="PresentationId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="JsonString" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tags" Relationship="WebPresentationsModel.PresentationTag" FromRole="Presentation" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Presentations" Relationship="WebPresentationsModel.PresentationTag" FromRole="Tag" ToRole="Presentation" />
+        </EntityType>
+        <Association Name="PresentationTag">
+          <End Role="Presentation" Type="WebPresentationsModel.Presentation" Multiplicity="*" />
+          <End Role="Tag" Type="WebPresentationsModel.Tag" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebPresentationsModelStoreContainer" CdmEntityContainer="WebPresentationsEntities">
+          <EntitySetMapping Name="Presentations"><EntityTypeMapping TypeName="WebPresentationsModel.Presentation"><MappingFragment StoreEntitySet="Presentation">
+            <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="JsonString" ColumnName="JsonString" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tags"><EntityTypeMapping TypeName="WebPresentationsModel.Tag"><MappingFragment StoreEntitySet="Tag">
+            <ScalarProperty Name="TagId" ColumnName="TagId" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="PresentationTag" TypeName="WebPresentationsModel.PresentationTag" StoreEntitySet="PresentationTag">
+            <EndProperty Name="Presentation">
+              <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+            </EndProperty>
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="TagId" ColumnName="TagId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="WebPresentationsModel">
+        <EntityTypeShape EntityType="WebPresentationsModel.Presentation" Width="1.5" PointX="0.75" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPresentationsModel.Tag" Width="1.5" PointX="3" PointY="1.125" Height="1.5956835937499996" IsExpanded="true" />
+        <AssociationConnector Association="WebPresentationsModel.PresentationTag" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.9228417968749998" />
+          <ConnectorPoint PointX="3" PointY="1.9228417968749998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

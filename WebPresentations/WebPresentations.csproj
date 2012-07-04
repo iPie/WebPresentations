@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE6DFA03-3983-49F5-87B7-737DBDE2E537}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPresentations</RootNamespace>
+    <AssemblyName>WebPresentations</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EditorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Presentation.cs">
+      <DependentUpon>WebPresentationsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs">
+      <DependentUpon>WebPresentationsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebPresentationsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPresentationsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebPresentationsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPresentationsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebPresentationsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPresentationsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\WebPresentations.mdf" />
+    <Content Include="App_Data\WebPresentations_log.ldf">
+      <DependentUpon>WebPresentations.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\docs.css" />
+    <Content Include="Content\bootstrap\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Content\bootstrap\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Content\bootstrap\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Content\bootstrap\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\bootstrap\ico\favicon.ico" />
+    <Content Include="Content\editor\css\bootstrap.css" />
+    <Content Include="Content\editor\css\close-btn.css" />
+    <Content Include="Content\editor\css\main.css" />
+    <Content Include="Content\editor\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\editor\img\glyphicons-halflings.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\css\colorpicker.css" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\blank.gif" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_background.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_hex.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_hsb_b.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_hsb_h.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_hsb_s.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_indic.gif" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_overlay.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_rgb_b.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_rgb_g.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_rgb_r.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_select.gif" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\colorpicker_submit.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_background.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_hex.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_hsb_b.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_hsb_h.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_hsb_s.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_indic.gif" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_rgb_b.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_rgb_g.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_rgb_r.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\custom_submit.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\select.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\select2.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\images\slider.png" />
+    <Content Include="Content\editor\jqplugins\colorpicker\js\colorpicker.js" />
+    <Content Include="Content\editor\jqplugins\colorpicker\js\eye.js" />
+    <Content Include="Content\editor\jqplugins\colorpicker\js\jquery.js" />
+    <Content Include="Content\editor\jqplugins\colorpicker\js\layout.js" />
+    <Content Include="Content\editor\jqplugins\colorpicker\js\utils.js" />
+    <Content Include="Content\editor\jqplugins\gradient_picker\circle_remove.png" />
+    <Content Include="Content\editor\jqplugins\gradient_picker\jquery.gradientPicker.css" />
+    <Content Include="Content\editor\jqplugins\gradient_picker\jquery.gradientPicker.js" />
+    <Content Include="Content\editor\jqplugins\smartspin\down.jpg" />
+    <Content Include="Content\editor\jqplugins\smartspin\down.png" />
+    <Content Include="Content\editor\jqplugins\smartspin\normal.jpg" />
+    <Content Include="Content\editor\jqplugins\smartspin\normal.png" />
+    <Content Include="Content\editor\jqplugins\smartspin\smartspinner.css" />
+    <Content Include="Content\editor\jqplugins\smartspin\smartspinner.js" />
+    <Content Include="Content\editor\jqplugins\smartspin\up.jpg" />
+    <Content Include="Content\editor\jqplugins\smartspin\up.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap\application.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\bootstrap\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\bootstrap\jquery.js" />
+    <Content Include="Scripts\editor\common\Calcium.js" />
+    <Content Include="Scripts\editor\common\collections\LinkedList.js" />
+    <Content Include="Scripts\editor\common\EventEmitter.js" />
+    <Content Include="Scripts\editor\common\MapResolver.js" />
+    <Content Include="Scripts\editor\common\Math2.js" />
+    <Content Include="Scripts\editor\common\Queue.js" />
+    <Content Include="Scripts\editor\common\RemoteStorageWrapper.js" />
+    <Content Include="Scripts\editor\common\Throttler.js" />
+    <Content Include="Scripts\editor\main.js" />
+    <Content Include="Scripts\editor\model\common_application\AutoSaver.js" />
+    <Content Include="Scripts\editor\model\common_application\UndoHistory.js" />
+    <Content Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.js" />
+    <Content Include="Scripts\editor\model\editor\transition_editor\TransitionEditorButtonBarModel.js" />
+    <Content Include="Scripts\editor\model\geom\SpatialObject.js" />
+    <Content Include="Scripts\editor\model\presentation\components\Component.js" />
+    <Content Include="Scripts\editor\model\presentation\components\ComponentFactory.js" />
+    <Content Include="Scripts\editor\model\presentation\components\Image.js" />
+    <Content Include="Scripts\editor\model\presentation\components\Table.js" />
+    <Content Include="Scripts\editor\model\presentation\components\TextBox.js" />
+    <Content Include="Scripts\editor\model\presentation\Deck.js" />
+    <Content Include="Scripts\editor\model\presentation\main.js" />
+    <Content Include="Scripts\editor\model\presentation\Slide.js" />
+    <Content Include="Scripts\editor\model\presentation\SlideCollection.js" />
+    <Content Include="Scripts\editor\model\system\Clipboard.js" />
+    <Content Include="Scripts\editor\require.js" />
+    <Content Include="Scripts\editor\shooter.js" />
+    <Content Include="Scripts\editor\state\DefaultState.js" />
+    <Content Include="Scripts\editor\storage\FileStorage.js" />
+    <Content Include="Scripts\editor\ui\editor\button_bar\AbstractButtonBarView.js" />
+    <Content Include="Scripts\editor\ui\editor\button_bar\ButtonBarView.js" />
+    <Content Include="Scripts\editor\ui\editor\components\ComponentView.js" />
+    <Content Include="Scripts\editor\ui\editor\components\ComponentViewFactory.js" />
+    <Content Include="Scripts\editor\ui\editor\components\ImageView.js" />
+    <Content Include="Scripts\editor\ui\editor\components\TableView.js" />
+    <Content Include="Scripts\editor\ui\editor\components\TextBoxView.js" />
+    <Content Include="Scripts\editor\ui\editor\components\ThreeDRotableComponentView.js" />
+    <Content Include="Scripts\editor\ui\editor\Editor.js" />
+    <Content Include="Scripts\editor\ui\editor\main.js" />
+    <Content Include="Scripts\editor\ui\editor\OperatingTable.js" />
+    <Content Include="Scripts\editor\ui\editor\raster\AbstractDrawer.js" />
+    <Content Include="Scripts\editor\ui\editor\raster\ImageModelDrawer.js" />
+    <Content Include="Scripts\editor\ui\editor\raster\SlideDrawer.js" />
+    <Content Include="Scripts\editor\ui\editor\raster\TextboxDrawer.js" />
+    <Content Include="Scripts\editor\ui\editor\res\css\ComponentView.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\Editor.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\OperatingTable.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\SlideEditor.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\SlidePreviewPanel.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\SlideSnapshot.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\TransitionEditor.css" />
+    <Content Include="Scripts\editor\ui\editor\res\css\TransitionSlideSnapshot.css" />
+    <Content Include="Scripts\editor\ui\editor\SlideCopyPaste.js" />
+    <Content Include="Scripts\editor\ui\editor\SlideEditor.js" />
+    <Content Include="Scripts\editor\ui\editor\SlidePreviewPanel.js" />
+    <Content Include="Scripts\editor\ui\editor\SlideSnapshot.js" />
+    <Content Include="Scripts\editor\ui\editor\Templates.js" />
+    <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionEditor.js" />
+    <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionEditorButtonBarView.js" />
+    <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionSlideSnapshot.js" />
+    <Content Include="Scripts\editor\ui\impress_renderer\ImpressRenderer.js" />
+    <Content Include="Scripts\editor\ui\impress_renderer\Templates.js" />
+    <Content Include="Scripts\editor\ui\interactions\CutCopyPasteBindings.js" />
+    <Content Include="Scripts\editor\ui\widgets\BackgroundPicker.js" />
+    <Content Include="Scripts\editor\ui\widgets\DeltaDragControl.js" />
+    <Content Include="Scripts\editor\ui\widgets\OpenDialog.js" />
+    <Content Include="Scripts\editor\ui\widgets\PictureGrabber.js" />
+    <Content Include="Scripts\editor\ui\widgets\RawTextImporter.js" />
+    <Content Include="Scripts\editor\ui\widgets\res\css\BackgroundPicker.css" />
+    <Content Include="Scripts\editor\ui\widgets\res\css\OpenDialog.css" />
+    <Content Include="Scripts\editor\ui\widgets\SaveAsDialog.js" />
+    <Content Include="Scripts\editor\ui\widgets\Templates.js" />
+    <Content Include="Scripts\editor\vendor\amd_plugins\css.js" />
+    <Content Include="Scripts\editor\vendor\amd_plugins\text.js" />
+    <Content Include="Scripts\editor\vendor\backbone.js" />
+    <Content Include="Scripts\editor\vendor\bootstrap-dropdown.js" />
+    <Content Include="Scripts\editor\vendor\bootstrap.js" />
+    <Content Include="Scripts\editor\vendor\class.js" />
+    <Content Include="Scripts\editor\vendor\extendFunc.js" />
+    <Content Include="Scripts\editor\vendor\Handlebars.js" />
+    <Content Include="Scripts\editor\vendor\jquery-1.7-matt.js" />
+    <Content Include="Scripts\editor\vendor\jqueryUI.js" />
+    <Content Include="Scripts\editor\vendor\jszip-deflate.js" />
+    <Content Include="Scripts\editor\vendor\jszip.js" />
+    <Content Include="Scripts\editor\vendor\keymaster.js" />
+    <Content Include="Scripts\editor\vendor\underscore.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Confirmation.cshtml" />
+    <Content Include="Views\Account\RegistrationSuccess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\editor\jqplugins\colorpicker\images\Thumbs.db" />
+    <Content Include="Views\Editor\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <EntityDeploy Include="Models\WebPresentationsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebPresentationsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\WebPresentationsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebPresentationsModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\WebPresentationsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebPresentationsModel.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\bootstrap\README.md" />
+    <Content Include="Views\Editor\Browse.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56556</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
