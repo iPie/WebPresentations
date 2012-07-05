@@ -1,44 +1,56 @@
-﻿@{
-    Layout = null;
+﻿@model IEnumerable<WebPresentations.Models.Presentation>
+@{
+    ViewBag.Title = "Index";
 }
-<!DOCTYPE html>
-<html lang="en">
-<title>Editor</title>
-<link rel="stylesheet" href="@Url.Content("~/Content/editor/css/close-btn.css")">
-</link>
-<link rel="stylesheet" href="@Url.Content("~/Content/editor/css/bootstrap.css")">
-</link>
-<link rel="stylesheet" href="@Url.Content("~/Content/editor/css/main.css")"></link>
-<link rel="stylesheet" href="@Url.Content("~/Content/editor/jqplugins/colorpicker/css/colorpicker.css")" type="text/css" />
-<link rel="stylesheet" href="@Url.Content("~/Content/editor/jqplugins/gradient_picker/jquery.gradientPicker.css")" type="text/css" />
-<link href='preview_export/css/web-fonts.css' rel='stylesheet' type='text/css'>
-<script>
-    jQuery.fn.selectText = function () {
-        var doc = document;
-        var element = this[0];
-        if (doc.body.createTextRange) {
-            var range = document.body.createTextRange();
-            range.moveToElementText(element);
-            range.select();
-        } else if (window.getSelection) {
-            var selection = window.getSelection();
-            var range = document.createRange();
-            range.selectNodeContents(element);
-            selection.removeAllRanges();
-            selection.addRange(range);
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Json
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Tags
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Json)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @foreach (var tag in item.Tags)
+                    {
+                        @tag.Text <b> </b>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PresentationId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PresentationId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PresentationId })
+                </td>
+            </tr>
         }
-        return this;
-    };        
-</script>
-<body>
-</body>
-<script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/jquery-1.7-matt.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/jqueryUI.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/underscore.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/bootstrap.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/bootstrap-dropdown.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/Content/editor/jqplugins/colorpicker/js/colorpicker.js")"></script>
-<script type="text/javascript" src="@Url.Content("~/Content/editor/jqplugins/gradient_picker/jquery.gradientPicker.js")"></script>
-<script type="text/javascript" data-main="@Url.Content("~/scripts/editor/main")" src="@Url.Content("~/scripts/editor/require.js")"></script>
-<script type="text/javascript" src="preview_export/scripts/impress.js"></script>
-</html>
+    </tbody>
+</table>
