@@ -13,6 +13,14 @@ namespace WebPresentations.Controllers
         PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
+        // GET: /Editor/View
+
+        public ActionResult MyView()
+        {
+            return View();
+        }
+
+        //
         // GET: /Editor/Index
 
         public ActionResult Index()
@@ -53,13 +61,13 @@ namespace WebPresentations.Controllers
                     }
                 }
                 var presentation = new Presentation
-                                       {
-                                           Title = model.Title,
-                                           Description = model.Description,
-                                           Json = model.Json,
-                                           Tags = tags,
-                                           UserName = User.Identity.Name
-                                       };
+                {
+                    Title = model.Title,
+                    Description = model.Description,
+                    Json = model.Json,
+                    Tags = tags,
+                    UserName = User.Identity.Name
+                };
                 presentationsDB.Presentations.Add(presentation);
                 presentationsDB.SaveChanges();
                 return View("Success");

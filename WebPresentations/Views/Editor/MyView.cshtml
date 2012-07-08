@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<title>Editor</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/editor/css/close-btn.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Content/editor/css/bootstrap.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Content/editor/css/main.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Content/editor/jqplugins/colorpicker/css/colorpicker.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/editor/jqplugins/gradient_picker/jquery.gradientPicker.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/preview_export/css/web-fonts.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/ComponentView.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/Editor.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/OperatingTable.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/SlideEditor.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/SlidePreviewPanel.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/SlideSnapShot.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/TransitionEditor.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/editor/res/css/TransitionSlideSnapShot.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/widgets/res/css/BackgroundPicker.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/scripts/editor/ui/widgets/res/css/OpenDialog.css")" type="text/css"/>
+<body>
+</body>
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/jquery-1.7-matt.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/jqueryUI.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/underscore.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/vendor/bootstrap-dropdown.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/editor/jqplugins/colorpicker/js/colorpicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/editor/jqplugins/gradient_picker/jquery.gradientPicker.js")"></script>
+    
+
+    <script type="text/javascript" src="@Url.Content("~/scripts/editor/preview_export/scripts/impress.js")"></script>    
+    <script type="text/javascript" data-main="/scripts/editor/main" src="/scripts/require.js"></script>
+    
+    
+<script type = "text/javascript">
+    jQuery.fn.selectText = function () {
+        var doc = document;
+        var element = this[0];
+        if (doc.body.createTextRange) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(element);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(element);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+        return this;
+    };        
+</script>
+</html>

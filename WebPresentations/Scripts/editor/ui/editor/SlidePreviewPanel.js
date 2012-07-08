@@ -3,7 +3,7 @@
 @author Matt Crinklaw-Vogt
 */
 
-define(["vendor/backbone", "./SlideSnapshot", "vendor/keymaster", "ui/interactions/CutCopyPasteBindings", "model/system/Clipboard", "./SlideCopyPaste", "css!./res/css/SlidePreviewPanel.css"], function(Backbone, SlideSnapshot, Keymaster, CutCopyPasteBindings, Clipboard, SlideCopyPaste, empty) {
+define(["vendor/backbone", "./SlideSnapshot", "vendor/keymaster", "ui/interactions/CutCopyPasteBindings", "model/system/Clipboard", "./SlideCopyPaste"], function(Backbone, SlideSnapshot, Keymaster, CutCopyPasteBindings, Clipboard, SlideCopyPaste) {
   return Backbone.View.extend({
     className: "slidePreviewPanel",
     events: {
