@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Preview";
+}
+<h2>Presentation preview</h2>
+<div class="container-fluid">
+    <div class="span4">
+        <h2>@ViewBag.PresentationTitle</h2>
+        <p>Description: @ViewBag.Description</p>
+        Tags:
+        @foreach (var tag in ViewBag.Tags)
+        {
+            @tag.Text<em></em>
+        }
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿<div class="pagination">
+    <ul>
+        @if (Model.HasPreviousPage)
+        {
+            <li class="prev"><a href="@Url.Action(ViewBag.RedirectRoute, new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
+                &larr; Previous</a></li>
+        }
+        else
+        {
+            <li class="disabled"><a>&larr; Previous</a></li>
+        }
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            @Html.ActionLink(i.ToString(), "Index", new { page = i, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="next"><a href="@Url.Action(ViewBag.RedirectRoute, new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
+                Next &rarr;</a></li>
+        }
+        else
+        {
+            <li class="disabled"><a>Next &rarr;</a></li>
+        }
+    </ul>
+</div>

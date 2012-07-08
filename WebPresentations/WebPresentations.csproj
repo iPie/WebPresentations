@@ -14,6 +14,7 @@
     <AssemblyName>WebPresentations</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +38,9 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -69,7 +73,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\PresentationsEntities.cs" />
@@ -88,6 +94,7 @@
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
+    <Content Include="Content\tagcloud.css" />
     <Content Include="Content\editor\img\glyphicons-halflings-white.png" />
     <Content Include="Content\editor\img\glyphicons-halflings.png" />
     <Content Include="Content\editor\jqplugins\colorpicker\css\colorpicker.css" />
@@ -237,6 +244,9 @@
     <Content Include="Views\Editor\Index.cshtml" />
     <Content Include="Views\Editor\Create.cshtml" />
     <Content Include="Views\Editor\Success.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
+    <Content Include="Views\Gallery\Preview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

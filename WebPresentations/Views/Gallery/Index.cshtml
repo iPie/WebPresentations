@@ -1,0 +1,23 @@
+﻿@model PagedList.IPagedList<WebPresentations.Models.Presentation>
+@{
+    ViewBag.Title = "Gallery";
+    ViewBag.RedirectRoute = "Index";
+}
+<h2>Presentations gallery</h2>
+    <div class="hero-unit">
+        <div class="container-fluid">
+            @foreach (var item in Model)
+            {
+                <div class="span3">
+                    <img src="http://placehold.it/260x180" alt="" class="thumbnail" />  
+                    <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                    <p>That's some default template slide..</p>
+                    <p><a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="btn btn-primary btn-small">Preview &raquo;</a></p>           
+                    <br />
+                    <br />
+                </div>
+
+            }
+        </div>
+    </div>
+@Html.Partial("_PageNavigatorPartial");

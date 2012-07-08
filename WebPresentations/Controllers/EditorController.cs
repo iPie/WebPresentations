@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Security;
-using System.Data.Entity;
 using System.Web.Mvc;
 using WebPresentations.Models;
 using WebPresentations.ViewModels;
@@ -41,10 +36,22 @@ namespace WebPresentations.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                var tags = (from string tag in Regex.Split(model.TagString, @"\s|,")
-                            where tag != null
-                            select new Tag { Text = tag }).ToList();
+                var tags = new List<Tag>();
+                foreach (var input in Regex.Split(model.TagString, @"\s|,"))
+                {
+                    var tagText = input.ToLower();
+                    var tagExists = presentationsDB.Tags.Any(g => g.Text == tagText);
+                    if (tagExists)
+                    {
+                        var tag = presentationsDB.Tags.First(g => g.Text == tagText);
+                        tag.Count++;
+                        tags.Add(tag);
+                    }
+                    else
+                    {
+                        tags.Add(new Tag { Text = tagText });
+                    }
+                }
                 var presentation = new Presentation
                                        {
                                            Title = model.Title,
