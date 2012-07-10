@@ -32,8 +32,7 @@
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor
-                                                 <b class="caret"></b></a>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Create", "Create", "Editor")</li>
                                 <li>@Html.ActionLink("Browse", "Index", "Editor")</li>
@@ -44,7 +43,7 @@
                     </ul>
                     
                     <form class="navbar-search pull-left" action="@Url.Action("Index","Gallery")">                    
-                        <input type="text" class="search-query span2" name="search">
+                        <input type="text" class="search-query span2" name="search" placeholder="Search">
                     </form>
                     <div class="btn-group pull-right">
                         @Html.Partial("_LogOnPartial")

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="page-header">
+<h2>Users</h2>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @if(!user.IsApproved)
+                    {
+                        <h5 style="color:red">Disabled</h5>
+                    }
+                    else
+                    {
+                        <h5 style="color:green">Active</h5>
+                    }
+                </td>
+                <td>
+                    @foreach (var role in Roles.GetRolesForUser(user.UserName))
+                    {
+                        @role<em></em>    
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Manage account", "Edit", new { userName = user.UserName })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

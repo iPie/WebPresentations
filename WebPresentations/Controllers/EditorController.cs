@@ -37,7 +37,7 @@ namespace WebPresentations.Controllers
         }
 
         //
-        // GET: /Create/
+        // POST: /Create/
 
         [HttpPost]
         public ActionResult Create(EditorViewModel model)

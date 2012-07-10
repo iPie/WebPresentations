@@ -1,0 +1,99 @@
+﻿@model WebPresentations.ViewModels.AdministrativeToolViewModel
+@{
+    ViewBag.Title = "Edit";  
+}
+<div class="page-header">
+    <h2>Account manager</h2>
+</div>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">User info</a>
+        </div>
+        <div id="collapseOne" class="accordion-body in collapse" style="height: auto;">
+            <div class="accordion-inner">
+                <h5>UserName: @Model.UserName</h5>
+                <h5>Email: @Model.EmailAddress</h5>
+                @if (Model.IsApproved)
+                {
+                    <h5>Status: Active</h5>    
+                }
+                else
+                {
+                    <h5>Status: Disabled</h5>    
+                }
+                
+                <h5>Last active: @Model.LastActivityDate</h5>
+                @if (Model.IsOnline)
+                {
+                    <h5 style="color:green">Online</h5>
+                }
+                else
+                {
+                    <h5 style="color:red">Offline</h5>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Manage user account</a>
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+            <div class="accordion-inner">
+                @using (Html.BeginForm())
+                {
+                    <h5>Role </h5>
+                    @Html.DropDownList("Role", new SelectList(Model.RolesList.Select(x => new {Value = x, Text = x}), "Value", "Text"))
+                    <h5>Enabled </h5>
+                    @Html.DropDownList("IsApproved", new SelectList(new List<Boolean> { false, true }.Select(x => new { Value = x, Text = x }), "Value", "Text"))
+                    <p><button  class="btn btn-primary"  type="submit" value="Edit">Save</button></p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Password reset</a>
+        </div>
+        <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+            <div class="accordion-inner">
+                <div class="alert alert-error">
+                    Reset user's password. User will be notified with an e-mail containing
+                    the new password.
+                </div>
+                <p><button  class="btn btn-danger"  onclick="Reset()" value="Reset">Reset</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Reset() {
+        $.post("/AdministrativeTool/PasswordReset", { "userName": "@Model.UserName"},
+            function (data) {             
+                var resultJson = data.message;
+                $('#statusMessage').modal('show');
+                if (resultJson == "Success") {
+                    $("#statusMessageHeader").html('<h3 style="color:green">Success</h3>');
+                    $("#statusMessageText").html('<h5>Password reset competed successfully</h5>');
+                } else {
+                    $("#statusMessageHeader").html('<h3 style="color:red">Error!</h3>');
+                    $("#statusMessageText").html('<h5>Password reset failed. Something went wrong..</h5>');
+                }
+            });        
+    };
+
+</script>
+<div class="modal hide" id="statusMessage">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3 id = statusMessageHeader></h3>
+    </div>
+    <div class="modal-body">
+        <p id="statusMessageText"></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">OK</a>
+    </div>
+</div>
+<a href ="@Url.Action("Index")" class="pull-right">Back</a>

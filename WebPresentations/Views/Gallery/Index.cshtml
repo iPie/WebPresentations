@@ -9,7 +9,9 @@
             @foreach (var item in Model)
             {
                 <div class="span3">
-                    <img src="http://placehold.it/260x180" alt="" class="thumbnail" />  
+                    <a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="thumbnail">
+                        <img src="http://placehold.it/260x180" alt=""/>
+                    </a>
                     <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
                     <p>That's some default template slide..</p>
                     <p><a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="btn btn-primary btn-small">Preview &raquo;</a></p>           
@@ -20,4 +22,4 @@
             }
         </div>
     </div>
-@Html.Partial("_PageNavigatorPartial");
+@Html.Partial("_PageNavigatorPartial")

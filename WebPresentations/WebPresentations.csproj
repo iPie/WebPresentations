@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministrativeToolController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -90,6 +92,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdministrativeToolViewModel.cs" />
     <Compile Include="ViewModels\EditorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +104,8 @@
     <Content Include="Content\bootstrap\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="Content\bootstrap\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Content\bootstrap\ico\favicon.ico" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
@@ -366,6 +371,8 @@
     <None Include="Scripts\editor\preview_export\fonts\SL0aFUFfkFMMdariYQ3_YbrIa-7acMAeDBVuclsi6Gc.woff" />
     <None Include="Scripts\editor\preview_export\fonts\vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff" />
     <None Include="Scripts\editor\preview_export\fonts\X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff" />
+    <Content Include="Views\AdministrativeTool\Index.cshtml" />
+    <Content Include="Views\AdministrativeTool\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

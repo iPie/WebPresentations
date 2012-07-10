@@ -86,7 +86,16 @@ namespace WebPresentations.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     // TODO: SendConfrimationEmail() might fail, try-catch here!
-                    SendConfrimationEmail(model.UserName);
+                    string confirmationGuid = Membership.GetUser(model.UserName).ProviderUserKey.ToString();
+                    string confirmUrl = System.Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
+                        "/account/confirm?id=" + confirmationGuid;
+                    var message = new MailService.MessageModel
+                                      {
+                                          UserName = model.UserName,
+                                          MessageSubject = "Registration confirmation from WebPresentations.com",
+                                          MessageBody = "Please follow the link below in order to activate your account:\n" + confirmUrl
+                                      };
+                    MailService.SendConfrimationEmail(message);
                     return RedirectToAction("Confirmation", "Account");
                 }
                 else
@@ -199,23 +208,6 @@ namespace WebPresentations.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
-        }
-
-        //Send confrimation Email
-        private void SendConfrimationEmail(string userName)
-        {
-            MembershipUser user = Membership.GetUser(userName);
-            string confirmationGuid = user.ProviderUserKey.ToString();
-            string confirmUrl = System.Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
-                             "/account/confirm?id=" + confirmationGuid;
-            // TODO: change confirmation email body
-            var message = new MailMessage("iliketits.spambot@yahoo.com", user.Email)
-            {
-                Subject = "Registration confirmation from iLikeTits.com",
-                Body = "Please follow the link below in order to activate your account:\n" + confirmUrl
-            };
-            var client = new SmtpClient();
-            client.Send(message);
         }
 
         #region Status Codes

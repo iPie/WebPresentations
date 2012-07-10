@@ -37,6 +37,9 @@ namespace WebPresentations.Controllers
             return View(presentations.ToPagedList(pageNumber, pageSize));           
         }
 
+        //
+        // GET: /Gallery/Preview?id=1
+
         public ViewResult Preview (int id)
         {
             bool exists = presentationsDB.Presentations.Any(g => g.PresentationId == id);
