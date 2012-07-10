@@ -88,14 +88,14 @@ namespace WebPresentations.Controllers
             try
             {
                 var user = Membership.GetUser(userName);
-                //var newPassword = user.ResetPassword();
-                //var message = new MailService.MessageModel
-                //{
-                //    UserName = userName,
-                //    MessageBody = "Password reset notification",
-                //    MessageSubject = "Your password had been reset to: " + newPassword
-                //};
-                //MailService.SendConfrimationEmail(message);
+                var newPassword = user.ResetPassword();
+                var message = new MailService.MessageModel
+                {
+                    UserName = userName,
+                    MessageSubject= "Password reset notification",
+                    MessageBody = "Your password had been reset to: " + newPassword
+                };
+                MailService.SendConfrimationEmail(message);
                 return Json(new { message = "Success"});
             }
             catch
