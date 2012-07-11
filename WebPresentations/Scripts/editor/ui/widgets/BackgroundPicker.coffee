@@ -1,7 +1,6 @@
 define(["vendor/amd/backbone",
-		"./Templates",
-		"css!./res/css/BackgroundPicker.css"]
-(Backbone, Templates, empty) ->
+		"./Templates"]
+(Backbone, Templates) ->
 	gradOptions =
 		type: (value) ->
 			@_updatePicker(type: value)

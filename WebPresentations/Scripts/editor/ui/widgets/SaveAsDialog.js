@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/backbone", "./Templates", "./OpenDialog"], function(Backbone, Templates, OpenDialog) {
+  define(["vendor/amd/backbone", "./Templates", "./OpenDialog"], function(Backbone, Templates, OpenDialog) {
     return OpenDialog.extend({
       initialize: function() {
         return OpenDialog.prototype.initialize.apply(this, arguments);

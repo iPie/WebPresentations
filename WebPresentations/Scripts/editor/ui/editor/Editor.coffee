@@ -12,10 +12,9 @@ define(["vendor/amd/backbone",
 		"storage/FileStorage",
 		"ui/widgets/BackgroundPicker",
 		"model/common_application/AutoSaver",
-		"model/presentation/Archiver",
-		"css!./res/css/Editor.css"],
+		"model/presentation/Archiver"],
 (Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, \
-FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
+FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
 	editorId = 0
 
 	menuOptions =
@@ -43,6 +42,7 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 			)
 		openRecent: (e) ->
 		save: (e) ->
+
 			fileName = @model.get("fileName")
 			if not fileName?
 				menuOptions.saveAs.call(@, e)
@@ -50,11 +50,16 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 				FileStorage.save(fileName, @model.toJSON(false, true))
 
 		saveAs: (e) ->
+			json = JSON.stringify(@model.toJSON(false, true))
+			localStorage.setItem("jsonString", json)
 			@saveAsDialog.show((fileName) =>
+				
 				if fileName? and fileName isnt ""
 					console.log "Attempting to save #{fileName}"
+					
 					@model.set("fileName", fileName)
-					FileStorage.save(fileName, @model.toJSON(false, true))
+						
+					FileStorage.save(fileName, @model.toJSON(false, true))					
 			)
 		undo: (e) ->
 			@model.undo()
@@ -75,7 +80,6 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 			perspective = @perspectives[@activePerspective]
 			if perspective?
 				perspective.paste()
-
 
 		transitionEditor: (e) ->
 			@changePerspective(e, {perspective: "transitionEditor"})

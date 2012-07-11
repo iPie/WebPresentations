@@ -4,8 +4,7 @@
 define(["vendor/amd/backbone"
 		"ui/widgets/DeltaDragControl"
 		"../Templates"
-		"common/Math2"
-		"css!../res/css/ComponentView.css"],
+		"common/Math2"],
 # TODO:
 # Start pushing more of this functionality down into a model
 (Backbone, DeltaDragControl, Templates, Math2, empty) ->

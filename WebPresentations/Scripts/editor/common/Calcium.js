@@ -7,7 +7,7 @@ function(Backbone) {
 
 	var Model = Backbone.Model.extend({
 		// ugh.. hax w/ the inspectArrays param...
-		// TODO: we need to detect object loops!!!!!!
+	    // TODO: we need to detect object loops!!!!!!
 		toJSON: function(dontRecurse, inspectArrays) {
 			if (dontRecurse) {
 				return Backbone.Model.prototype.toJSON.apply(this, arguments);

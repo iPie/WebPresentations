@@ -2,8 +2,11 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Web.Services;
 using WebPresentations.Models;
 using WebPresentations.ViewModels;
+
 
 namespace WebPresentations.Controllers
 {
@@ -40,7 +43,7 @@ namespace WebPresentations.Controllers
         // POST: /Create/
 
         [HttpPost]
-        public ActionResult Create(EditorViewModel model)
+        public JsonResult Create(EditorViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -70,12 +73,9 @@ namespace WebPresentations.Controllers
                 };
                 presentationsDB.Presentations.Add(presentation);
                 presentationsDB.SaveChanges();
-                return View("Success");
+                return Json("Success");
             }
-            else
-            {
-                return View(model);
-            }
+            return Json("Fail");
         }
 
         protected override void Dispose(bool disposing)

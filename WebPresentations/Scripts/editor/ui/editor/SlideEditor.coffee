@@ -5,11 +5,10 @@ define(["vendor/amd/backbone", "./Templates",
 		"./SlidePreviewPanel",
 		"./OperatingTable",
 		"common/EventEmitter",
-		"css!./res/css/SlideEditor.css",
 		"./button_bar/ButtonBarView",
 		"ui/widgets/ItemGrabber",
 		"vendor/amd/keymaster"],
-(Backbone, Templates, SlidePreviewPanel, OperatingTable, EventEmitter, empty, ButtonBarView, ItemGrabber, Keymaster) ->
+(Backbone, Templates, SlidePreviewPanel, OperatingTable, EventEmitter, ButtonBarView, ItemGrabber, Keymaster) ->
 
 	Backbone.View.extend(
 		className: "slideEditor"
