@@ -3,8 +3,9 @@
 ###
 define(["../components/ThreeDRotableComponentView",
 		"../Templates",
-		"../raster/SlideDrawer"],
-(ThreeDComponentView, Templates, SlideDrawer) ->
+		"../raster/SlideDrawer"
+		"css!../res/css/TransitionSlideSnapshot.css"],
+(ThreeDComponentView, Templates, SlideDrawer, empty) ->
 	ThreeDComponentView.extend(
 		className: "component transitionSlideSnapshot"
 		events: () ->

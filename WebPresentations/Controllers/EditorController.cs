@@ -16,22 +16,6 @@ namespace WebPresentations.Controllers
         PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
-        // GET: /Editor/View
-
-        public ActionResult MyView()
-        {
-            return View();
-        }
-
-        //
-        // GET: /Editor/Index
-
-        public ActionResult Index()
-        {
-            return View(presentationsDB.Presentations.ToList());
-        }
-
-        //
         // GET: /Create/
 
         public ActionResult Create()
@@ -71,8 +55,15 @@ namespace WebPresentations.Controllers
                     Tags = tags,
                     UserName = User.Identity.Name
                 };
-                presentationsDB.Presentations.Add(presentation);
-                presentationsDB.SaveChanges();
+                try
+                {
+                    presentationsDB.Presentations.Add(presentation);
+                    presentationsDB.SaveChanges();
+                }
+                catch
+                {
+                    return Json("Fail");
+                }
                 return Json("Success");
             }
             return Json("Fail");

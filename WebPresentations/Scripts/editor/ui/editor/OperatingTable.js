@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./Templates", "./components/ComponentViewFactory", "vendor/amd/keymaster", "ui/interactions/CutCopyPasteBindings", "model/system/Clipboard"], function(Backbone, Templates, ComponentViewFactory, Keymaster, CutCopyPasteBindings, Clipboard) {
+  define(["vendor/amd/backbone", "./Templates", "./components/ComponentViewFactory", "vendor/amd/keymaster", "ui/interactions/CutCopyPasteBindings", "model/system/Clipboard", "css!./res/css/OperatingTable.css"], function(Backbone, Templates, ComponentViewFactory, Keymaster, CutCopyPasteBindings, Clipboard, empty) {
     return Backbone.View.extend({
       className: "operatingTable",
       events: {
@@ -63,8 +63,7 @@
         if ((item != null)) {
           this._clipboard.set("item", item);
           this.model.remove(item);
-          item.set("selected", false);
-          return false;
+          return item.set("selected", false);
         }
       },
       copy: function() {
@@ -74,8 +73,7 @@
           newItem = item.clone();
           newItem.set("x", item.get("x") + 25);
           newItem.set("selected", false);
-          this._clipboard.set("item", newItem);
-          return false;
+          return this._clipboard.set("item", newItem);
         }
       },
       paste: function() {
@@ -85,9 +83,8 @@
         } else {
           item = this._clipboard.get("item");
           if (item != null) {
-            this.model.add(item.clone());
+            return this.model.add(item.clone());
           }
-          return false;
         }
       },
       _focus: function() {

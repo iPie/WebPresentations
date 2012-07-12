@@ -1,6 +1,6 @@
 (function() {
 
-  define(["vendor/amd/backbone", "./Templates"], function(Backbone, Templates) {
+  define(["vendor/amd/backbone", "./Templates", "css!./res/css/BackgroundPicker.css"], function(Backbone, Templates, empty) {
     var gradOptions;
     gradOptions = {
       type: function(value) {

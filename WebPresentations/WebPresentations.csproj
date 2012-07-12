@@ -96,7 +96,6 @@
     <Compile Include="ViewModels\EditorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\WebPresentations.sdf" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\docs.css" />
@@ -110,6 +109,8 @@
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
+    <Content Include="Content\preview\main.css" />
+    <Content Include="Content\preview\web-fonts.css" />
     <Content Include="Content\tagcloud.css" />
     <Content Include="Content\editor\img\glyphicons-halflings-white.png" />
     <Content Include="Content\editor\img\glyphicons-halflings.png" />
@@ -203,85 +204,132 @@
     <Content Include="Scripts\bootstrap\google-code-prettify\prettify.js" />
     <Content Include="Scripts\bootstrap\jquery.js" />
     <Content Include="Scripts\editor\common\Calcium.js" />
-    <Content Include="Scripts\editor\common\collections\LinkedList.js" />
     <Content Include="Scripts\editor\common\EventEmitter.js" />
-    <Content Include="Scripts\editor\common\FileUtils.js">
-      <DependentUpon>FileUtils.coffee</DependentUpon>
+    <Content Include="Scripts\editor\common\collections\LinkedList.js">
+      <DependentUpon>LinkedList.coffee</DependentUpon>
     </Content>
     <Content Include="Scripts\editor\common\MapResolver.js" />
-    <Content Include="Scripts\editor\common\Math2.js" />
     <Content Include="Scripts\editor\common\Queue.js" />
     <Content Include="Scripts\editor\common\RemoteStorageWrapper.js" />
     <Content Include="Scripts\editor\common\Throttler.js" />
+    <Content Include="Scripts\editor\common\FileUtils.js">
+      <DependentUpon>FileUtils.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\common\Math2.js">
+      <DependentUpon>Math2.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\main.js">
       <DependentUpon>main.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\common_application\AutoSaver.js">
+      <DependentUpon>AutoSaver.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\common_application\UndoHistory.js">
+      <DependentUpon>UndoHistory.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.js">
+      <DependentUpon>ButtonBarModel.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\editor\transition_editor\TransitionEditorButtonBarModel.js">
+      <DependentUpon>TransitionEditorButtonBarModel.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\geom\SpatialObject.js">
+      <DependentUpon>SpatialObject.coffee</DependentUpon>
     </Content>
     <Content Include="Scripts\editor\model\presentation\Archiver.js">
       <DependentUpon>Archiver.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\model\presentation\domain_model.txt" />
-    <Content Include="Scripts\editor\ui\editor\Editor.js">
-      <DependentUpon>Editor.coffee</DependentUpon>
+    <Content Include="Scripts\editor\model\presentation\components\Component.js">
+      <DependentUpon>Component.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\widgets\ItemGrabber.js">
-      <DependentUpon>ItemGrabber.coffee</DependentUpon>
+    <Content Include="Scripts\editor\model\presentation\components\ComponentFactory.js">
+      <DependentUpon>ComponentFactory.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.form.js" />
-    <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\editor\model\common_application\AutoSaver.js">
-      <DependentUpon>AutoSaver.coffee</DependentUpon>
+    <Content Include="Scripts\editor\model\presentation\components\Image.js">
+      <DependentUpon>Image.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\model\common_application\UndoHistory.js" />
-    <Content Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.js" />
-    <Content Include="Scripts\editor\model\editor\transition_editor\TransitionEditorButtonBarModel.js" />
-    <Content Include="Scripts\editor\model\geom\SpatialObject.js" />
-    <Content Include="Scripts\editor\model\presentation\components\Component.js" />
-    <Content Include="Scripts\editor\model\presentation\components\ComponentFactory.js" />
-    <Content Include="Scripts\editor\model\presentation\components\Image.js" />
-    <Content Include="Scripts\editor\model\presentation\components\Table.js" />
-    <Content Include="Scripts\editor\model\presentation\components\TextBox.js" />
+    <Content Include="Scripts\editor\model\presentation\components\Table.js">
+      <DependentUpon>Table.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\presentation\components\TextBox.js">
+      <DependentUpon>TextBox.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\presentation\components\Video.js">
+      <DependentUpon>Video.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\model\presentation\components\WebFrame.js">
+      <DependentUpon>WebFrame.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\model\presentation\Deck.js">
       <DependentUpon>Deck.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\model\presentation\main.js" />
     <Content Include="Scripts\editor\model\presentation\Slide.js">
       <DependentUpon>Slide.coffee</DependentUpon>
     </Content>
     <Content Include="Scripts\editor\model\presentation\SlideCollection.js">
       <DependentUpon>SlideCollection.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\model\system\Clipboard.js" />
-    <Content Include="Scripts\editor\preview_export\css\main.css" />
-    <Content Include="Scripts\editor\preview_export\css\web-fonts.css" />
-    <Content Include="Scripts\editor\preview_export\demo.html" />
-    <Content Include="Scripts\editor\preview_export\index.html" />
-    <Content Include="Scripts\editor\preview_export\scripts\impress.js" />
-    <Content Include="Scripts\editor\preview_export\scripts\jquery.js" />
-    <Content Include="Scripts\editor\preview_export\scripts\showPreview.js" />
+    <Content Include="Scripts\editor\model\system\Clipboard.js">
+      <DependentUpon>Clipboard.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\require.js" />
-    <Content Include="Scripts\editor\shooter.js" />
-    <Content Include="Scripts\editor\state\DefaultState.js" />
+    <Content Include="Scripts\editor\state\DefaultState.js">
+      <DependentUpon>DefaultState.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\storage\FileStorage.js">
       <DependentUpon>FileStorage.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\editor\button_bar\AbstractButtonBarView.js" />
-    <Content Include="Scripts\editor\ui\editor\button_bar\ButtonBarView.js" />
+    <Content Include="Scripts\editor\ui\editor\button_bar\AbstractButtonBarView.js">
+      <DependentUpon>AbstractButtonBarView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\button_bar\ButtonBarView.js">
+      <DependentUpon>ButtonBarView.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\editor\components\ComponentView.js">
       <DependentUpon>ComponentView.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\editor\components\ComponentViewFactory.js" />
-    <Content Include="Scripts\editor\ui\editor\components\ImageView.js" />
-    <Content Include="Scripts\editor\ui\editor\components\TableView.js" />
-    <Content Include="Scripts\editor\ui\editor\components\TextBoxView.js" />
-    <Content Include="Scripts\editor\ui\editor\components\ThreeDRotableComponentView.js" />
-    <Content Include="Scripts\editor\ui\editor\main.js" />
+    <Content Include="Scripts\editor\ui\editor\components\ComponentViewFactory.js">
+      <DependentUpon>ComponentViewFactory.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\ImageView.js">
+      <DependentUpon>ImageView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\TableView.js">
+      <DependentUpon>TableView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\TextBoxView.js">
+      <DependentUpon>TextBoxView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\ThreeDRotableComponentView.js">
+      <DependentUpon>ThreeDRotableComponentView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\VideoView.js">
+      <DependentUpon>VideoView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\components\WebFrameView.js">
+      <DependentUpon>WebFrameView.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\Editor.js">
+      <DependentUpon>Editor.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\main.js">
+      <DependentUpon>main.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\editor\OperatingTable.js">
       <DependentUpon>OperatingTable.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\editor\raster\AbstractDrawer.js" />
-    <Content Include="Scripts\editor\ui\editor\raster\ImageModelDrawer.js" />
-    <Content Include="Scripts\editor\ui\editor\raster\SlideDrawer.js" />
-    <Content Include="Scripts\editor\ui\editor\raster\TextboxDrawer.js" />
+    <Content Include="Scripts\editor\ui\editor\raster\AbstractDrawer.js">
+      <DependentUpon>AbstractDrawer.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\raster\ImageModelDrawer.js">
+      <DependentUpon>ImageModelDrawer.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\raster\SlideDrawer.js">
+      <DependentUpon>SlideDrawer.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\raster\TextboxDrawer.js">
+      <DependentUpon>TextboxDrawer.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\editor\res\css\ComponentView.css" />
     <Content Include="Scripts\editor\ui\editor\res\css\Editor.css" />
     <Content Include="Scripts\editor\ui\editor\res\css\OperatingTable.css" />
@@ -290,7 +338,9 @@
     <Content Include="Scripts\editor\ui\editor\res\css\SlideSnapshot.css" />
     <Content Include="Scripts\editor\ui\editor\res\css\TransitionEditor.css" />
     <Content Include="Scripts\editor\ui\editor\res\css\TransitionSlideSnapshot.css" />
-    <Content Include="Scripts\editor\ui\editor\SlideCopyPaste.js" />
+    <Content Include="Scripts\editor\ui\editor\SlideCopyPaste.js">
+      <DependentUpon>SlideCopyPaste.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\editor\SlideEditor.js">
       <DependentUpon>SlideEditor.coffee</DependentUpon>
     </Content>
@@ -304,42 +354,56 @@
     <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionEditor.js">
       <DependentUpon>TransitionEditor.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionEditorButtonBarView.js" />
+    <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionEditorButtonBarView.js">
+      <DependentUpon>TransitionEditorButtonBarView.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\editor\transition_editor\TransitionSlideSnapshot.js">
       <DependentUpon>TransitionSlideSnapshot.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\impress_renderer\ImpressRenderer.js" />
+    <Content Include="Scripts\editor\ui\impress_renderer\ImpressRenderer.js">
+      <DependentUpon>ImpressRenderer.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\impress_renderer\Templates.js" />
-    <Content Include="Scripts\editor\ui\interactions\CutCopyPasteBindings.js" />
+    <Content Include="Scripts\editor\ui\interactions\CutCopyPasteBindings.js">
+      <DependentUpon>CutCopyPasteBindings.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\widgets\BackgroundPicker.js">
       <DependentUpon>BackgroundPicker.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\widgets\DeltaDragControl.js" />
+    <Content Include="Scripts\editor\ui\widgets\DeltaDragControl.js">
+      <DependentUpon>DeltaDragControl.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\widgets\ItemGrabber.js">
+      <DependentUpon>ItemGrabber.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\widgets\OpenDialog.js">
       <DependentUpon>OpenDialog.coffee</DependentUpon>
     </Content>
-    <Content Include="Scripts\editor\ui\widgets\PictureGrabber.js" />
-    <Content Include="Scripts\editor\ui\widgets\RawTextImporter.js" />
+    <Content Include="Scripts\editor\ui\widgets\RawTextImporter.js">
+      <DependentUpon>RawTextImporter.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\ui\widgets\res\css\BackgroundPicker.css" />
     <Content Include="Scripts\editor\ui\widgets\res\css\OpenDialog.css" />
     <Content Include="Scripts\editor\ui\widgets\SaveAsDialog.js">
       <DependentUpon>SaveAsDialog.coffee</DependentUpon>
     </Content>
     <Content Include="Scripts\editor\ui\widgets\Templates.js" />
+    <Content Include="Scripts\editor\vendor\A-jquery-1.7-matt.js" />
+    <Content Include="Scripts\editor\vendor\amd\backbone.js" />
+    <Content Include="Scripts\editor\vendor\amd\class.js" />
+    <Content Include="Scripts\editor\vendor\amd\extendFunc.js" />
+    <Content Include="Scripts\editor\vendor\amd\Handlebars.js" />
+    <Content Include="Scripts\editor\vendor\amd\jszip-deflate.js" />
+    <Content Include="Scripts\editor\vendor\amd\jszip.js" />
+    <Content Include="Scripts\editor\vendor\amd\keymaster.js" />
     <Content Include="Scripts\editor\vendor\amd_plugins\css.js" />
     <Content Include="Scripts\editor\vendor\amd_plugins\text.js" />
-    <Content Include="Scripts\editor\vendor\backbone.js" />
-    <Content Include="Scripts\editor\vendor\bootstrap-dropdown.js" />
-    <Content Include="Scripts\editor\vendor\bootstrap.js" />
-    <Content Include="Scripts\editor\vendor\class.js" />
-    <Content Include="Scripts\editor\vendor\extendFunc.js" />
-    <Content Include="Scripts\editor\vendor\Handlebars.js" />
-    <Content Include="Scripts\editor\vendor\jquery-1.7-matt.js" />
-    <Content Include="Scripts\editor\vendor\jqueryUI.js" />
-    <Content Include="Scripts\editor\vendor\jszip-deflate.js" />
-    <Content Include="Scripts\editor\vendor\jszip.js" />
-    <Content Include="Scripts\editor\vendor\keymaster.js" />
-    <Content Include="Scripts\editor\vendor\underscore.js" />
+    <Content Include="Scripts\editor\vendor\B-jqueryUI.js" />
+    <Content Include="Scripts\editor\vendor\C-underscore.js" />
+    <Content Include="Scripts\editor\vendor\D-bootstrap.js" />
+    <Content Include="Scripts\editor\vendor\E-bootstrapDropdown.js" />
+    <Content Include="Scripts\editor\vendor\vendor-built.js" />
+    <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
@@ -350,7 +414,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\editor\model\presentation\domain_model.txt" />
+    <Content Include="Scripts\preview\impress.js" />
+    <Content Include="Scripts\preview\jquery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -393,86 +459,335 @@
     <Content Include="Views\Account\RegistrationSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\editor\fonts\0ihfXUL2emPh0ROJezvraLO3LdcAZYWl9Si6vvxL-qU.woff" />
+    <None Include="Content\editor\fonts\8Lg6LX8-ntOHUQnvQ0E7o2jf3WypfQQP02nP_ZmoBRo.woff" />
+    <None Include="Content\editor\fonts\FWNn6ITYqL6or7ZTmBxRhgaS65eljNVkG0R6HbhLwtY.woff" />
+    <None Include="Content\editor\fonts\HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff" />
+    <None Include="Content\editor\fonts\OofBftZK2azuDs_dfHbULHYhjbSpvc47ee6xR_80Hnw.woff" />
+    <None Include="Content\editor\fonts\qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff" />
+    <None Include="Content\editor\fonts\qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff" />
+    <None Include="Content\editor\fonts\SL0aFUFfkFMMdariYQ3_YbrIa-7acMAeDBVuclsi6Gc.woff" />
+    <None Include="Content\editor\fonts\vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff" />
+    <None Include="Content\editor\fonts\X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff" />
     <None Include="Content\editor\jqplugins\colorpicker\images\Thumbs.db" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Content\fonts\AbrilFatface-Regular.woff" />
+    <None Include="Content\fonts\FredokaOne-Regular.woff" />
+    <None Include="Content\fonts\Gorditas-Regular.woff" />
+    <None Include="Content\fonts\HammersmithOne.woff" />
+    <None Include="Content\fonts\Lato-Bold.woff" />
+    <None Include="Content\fonts\Lato-BoldItalic.woff" />
+    <None Include="Content\fonts\Lato-Regular.woff" />
+    <None Include="Content\fonts\PressStart2P-Regular.woff" />
+    <None Include="Content\fonts\Ubuntu-Bold.woff" />
+    <None Include="Content\fonts\Ubuntu.woff" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\bootstrap\README.md" />
-    <Content Include="Views\Editor\Index.cshtml" />
-    <Content Include="Views\Editor\Create.cshtml" />
     <Content Include="Views\Editor\Success.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
-    <Content Include="Views\Gallery\Preview.cshtml" />
-    <Content Include="Views\Editor\MyView.cshtml" />
-    <None Include="Scripts\editor\common\collections\LinkedList.coffee" />
-    <None Include="Scripts\editor\common\FileUtils.coffee" />
-    <None Include="Scripts\editor\common\Math2.coffee" />
-    <None Include="Scripts\editor\main.coffee" />
-    <None Include="Scripts\editor\model\common_application\AutoSaver.coffee" />
-    <None Include="Scripts\editor\model\common_application\UndoHistory.coffee" />
-    <None Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.coffee" />
-    <None Include="Scripts\editor\model\editor\transition_editor\TransitionEditorButtonBarModel.coffee" />
-    <None Include="Scripts\editor\model\geom\SpatialObject.coffee" />
-    <None Include="Scripts\editor\model\presentation\Archiver.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\Component.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\ComponentFactory.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\Image.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\Table.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\TextBox.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\Video.coffee" />
-    <None Include="Scripts\editor\model\presentation\components\WebFrame.coffee" />
-    <None Include="Scripts\editor\model\presentation\Deck.coffee" />
-    <None Include="Scripts\editor\model\presentation\Slide.coffee" />
-    <None Include="Scripts\editor\model\presentation\SlideCollection.coffee" />
-    <None Include="Scripts\editor\model\system\Clipboard.coffee" />
-    <None Include="Scripts\editor\preview_export\fonts\0ihfXUL2emPh0ROJezvraLO3LdcAZYWl9Si6vvxL-qU.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\8Lg6LX8-ntOHUQnvQ0E7o2jf3WypfQQP02nP_ZmoBRo.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\FWNn6ITYqL6or7ZTmBxRhgaS65eljNVkG0R6HbhLwtY.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\OofBftZK2azuDs_dfHbULHYhjbSpvc47ee6xR_80Hnw.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\SL0aFUFfkFMMdariYQ3_YbrIa-7acMAeDBVuclsi6Gc.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff" />
-    <None Include="Scripts\editor\preview_export\fonts\X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff" />
+    <Content Include="Views\Editor\Create.cshtml" />
     <Content Include="Views\AdministrativeTool\Index.cshtml" />
     <Content Include="Views\AdministrativeTool\Edit.cshtml" />
-    <None Include="Scripts\editor\state\DefaultState.coffee" />
-    <None Include="Scripts\editor\storage\FileStorage.coffee" />
-    <None Include="Scripts\editor\ui\editor\button_bar\AbstractButtonBarView.coffee" />
-    <None Include="Scripts\editor\ui\editor\button_bar\ButtonBarView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\ComponentView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\ComponentViewFactory.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\ImageView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\TableView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\TextBoxView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\ThreeDRotableComponentView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\VideoView.coffee" />
-    <None Include="Scripts\editor\ui\editor\components\WebFrameView.coffee" />
-    <None Include="Scripts\editor\ui\editor\Editor.coffee" />
-    <None Include="Scripts\editor\ui\editor\main.coffee" />
-    <None Include="Scripts\editor\ui\editor\OperatingTable.coffee" />
-    <None Include="Scripts\editor\ui\editor\raster\AbstractDrawer.coffee" />
-    <None Include="Scripts\editor\ui\editor\raster\ImageModelDrawer.coffee" />
-    <None Include="Scripts\editor\ui\editor\raster\SlideDrawer.coffee" />
-    <None Include="Scripts\editor\ui\editor\raster\TextboxDrawer.coffee" />
+    <Content Include="Views\Gallery\Preview.cshtml" />
+    <None Include="Scripts\editor\common\collections\LinkedList.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\common\FileUtils.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\common\Math2.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\main.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\common_application\AutoSaver.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\common_application\UndoHistory.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\editor\transition_editor\TransitionEditorButtonBarModel.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\geom\SpatialObject.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\Archiver.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\Component.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\ComponentFactory.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\Image.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\Table.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\TextBox.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\Video.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\components\WebFrame.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\Deck.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\Slide.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\presentation\SlideCollection.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\model\system\Clipboard.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\state\DefaultState.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\storage\FileStorage.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\button_bar\AbstractButtonBarView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\button_bar\ButtonBarView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\ComponentView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\ComponentViewFactory.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\ImageView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\TableView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\TextBoxView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\ThreeDRotableComponentView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\VideoView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\components\WebFrameView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\Editor.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\main.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\OperatingTable.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\raster\AbstractDrawer.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\raster\ImageModelDrawer.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\raster\SlideDrawer.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\raster\TextboxDrawer.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
     <None Include="Scripts\editor\ui\editor\res\templates\Component.bars" />
     <None Include="Scripts\editor\ui\editor\res\templates\Editor.bars" />
     <None Include="Scripts\editor\ui\editor\res\templates\SlideEditor.bars" />
     <None Include="Scripts\editor\ui\editor\res\templates\SlideSnapshot.bars" />
     <None Include="Scripts\editor\ui\editor\res\templates\TransitionEditor.bars" />
     <None Include="Scripts\editor\ui\editor\res\templates\TransitionSlideSnapshot.bars" />
-    <None Include="Scripts\editor\ui\editor\SlideCopyPaste.coffee" />
-    <None Include="Scripts\editor\ui\editor\SlideEditor.coffee" />
-    <None Include="Scripts\editor\ui\editor\SlidePreviewPanel.coffee" />
-    <None Include="Scripts\editor\ui\editor\SlideSnapshot.coffee" />
-    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionEditor.coffee" />
-    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionEditorButtonBarView.coffee" />
-    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionSlideSnapshot.coffee" />
-    <None Include="Scripts\editor\ui\impress_renderer\ImpressRenderer.coffee" />
+    <None Include="Scripts\editor\ui\editor\SlideCopyPaste.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\SlideEditor.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\SlidePreviewPanel.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\SlideSnapshot.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionEditor.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionEditorButtonBarView.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\editor\transition_editor\TransitionSlideSnapshot.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\vendor\.gitignore" />
+    <None Include="Scripts\editor\ui\impress_renderer\ImpressRenderer.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\ComponentContainer.bars" />
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\Image.bars" />
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\ImpressTemplate.bars" />
@@ -481,20 +796,57 @@
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\TextBox.bars" />
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\TransformContainer.bars" />
     <None Include="Scripts\editor\ui\impress_renderer\res\templates\Video.bars" />
-    <None Include="Scripts\editor\ui\interactions\CutCopyPasteBindings.coffee" />
-    <None Include="Scripts\editor\ui\widgets\BackgroundPicker.coffee" />
-    <None Include="Scripts\editor\ui\widgets\DeltaDragControl.coffee" />
-    <None Include="Scripts\editor\ui\widgets\ItemGrabber.coffee" />
-    <None Include="Scripts\editor\ui\widgets\OpenDialog.coffee" />
-    <None Include="Scripts\editor\ui\widgets\RawTextImporter.coffee" />
+    <None Include="Scripts\editor\ui\interactions\CutCopyPasteBindings.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\widgets\BackgroundPicker.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\widgets\DeltaDragControl.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\widgets\ItemGrabber.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\widgets\OpenDialog.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
+    <None Include="Scripts\editor\ui\widgets\RawTextImporter.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
     <None Include="Scripts\editor\ui\widgets\res\templates\BackgroundPicker.bars" />
     <None Include="Scripts\editor\ui\widgets\res\templates\ItemGrabber.bars" />
     <None Include="Scripts\editor\ui\widgets\res\templates\OpenDialog.bars" />
     <None Include="Scripts\editor\ui\widgets\res\templates\RawTextImporter.bars" />
     <None Include="Scripts\editor\ui\widgets\res\templates\SaveAsDialog.bars" />
-    <None Include="Scripts\editor\ui\widgets\SaveAsDialog.coffee" />
+    <None Include="Scripts\editor\ui\widgets\SaveAsDialog.coffee">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <Bare>False</Bare>
+      <Iced>False</Iced>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

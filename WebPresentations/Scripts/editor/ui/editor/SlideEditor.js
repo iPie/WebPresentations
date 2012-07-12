@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./Templates", "./SlidePreviewPanel", "./OperatingTable", "common/EventEmitter", "./button_bar/ButtonBarView", "ui/widgets/ItemGrabber", "vendor/amd/keymaster"], function(Backbone, Templates, SlidePreviewPanel, OperatingTable, EventEmitter, ButtonBarView, ItemGrabber, Keymaster) {
+  define(["vendor/amd/backbone", "./Templates", "./SlidePreviewPanel", "./OperatingTable", "common/EventEmitter", "css!./res/css/SlideEditor.css", "./button_bar/ButtonBarView", "ui/widgets/ItemGrabber", "vendor/amd/keymaster"], function(Backbone, Templates, SlidePreviewPanel, OperatingTable, EventEmitter, empty, ButtonBarView, ItemGrabber, Keymaster) {
     return Backbone.View.extend({
       className: "slideEditor",
       initialize: function() {

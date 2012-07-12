@@ -13,10 +13,10 @@
       "text": "vendor/amd_plugins/text"
     },
     shim: {
-      'vendor/jszip': {
+      'vendor/amd/jszip': {
         exports: 'JSZip'
       },
-      'vendor/jszip-deflate': ['vendor/jszip']
+      'vendor/amd/jszip-deflate': ['vendor/amd/jszip']
     }
   });
 
@@ -79,7 +79,7 @@
         }
       });
     };
-    requirejs(["vendor/backbone", "state/DefaultState"], function(Backbone, DefaultState) {
+    requirejs(["vendor/amd/backbone", "state/DefaultState"], function(Backbone, DefaultState) {
       Backbone.sync = function(method, model, options) {
         if (options.keyTrail != null) {
           return options.success(DefaultState.get(options.keyTrail));

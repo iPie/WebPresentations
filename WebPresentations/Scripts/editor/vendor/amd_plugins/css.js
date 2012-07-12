@@ -6,7 +6,7 @@ define(function() {
 	    var link = document.createElement("link");
 	    link.type = "text/css";
 	    link.rel = "stylesheet";
-	    link.href = "scripts/editor/" + url; // TODO: needs to be configurable.
+	    link.href = "/scripts/editor/" + url; // TODO: needs to be configurable.
 	    document.getElementsByTagName("head")[0].appendChild(link);
 	}
 

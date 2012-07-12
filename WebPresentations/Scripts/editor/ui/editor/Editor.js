@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver) {
+  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver", "css!./res/css/Editor.css"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) {
     var editorId, menuOptions;
     editorId = 0;
     menuOptions = {
@@ -50,7 +50,7 @@
       saveAs: function(e) {
         var json,
           _this = this;
-        json = JSON.stringify(this.model.toJSON(false, true));
+        json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)));
         localStorage.setItem("jsonString", json);
         return this.saveAsDialog.show(function(fileName) {
           if ((fileName != null) && fileName !== "") {
@@ -101,7 +101,8 @@
         return this.$el.trigger("preview");
       },
       exportJSON: function(e) {
-        return this.rawTextModal.show(null, JSON.stringify(this.model.toJSON(false, true)));
+        var json;
+        return this.rawTextModal.show(null, json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes))));
       },
       importJSON: function(e) {
         var _this = this;

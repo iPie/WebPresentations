@@ -12,9 +12,10 @@ define(["vendor/amd/backbone",
 		"storage/FileStorage",
 		"ui/widgets/BackgroundPicker",
 		"model/common_application/AutoSaver",
-		"model/presentation/Archiver"],
+		"model/presentation/Archiver",
+		"css!./res/css/Editor.css"],
 (Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, \
-FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
+FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 	editorId = 0
 
 	menuOptions =
@@ -42,7 +43,6 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
 			)
 		openRecent: (e) ->
 		save: (e) ->
-
 			fileName = @model.get("fileName")
 			if not fileName?
 				menuOptions.saveAs.call(@, e)
@@ -50,16 +50,14 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
 				FileStorage.save(fileName, @model.toJSON(false, true))
 
 		saveAs: (e) ->
-			json = JSON.stringify(@model.toJSON(false, true))
+			#json = JSON.stringify(@model.toJSON(false, true))
+			json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)))
 			localStorage.setItem("jsonString", json)
 			@saveAsDialog.show((fileName) =>
-				
 				if fileName? and fileName isnt ""
 					console.log "Attempting to save #{fileName}"
-					
 					@model.set("fileName", fileName)
-						
-					FileStorage.save(fileName, @model.toJSON(false, true))					
+					FileStorage.save(fileName, @model.toJSON(false, true))
 			)
 		undo: (e) ->
 			@model.undo()
@@ -81,6 +79,7 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
 			if perspective?
 				perspective.paste()
 
+
 		transitionEditor: (e) ->
 			@changePerspective(e, {perspective: "transitionEditor"})
 		slideEditor: (e) ->
@@ -88,7 +87,8 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver) ->
 		preview: (e) ->
 			@$el.trigger("preview")
 		exportJSON: (e) ->
-			@rawTextModal.show(null, JSON.stringify(@model.toJSON(false, true)))
+			#@rawTextModal.show(null, JSON.stringify(@model.toJSON(false, true)))
+			@rawTextModal.show(null,json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes))))
 
 		importJSON: (e) ->
 			@rawTextModal.show((json) =>

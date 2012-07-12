@@ -46,10 +46,10 @@ namespace WebPresentations.Controllers
             if (exists)
             {
                 var presentation = presentationsDB.Presentations.Include("Tags").First(g => g.PresentationId == id);
-                ViewBag.PresentationTitle = presentation.Title;
-                ViewBag.Description = presentation.Description;
-                ViewBag.Tags = presentation.Tags;
-                return View();
+                //ViewBag.PresentationTitle = presentation.Title;
+                //ViewBag.Description = presentation.Description;
+                //ViewBag.Tags = presentation.Tags;
+                return View(presentation);
             }
             else
             {

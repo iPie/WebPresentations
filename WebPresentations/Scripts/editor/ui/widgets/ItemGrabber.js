@@ -77,7 +77,7 @@
       },
       constructor: function ItemGrabber() {
 			Backbone.View.prototype.constructor.apply(this, arguments);
-			}
+		}
     });
   });
 

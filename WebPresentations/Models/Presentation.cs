@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebPresentations.Models
 {
@@ -9,6 +10,7 @@ namespace WebPresentations.Models
         public String UserName { get; set; }
         public String Title { get; set; }
         public String Description { get; set; }
+        [MaxLength]
         public String Json { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
 
