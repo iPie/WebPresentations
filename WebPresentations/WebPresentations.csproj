@@ -843,6 +843,7 @@
       <Bare>False</Bare>
       <Iced>False</Iced>
     </None>
+    <Content Include="Views\Editor\Preview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -101,8 +101,7 @@
         return this.$el.trigger("preview");
       },
       exportJSON: function(e) {
-        var json;
-        return this.rawTextModal.show(null, json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes))));
+        return this.rawTextModal.show(null, JSON.stringify(this.model.toJSON(false, true)));
       },
       importJSON: function(e) {
         var _this = this;
@@ -166,22 +165,8 @@
         }
       },
       renderPreview: function() {
-        var cb, showStr, sourceWind;
-        showStr = ImpressRenderer.render(this.model.attributes);
-        window.previewWind = window.open("index.html?preview=true");
-        sourceWind = window;
-        cb = function() {
-          if (!(sourceWind.previewWind.startImpress != null)) {
-            return setTimeout(cb, 200);
-          } else {
-            sourceWind.previewWind.document.getElementsByTagName("html")[0].innerHTML = showStr;
-            if (!sourceWind.previewWind.impressStarted) {
-              sourceWind.previewWind.startImpress(sourceWind.previewWind.document, sourceWind.previewWind);
-              return sourceWind.previewWind.impress().init();
-            }
-          }
-        };
-        return $(window.previewWind.document).ready(cb);
+        localStorage.setItem("jsonPreview", JSON.stringify(ImpressRenderer.render(this.model.attributes)));
+        return window.location = "Preview";
       },
       changePerspective: function(e, data) {
         var _this = this;

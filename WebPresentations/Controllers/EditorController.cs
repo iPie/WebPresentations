@@ -16,7 +16,7 @@ namespace WebPresentations.Controllers
         PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
-        // GET: /Create/
+        // GET: /Editor/Create/
 
         public ActionResult Create()
         {
@@ -24,7 +24,7 @@ namespace WebPresentations.Controllers
         }
 
         //
-        // POST: /Create/
+        // POST: /Editor/Create/
 
         [HttpPost]
         public JsonResult Create(EditorViewModel model)
@@ -67,6 +67,14 @@ namespace WebPresentations.Controllers
                 return Json("Success");
             }
             return Json("Fail");
+        }
+
+        //
+        // POST: /Editor/Preview/
+
+        public ActionResult Preview()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)
