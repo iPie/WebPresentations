@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver) {
+  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver", "css!./res/css/Editor.css"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) {
     var editorId, menuOptions;
     editorId = 0;
     menuOptions = {
@@ -50,7 +50,7 @@
       saveAs: function(e) {
         var json,
           _this = this;
-        json = JSON.stringify(this.model.toJSON(false, true));
+        json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)));
         localStorage.setItem("jsonString", json);
         return this.saveAsDialog.show(function(fileName) {
           if ((fileName != null) && fileName !== "") {
@@ -165,22 +165,8 @@
         }
       },
       renderPreview: function() {
-        var cb, showStr, sourceWind;
-        showStr = ImpressRenderer.render(this.model.attributes);
-        window.previewWind = window.open("index.html?preview=true");
-        sourceWind = window;
-        cb = function() {
-          if (!(sourceWind.previewWind.startImpress != null)) {
-            return setTimeout(cb, 200);
-          } else {
-            sourceWind.previewWind.document.getElementsByTagName("html")[0].innerHTML = showStr;
-            if (!sourceWind.previewWind.impressStarted) {
-              sourceWind.previewWind.startImpress(sourceWind.previewWind.document, sourceWind.previewWind);
-              return sourceWind.previewWind.impress().init();
-            }
-          }
-        };
-        return $(window.previewWind.document).ready(cb);
+        localStorage.setItem("jsonPreview", JSON.stringify(ImpressRenderer.render(this.model.attributes)));
+        return window.location = "Preview";
       },
       changePerspective: function(e, data) {
         var _this = this;

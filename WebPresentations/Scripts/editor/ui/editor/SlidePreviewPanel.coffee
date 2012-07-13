@@ -6,8 +6,9 @@ define(["vendor/amd/backbone",
 		"vendor/amd/keymaster",
 		"ui/interactions/CutCopyPasteBindings",
 		"model/system/Clipboard",
-		"./SlideCopyPaste"],
-(Backbone, SlideSnapshot, Keymaster, CutCopyPasteBindings, Clipboard, SlideCopyPaste) ->
+		"./SlideCopyPaste",
+		"css!./res/css/SlidePreviewPanel.css"],
+(Backbone, SlideSnapshot, Keymaster, CutCopyPasteBindings, Clipboard, SlideCopyPaste, empty) ->
 	Backbone.View.extend(
 		className: "slidePreviewPanel"
 		events:

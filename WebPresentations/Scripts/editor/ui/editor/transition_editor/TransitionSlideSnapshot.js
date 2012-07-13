@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["../components/ThreeDRotableComponentView", "../Templates", "../raster/SlideDrawer"], function(ThreeDComponentView, Templates, SlideDrawer) {
+  define(["../components/ThreeDRotableComponentView", "../Templates", "../raster/SlideDrawer", "css!../res/css/TransitionSlideSnapshot.css"], function(ThreeDComponentView, Templates, SlideDrawer, empty) {
     return ThreeDComponentView.extend({
       className: "component transitionSlideSnapshot",
       events: function() {

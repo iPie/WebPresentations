@@ -9,8 +9,9 @@ define(["vendor/amd/backbone",
 		"vendor/amd/keymaster",
 		"ui/interactions/CutCopyPasteBindings",
 		"../SlideCopyPaste",
-		"model/system/Clipboard"],
-(Backbone, TransitionSlideSnapshot, Templates, ButtonBarView, ButtonBarModel, Keymaster, CutCopyPasteBindings, SlideCopyPaste, Clipboard) ->
+		"model/system/Clipboard",
+		"css!../res/css/TransitionEditor.css"],
+(Backbone, TransitionSlideSnapshot, Templates, ButtonBarView, ButtonBarModel, Keymaster, CutCopyPasteBindings, SlideCopyPaste, Clipboard, empty) ->
 	Backbone.View.extend(
 		className: "transitionEditor"
 		events:

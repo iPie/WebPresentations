@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./Templates", "./raster/SlideDrawer"], function(Backbone, Templates, SlideDrawer) {
+  define(["vendor/amd/backbone", "./Templates", "css!./res/css/SlideSnapshot.css", "./raster/SlideDrawer"], function(Backbone, Templates, empty, SlideDrawer) {
     return Backbone.View.extend({
       className: "slideSnapshot",
       events: {

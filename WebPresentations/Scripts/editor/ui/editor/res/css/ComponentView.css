@@ -16,6 +16,15 @@
 	-webkit-transform-origin: 50% 50%;
 	-moz-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
+	white-space: nowrap;
+}
+
+.component .content-scale:not(.svg) {
+	display: inline-block;
+}
+
+.component .content:not(.svg) {
+	display: inline-block;
 }
 
 .component.selected .label {
@@ -75,7 +84,7 @@
 .component {
 	position: absolute;
 	line-height: normal;
-	padding: 2px;
+	/*padding: 2px;*/
 	cursor: pointer;
 	margin: 0px;
 }

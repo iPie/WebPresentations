@@ -6,8 +6,9 @@ define(["vendor/amd/backbone",
 		"./components/ComponentViewFactory",
 		"vendor/amd/keymaster",
 		"ui/interactions/CutCopyPasteBindings",
-		"model/system/Clipboard"],
-(Backbone, Templates, ComponentViewFactory, Keymaster, CutCopyPasteBindings, Clipboard) ->
+		"model/system/Clipboard"
+		"css!./res/css/OperatingTable.css"],
+(Backbone, Templates, ComponentViewFactory, Keymaster, CutCopyPasteBindings, Clipboard, empty) ->
 	Backbone.View.extend(
 		className: "operatingTable"
 		events:
@@ -62,7 +63,7 @@ define(["vendor/amd/backbone",
 				@_clipboard.set("item", item)
 				@model.remove(item)
 				item.set("selected", false)
-				false
+				#false
 
 		copy: () ->
 			item = @model.lastSelection
@@ -72,7 +73,7 @@ define(["vendor/amd/backbone",
 				newItem.set("x", item.get("x") + 25)
 				newItem.set("selected", false)
 				@_clipboard.set("item", newItem)
-				false
+				#false
 
 		paste: () ->
 			if @$el.find(".editable").length isnt 0
@@ -82,7 +83,7 @@ define(["vendor/amd/backbone",
 				item = @_clipboard.get("item")
 				if item?
 					@model.add(item.clone())
-				false
+				#false
 
 		_focus: () ->
 			if Keymaster.getScope() isnt "operatingTable"

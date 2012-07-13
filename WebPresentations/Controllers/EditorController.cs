@@ -16,6 +16,7 @@ namespace WebPresentations.Controllers
         PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
+<<<<<<< HEAD
         // GET: /Editor/Index
 
         public ActionResult Index()
@@ -26,13 +27,17 @@ namespace WebPresentations.Controllers
         //
         // GET: /Editor/Create
         
+=======
+        // GET: /Editor/Create/
+
+>>>>>>> cd4c1e730c57201d81a7eb0ddc0c7abd27b1c95a
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Create/
+        // POST: /Editor/Create/
 
         [HttpPost]
         public JsonResult Create(EditorViewModel model)
@@ -63,11 +68,26 @@ namespace WebPresentations.Controllers
                     Tags = tags,
                     UserName = User.Identity.Name
                 };
-                presentationsDB.Presentations.Add(presentation);
-                presentationsDB.SaveChanges();
+                try
+                {
+                    presentationsDB.Presentations.Add(presentation);
+                    presentationsDB.SaveChanges();
+                }
+                catch
+                {
+                    return Json("Fail");
+                }
                 return Json("Success");
             }
             return Json("Fail");
+        }
+
+        //
+        // POST: /Editor/Preview/
+
+        public ActionResult Preview()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)
