@@ -38,6 +38,9 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -92,6 +95,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TagCloud\TagCloud.cs" />
     <Compile Include="ViewModels\AdministrativeToolViewModel.cs" />
     <Compile Include="ViewModels\EditorViewModel.cs" />
   </ItemGroup>
@@ -107,9 +111,11 @@
     <Content Include="Content\bootstrap\ico\favicon.ico" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\cloud.css" />
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
+    <Content Include="TagCloud\jquery.json-2.3.js" />
     <Content Include="Content\tagcloud.css" />
     <Content Include="Content\editor\img\glyphicons-halflings-white.png" />
     <Content Include="Content\editor\img\glyphicons-halflings.png" />
@@ -202,6 +208,13 @@
     <Content Include="Scripts\bootstrap\google-code-prettify\prettify.css" />
     <Content Include="Scripts\bootstrap\google-code-prettify\prettify.js" />
     <Content Include="Scripts\bootstrap\jquery.js" />
+    <Content Include="Scripts\cloud\cloud.js" />
+    <Content Include="Scripts\cloud\bbtree.js" />
+    <Content Include="Scripts\cloud\d3.layout.cloud.js" />
+    <Content Include="Scripts\cloud\d3.v2.js" />
+    <Content Include="Scripts\cloud\d3.v2.min.js" />
+    <Content Include="Scripts\cloud\highlight.min.js" />
+    <Content Include="Scripts\cloud\jsonp.js" />
     <Content Include="Scripts\editor\common\Calcium.js" />
     <Content Include="Scripts\editor\common\collections\LinkedList.js" />
     <Content Include="Scripts\editor\common\EventEmitter.js" />
@@ -401,12 +414,10 @@
     </None>
     <None Include="Scripts\bootstrap\README.md" />
     <Content Include="Views\Editor\Index.cshtml" />
-    <Content Include="Views\Editor\Create.cshtml" />
-    <Content Include="Views\Editor\Success.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
     <Content Include="Views\Gallery\Preview.cshtml" />
-    <Content Include="Views\Editor\MyView.cshtml" />
+    <None Include="Views\Editor\Create.cshtml" />
     <None Include="Scripts\editor\common\collections\LinkedList.coffee" />
     <None Include="Scripts\editor\common\FileUtils.coffee" />
     <None Include="Scripts\editor\common\Math2.coffee" />
@@ -494,7 +505,6 @@
     <None Include="Scripts\editor\ui\widgets\res\templates\SaveAsDialog.bars" />
     <None Include="Scripts\editor\ui\widgets\SaveAsDialog.coffee" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,24 +16,16 @@ namespace WebPresentations.Controllers
         PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
-        // GET: /Editor/View
-
-        public ActionResult MyView()
-        {
-            return View();
-        }
-
-        //
         // GET: /Editor/Index
 
         public ActionResult Index()
         {
             return View(presentationsDB.Presentations.ToList());
         }
-
+        
         //
-        // GET: /Create/
-
+        // GET: /Editor/Create
+        
         public ActionResult Create()
         {
             return View();
