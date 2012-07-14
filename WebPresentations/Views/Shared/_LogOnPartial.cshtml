@@ -9,7 +9,7 @@
             <li><a href="@Url.Action("Index", "AdministrativeTool")" style="color:red">Administrative tool</a></li>
             <li class="divider"></li>            
         }
-        <li><a href="#">Profile</a></li>
+        <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
         <li class="divider"></li>
         <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
     </ul>    

@@ -7,14 +7,16 @@ using System.Web.Mvc;
 namespace WebPresentations.Controllers
 {
     [Authorize]
-    public class ProfileController : Controller
+    public class ProfileController : EntityController
     {
         //
         // GET: /Profile/
 
         public ActionResult Index()
         {
-            return View();
+            var presentations = Entities.Presentations
+                .Where(p => p.UserName == User.Identity.Name).ToList();
+            return View(presentations);
         }
 
     }

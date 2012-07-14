@@ -8,9 +8,8 @@ using WebPresentations.Models;
 
 namespace WebPresentations.Controllers
 {
-    public class GalleryController : Controller
+    public class GalleryController : EntityController
     {
-        PresentationsEntities presentationsDB = new PresentationsEntities();
 
         //
         // GET: /Gallery/
@@ -23,11 +22,11 @@ namespace WebPresentations.Controllers
             //else
             page = 1;
             ViewBag.CurrentFilter = search;
-            var presentations = presentationsDB.Presentations
+            var presentations = Entities.Presentations
                 .Include("Tags").OrderBy(g => g.Title);
             if (!String.IsNullOrEmpty(search))
             {
-                presentations = presentationsDB.Presentations
+                presentations = Entities.Presentations
                     .Where(p => p.Title.Contains(search)).OrderBy(p => p.Title);
             }
 
@@ -42,10 +41,10 @@ namespace WebPresentations.Controllers
 
         public ViewResult Preview (int id)
         {
-            bool exists = presentationsDB.Presentations.Any(g => g.PresentationId == id);
+            bool exists = Entities.Presentations.Any(g => g.PresentationId == id);
             if (exists)
             {
-                var presentation = presentationsDB.Presentations.Include("Tags").First(g => g.PresentationId == id);
+                var presentation = Entities.Presentations.Include("Tags").First(g => g.PresentationId == id);
                 //ViewBag.PresentationTitle = presentation.Title;
                 //ViewBag.Description = presentation.Description;
                 //ViewBag.Tags = presentation.Tags;

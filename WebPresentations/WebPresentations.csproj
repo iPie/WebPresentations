@@ -38,9 +38,6 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -73,17 +70,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrativeToolController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
+    <Compile Include="Controllers\EntityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Models\Presentation.cs" />
-    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\PresentationsEntities.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,6 +98,10 @@
     <Compile Include="ViewModels\EditorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\docs.css" />
@@ -500,9 +502,7 @@
     </None>
     <None Include="Scripts\bootstrap\README.md" />
     <Content Include="Views\Editor\Index.cshtml" />
-    <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
-    <Content Include="Views\Gallery\Preview.cshtml" />
     <None Include="Views\Editor\Create.cshtml" />
     <None Include="Scripts\editor\common\collections\LinkedList.coffee" />
     <None Include="Scripts\editor\common\FileUtils.coffee" />
@@ -536,12 +536,10 @@
     <None Include="Scripts\editor\preview_export\fonts\vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff" />
     <None Include="Scripts\editor\preview_export\fonts\X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff" />
     <Content Include="Views\Editor\Success.cshtml" />
-    <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
     <Content Include="Views\Editor\Create.cshtml" />
     <Content Include="Views\AdministrativeTool\Index.cshtml" />
     <Content Include="Views\AdministrativeTool\Edit.cshtml" />
-    <Content Include="Views\Gallery\Preview.cshtml" />
     <None Include="Scripts\editor\common\collections\LinkedList.coffee">
       <Compile>True</Compile>
       <Minify>True</Minify>
@@ -893,10 +891,11 @@
       <Iced>False</Iced>
     </None>
     <Content Include="Views\Editor\Preview.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\Preview.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

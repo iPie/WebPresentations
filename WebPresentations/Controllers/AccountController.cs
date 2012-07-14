@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Configuration;
 using System.Web.Mvc;
-using System.Web.Handlers;
-using System.Web.Routing;
 using System.Web.Security;
 using WebPresentations.Models;
 
@@ -75,6 +68,7 @@ namespace WebPresentations.Controllers
 
         //
         // POST: /Account/Register
+
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {

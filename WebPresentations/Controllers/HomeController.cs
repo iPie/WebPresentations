@@ -26,17 +26,8 @@ namespace WebPresentations.Controllers
         public string GetTags()
         {
             var cloud = new TagCloud.TagCloud();
-            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            var javaScriptSerializer = new JavaScriptSerializer();
             return javaScriptSerializer.Serialize(cloud.Cloud);
         }
-
-        //[HttpGet]
-        //public JsonResult GetTags()
-        //{
-        //    var cloud = new TagCloud.TagCloud();
-        //    JsonResult answer = Json(cloud.Cloud);
-        //    answer.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-        //    return answer;
-        //}
     }
 }
