@@ -4,6 +4,15 @@
     ViewBag.Title = "Gallery";
     ViewBag.RedirectRoute = "Index";
 }
+<style>
+    p.description {
+        font-size: 10px;
+    }
+    .title {
+        font-size: 12px;
+        margin: 0;
+    }
+</style>
 <h2>Presentations gallery</h2>
     <div class="hero-unit">
         <div class="container-fluid">
@@ -13,8 +22,8 @@
                     <a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="thumbnail">
                         <img src="http://placehold.it/260x180" alt=""/>
                     </a>
-                    <h2>@Html.Truncate(item.Title,10)</h2>
-                    <p>@Html.Truncate(item.Description,20)</p>
+                    <h2 class="title">@Html.Truncate(item.Title,30)</h2>
+                    <p class="description">@Html.Truncate(item.Description,20)</p>
                     <p><a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="btn btn-primary btn-small">Preview &raquo;</a></p>           
                     <br />
                     <br />

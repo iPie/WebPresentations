@@ -41,8 +41,8 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                     </ul>
                     
-                    <form class="navbar-search pull-left" action="@Url.Action("Index","Gallery")">                    
-                        <input type="text" class="search-query span2" name="search" placeholder="Search">
+                    <form class="navbar-search pull-left" action="@Url.Action("Index","Gallery")" name="searchForm">                    
+                        <input type="text" class="search-query span2" name="search" placeholder="Search" id="search">
                     </form>
                     <div class="btn-group pull-right">
                         @Html.Partial("_LogOnPartial")

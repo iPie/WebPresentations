@@ -34,10 +34,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -67,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\WebPresentationsCacheManager.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrativeToolController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
@@ -82,6 +92,12 @@
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\PresentationsEntities.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\WebPresentationsModel.cs" />
+    <Compile Include="Models\WebPresentationsModel.Designer.cs">
+      <DependentUpon>WebPresentationsModel.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,6 +118,7 @@
     <Content Include="App_Data\aspnetdb_log.ldf">
       <DependentUpon>ASPNETDB.MDF</DependentUpon>
     </Content>
+    <Content Include="App_Data\WebPresentations.sdf" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\docs.css" />
@@ -112,11 +129,9 @@
     <Content Include="Content\bootstrap\ico\favicon.ico" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
-    <Content Include="Content\cloud.css" />
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
-    <Content Include="TagCloud\jquery.json-2.3.js" />
     <Content Include="Content\preview\main.css" />
     <Content Include="Content\preview\web-fonts.css" />
     <Content Include="Content\tagcloud.css" />
@@ -212,12 +227,6 @@
     <Content Include="Scripts\bootstrap\google-code-prettify\prettify.js" />
     <Content Include="Scripts\bootstrap\jquery.js" />
     <Content Include="Scripts\cloud\cloud.js" />
-    <Content Include="Scripts\cloud\bbtree.js" />
-    <Content Include="Scripts\cloud\d3.layout.cloud.js" />
-    <Content Include="Scripts\cloud\d3.v2.js" />
-    <Content Include="Scripts\cloud\d3.v2.min.js" />
-    <Content Include="Scripts\cloud\highlight.min.js" />
-    <Content Include="Scripts\cloud\jsonp.js" />
     <Content Include="Scripts\editor\common\Calcium.js" />
     <Content Include="Scripts\editor\common\EventEmitter.js" />
     <Content Include="Scripts\editor\common\collections\LinkedList.js">
@@ -496,6 +505,10 @@
     <None Include="Content\fonts\PressStart2P-Regular.woff" />
     <None Include="Content\fonts\Ubuntu-Bold.woff" />
     <None Include="Content\fonts\Ubuntu.woff" />
+    <EntityDeploy Include="Models\WebPresentationsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebPresentationsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

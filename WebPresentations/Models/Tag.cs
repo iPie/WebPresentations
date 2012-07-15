@@ -15,5 +15,11 @@ namespace WebPresentations.Models
             Count = 1;
             Presentations = new HashSet<Presentation>();
         }
+
+        public Tag(string text)
+        {
+            this.Text = text;
+            this.Count = 0;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using WebPresentations.Caching;
 using WebPresentations.Models;
 using WebPresentations.ViewModels;
 
@@ -56,6 +57,8 @@ namespace WebPresentations.Controllers
                 {
                     Entities.Presentations.Add(presentation);
                     Entities.SaveChanges();
+                    var cm = new WebPresentationsCacheManager();
+                    cm.Flush();
                 }
                 catch
                 {
