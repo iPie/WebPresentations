@@ -13,7 +13,11 @@
         margin: 0;
     }
 </style>
+<div class="page-header">
 <h2>Presentations gallery</h2>
+</div>
+@if (Model.Count != 0)
+{    
     <div class="hero-unit">
         <div class="container-fluid">
             @foreach (var item in Model)
@@ -22,8 +26,8 @@
                     <a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="thumbnail">
                         <img src="http://placehold.it/260x180" alt=""/>
                     </a>
-                    <h2 class="title">@Html.Truncate(item.Title,30)</h2>
-                    <p class="description">@Html.Truncate(item.Description,20)</p>
+                    <h2 class="title">@Html.Truncate(item.Title, 30)</h2>
+                    <p class="description">@Html.Truncate(item.Description, 20)</p>
                     <p><a href = "@Url.Action("Preview", new {id = item.PresentationId})" class="btn btn-primary btn-small">Preview &raquo;</a></p>           
                     <br />
                     <br />
@@ -32,4 +36,8 @@
             }
         </div>
     </div>
-@Html.Partial("_PageNavigatorPartial")
+    @Html.Partial("_PageNavigatorPartial")
+} else
+{
+    <h3>Sorry, nothing was found.. :(</h3>
+}

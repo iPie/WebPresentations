@@ -1,0 +1,1513 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Web.ApplicationServices.Moles</name>
+    </assembly>
+    <members>
+        <member name="T:System.Web.Security.Moles.MMembershipCreateUserException">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipCreateUserException"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipCreateUserException.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipCreateUserException.#ctor(System.Web.Security.MembershipCreateUserException)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipCreateUserException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipCreateUserException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipCreateUserException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.ConstructorMembershipCreateStatus">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Web.Security.MembershipCreateStatus)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.ConstructorSerializationInfoStreamingContext">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.ConstructorString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.ConstructorStringException">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String,System.Exception)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.GetMessageFromStatusCodeMembershipCreateStatus">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.GetMessageFromStatusCode(System.Web.Security.MembershipCreateStatus)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.StatusCodeGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipCreateUserException.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.AllInstances.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipCreateUserException.AllInstances.StatusCodeGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipPasswordException">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipPasswordException"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipPasswordException.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipPasswordException.#ctor(System.Web.Security.MembershipPasswordException)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipPasswordException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipPasswordException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipPasswordException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipPasswordException.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipPasswordException.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipPasswordException.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipPasswordException.ConstructorSerializationInfoStreamingContext">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipPasswordException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipPasswordException.ConstructorString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipPasswordException.#ctor(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipPasswordException.ConstructorStringException">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipPasswordException.#ctor(System.String,System.Exception)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipPasswordException.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipProvider">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipProvider"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProvider.#ctor(System.Web.Security.MembershipProvider)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProvider.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProvider.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.DecryptPasswordByteArray">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.DecryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.EncryptPasswordByteArray">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.EncryptPasswordByteArrayMembershipPasswordCompatibilityMode">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.GetUserStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.OnValidatingPasswordValidatePasswordEventArgs">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.ValidatingPasswordAddMembershipValidatePasswordEventHandler">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.add_ValidatingPassword(System.Web.Security.MembershipValidatePasswordEventHandler)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.ValidatingPasswordRemoveMembershipValidatePasswordEventHandler">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.remove_ValidatingPassword(System.Web.Security.MembershipValidatePasswordEventHandler)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipProvider.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.DecryptPasswordByteArray">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.DecryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.EncryptPasswordByteArray">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.EncryptPasswordByteArrayMembershipPasswordCompatibilityMode">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.GetUserStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.OnValidatingPasswordValidatePasswordEventArgs">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.ValidatingPasswordAddMembershipValidatePasswordEventHandler">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.add_ValidatingPassword(System.Web.Security.MembershipValidatePasswordEventHandler)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProvider.AllInstances.ValidatingPasswordRemoveMembershipValidatePasswordEventHandler">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProvider.remove_ValidatingPassword(System.Web.Security.MembershipValidatePasswordEventHandler)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipProviderCollection">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipProviderCollection"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.#ctor(System.Web.Security.MembershipProviderCollection)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.Bind(System.Collections.ICollection)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipProviderCollection.Bind(System.Collections.IEnumerable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.AddProviderBase">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProviderCollection.Add(System.Configuration.Provider.ProviderBase)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProviderCollection.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.CopyToMembershipProviderArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProviderCollection.CopyTo(System.Web.Security.MembershipProvider[],System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.ItemGetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipProviderCollection.Item(System.String)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipProviderCollection.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.AllInstances.AddProviderBase">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProviderCollection.Add(System.Configuration.Provider.ProviderBase)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.AllInstances.CopyToMembershipProviderArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipProviderCollection.CopyTo(System.Web.Security.MembershipProvider[],System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipProviderCollection.AllInstances.ItemGetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipProviderCollection.Item(System.String)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipUser">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipUser"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUser.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUser.#ctor(System.Web.Security.MembershipUser)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUser.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUser.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ChangePasswordQuestionAndAnswerStringStringString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ChangePasswordStringString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ChangePasswordStringStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.CommentGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.CommentSetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ConstructorStringStringObjectStringStringStringBooleanBooleanDateTimeDateTimeDateTimeDateTimeDateTime">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.#ctor(System.String,System.String,System.Object,System.String,System.String,System.String,System.Boolean,System.Boolean,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.DateTime)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.CreationDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.CreationDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.EmailGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.EmailSetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.GetPassword">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.GetPasswordBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.GetPasswordString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.GetPasswordStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.GetPasswordStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.IsApprovedGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.IsApprovedSetBoolean">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.IsLockedOutGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsLockedOut"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.IsOnlineGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsOnline"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastActivityDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastActivityDateSetDateTime">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastLockoutDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLockoutDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastLoginDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastLoginDateSetDateTime">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.LastPasswordChangedDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.PasswordQuestionGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.PasswordQuestion"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ProviderNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.ProviderName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ProviderUserKeyGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.ProviderUserKey"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ResetPassword">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ResetPasswordBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ResetPasswordString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ResetPasswordStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ResetPasswordStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.ToString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ToString"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.UnlockUser">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.UnlockUser"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.Update">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.Update"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.UpdateSelf">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.UpdateSelf"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.UserNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.UserName"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipUser.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ChangePasswordQuestionAndAnswerStringStringString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ChangePasswordStringString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ChangePasswordStringStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.CommentGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.CommentSetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.CreationDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.CreationDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.EmailGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.EmailSetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.GetPassword">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.GetPasswordBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.GetPasswordString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.GetPasswordStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.GetPasswordStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.IsApprovedGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.IsApprovedSetBoolean">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.IsLockedOutGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsLockedOut"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.IsOnlineGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.IsOnline"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastActivityDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastActivityDateSetDateTime">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastLockoutDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLockoutDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastLoginDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastLoginDateSetDateTime">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.LastPasswordChangedDateGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.PasswordQuestionGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.PasswordQuestion"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ProviderNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.ProviderName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ProviderUserKeyGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.ProviderUserKey"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ResetPassword">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ResetPasswordBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ResetPasswordString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ResetPasswordStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ResetPasswordStringBooleanBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String,System.Boolean,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.ToString01">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.ToString"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.UnlockUser">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.UnlockUser"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.Update">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.Update"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.UpdateSelf">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUser.UpdateSelf"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUser.AllInstances.UserNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUser.UserName"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipUserCollection">
+            <summary>Mole type of <see cref="T:System.Web.Security.MembershipUserCollection"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.#ctor(System.Web.Security.MembershipUserCollection)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.Bind(System.Collections.ICollection)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MMembershipUserCollection.Bind(System.Collections.IEnumerable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AddMembershipUser">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Add(System.Web.Security.MembershipUser)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.Clear">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Clear"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.CopyToMembershipUserArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.CopyTo(System.Web.Security.MembershipUser[],System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.CountGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.Count"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.GetEnumerator">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.GetEnumerator"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.IsSynchronizedGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.IsSynchronized"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.ItemGetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.Item(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.RemoveString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Remove(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.SetReadOnly">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.SetReadOnly"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.SyncRootGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.SyncRoot"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.SystemCollectionsICollectionCopyToArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.System.Collections.ICollection.CopyTo(System.Array,System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MMembershipUserCollection.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.AddMembershipUser">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Add(System.Web.Security.MembershipUser)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.Clear">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Clear"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.CopyToMembershipUserArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.CopyTo(System.Web.Security.MembershipUser[],System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.CountGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.Count"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.GetEnumerator">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.GetEnumerator"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.IsSynchronizedGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.IsSynchronized"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.ItemGetString">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.Item(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.RemoveString">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.Remove(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.SetReadOnly">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.SetReadOnly"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.SyncRootGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.MembershipUserCollection.SyncRoot"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MMembershipUserCollection.AllInstances.SystemCollectionsICollectionCopyToArrayInt32">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.MembershipUserCollection.System.Collections.ICollection.CopyTo(System.Array,System.Int32)"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MRoleProvider">
+            <summary>Mole type of <see cref="T:System.Web.Security.RoleProvider"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MRoleProvider.#ctor(System.Web.Security.RoleProvider)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MRoleProvider.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MRoleProvider.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MRoleProvider.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MRoleProvider.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.RoleProvider.#ctor"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MRoleProvider.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MValidatePasswordEventArgs">
+            <summary>Mole type of <see cref="T:System.Web.Security.ValidatePasswordEventArgs"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MValidatePasswordEventArgs.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MValidatePasswordEventArgs.#ctor(System.Web.Security.ValidatePasswordEventArgs)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MValidatePasswordEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.MValidatePasswordEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.CancelGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Cancel"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.CancelSetBoolean">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Cancel"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.ConstructorStringStringBoolean">
+            <summary>Sets the mole of <see cref="M:System.Web.Security.ValidatePasswordEventArgs.#ctor(System.String,System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.FailureInformationGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.FailureInformation"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.FailureInformationSetException">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.FailureInformation"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.IsNewUserGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.IsNewUser"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.PasswordGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Password"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.UserNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.UserName"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.CancelGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Cancel"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.CancelSetBoolean">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Cancel"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.FailureInformationGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.FailureInformation"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.FailureInformationSetException">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.FailureInformation"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.IsNewUserGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.IsNewUser"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.PasswordGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.Password"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.MValidatePasswordEventArgs.AllInstances.UserNameGet">
+            <summary>Sets the mole of <see cref="P:System.Web.Security.ValidatePasswordEventArgs.UserName"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.SMembershipCreateUserException">
+            <summary>Stub type of <see cref="T:System.Web.Security.MembershipCreateUserException"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.#ctor(System.Web.Security.MembershipCreateStatus)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipCreateUserException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipCreateUserException.InitializeStub">
+            <summary>Initializes a new instance of type SMembershipCreateUserException</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipCreateUserException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipCreateUserException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.SMembershipPasswordException">
+            <summary>Stub type of <see cref="T:System.Web.Security.MembershipPasswordException"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipPasswordException.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipPasswordException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipPasswordException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipPasswordException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipPasswordException.InitializeStub">
+            <summary>Initializes a new instance of type SMembershipPasswordException</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipPasswordException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipPasswordException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.SMembershipProvider">
+            <summary>Stub type of <see cref="T:System.Web.Security.MembershipProvider"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ApplicationNameGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ApplicationNameSetString">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.AttachBackingFieldToApplicationName">
+            <summary>Attaches delegates to emulate SMembershipProvider.ApplicationName as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.ChangePassword(System.String,System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ChangePassword(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ChangePasswordQuestionAndAnswerStringStringStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ChangePasswordStringStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ChangePassword(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.CreateUserStringStringStringStringStringBooleanObjectMembershipCreateStatusOut">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.DecryptPassword(System.Byte[])">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.DecryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.DecryptPasswordByteArray">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.DecryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.DeleteUser(System.String,System.Boolean)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.DeleteUser(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.DeleteUserStringBoolean">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.DeleteUser(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.DescriptionGet">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Description"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.EnablePasswordResetGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.EnablePasswordReset"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.EnablePasswordRetrievalGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.EnablePasswordRetrieval"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.EncryptPassword(System.Byte[])">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.EncryptPasswordByteArray">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[])"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.EncryptPasswordByteArrayMembershipPasswordCompatibilityMode">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.EncryptPassword(System.Byte[],System.Web.Configuration.MembershipPasswordCompatibilityMode)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.FindUsersByEmailStringInt32Int32Int32Out">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.FindUsersByNameStringInt32Int32Int32Out">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetAllUsersInt32Int32Int32Out">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetNumberOfUsersOnline">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetNumberOfUsersOnline"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetNumberOfUsersOnline01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetNumberOfUsersOnline"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetPassword(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetPassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetPasswordStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetPassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetUser(System.Object,System.Boolean)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.Object,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetUser(System.String,System.Boolean)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.GetUserNameByEmail(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUserNameByEmail(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetUserNameByEmailString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUserNameByEmail(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetUserObjectBoolean">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.Object,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.GetUserStringBoolean">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.GetUser(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>Sets the stub of <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.InitializeStringNameValueCollection">
+            <summary>Sets the stub of <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.InitializeStub">
+            <summary>Initializes a new instance of type SMembershipProvider</summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.MaxInvalidPasswordAttemptsGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MaxInvalidPasswordAttempts"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.MinRequiredNonAlphanumericCharactersGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MinRequiredNonAlphanumericCharacters"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.MinRequiredPasswordLengthGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MinRequiredPasswordLength"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.NameGet">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Name"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.OnValidatingPasswordValidatePasswordEventArgs">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.OnValidatingPassword(System.Web.Security.ValidatePasswordEventArgs)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.PasswordAttemptWindowGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordAttemptWindow"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.PasswordFormatGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordFormat"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.PasswordStrengthRegularExpressionGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordStrengthRegularExpression"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.RequiresQuestionAndAnswerGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.RequiresQuestionAndAnswer"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.RequiresUniqueEmailGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.RequiresUniqueEmail"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.ResetPassword(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ResetPassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ResetPasswordStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ResetPassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.UnlockUser(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.UnlockUser(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.UnlockUserString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.UnlockUser(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.UpdateUser(System.Web.Security.MembershipUser)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.UpdateUserMembershipUser">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.UpdateUser(System.Web.Security.MembershipUser)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipProvider.ValidateUser(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ValidateUser(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipProvider.ValidateUserStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipProvider.ValidateUser(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.ApplicationName">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.Description">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Description"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.EnablePasswordReset">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.EnablePasswordReset"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.EnablePasswordRetrieval">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.EnablePasswordRetrieval"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.MaxInvalidPasswordAttempts">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MaxInvalidPasswordAttempts"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.MinRequiredNonAlphanumericCharacters">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MinRequiredNonAlphanumericCharacters"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.MinRequiredPasswordLength">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.MinRequiredPasswordLength"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.Name">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Name"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.PasswordAttemptWindow">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordAttemptWindow"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.PasswordFormat">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordFormat"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.PasswordStrengthRegularExpression">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.PasswordStrengthRegularExpression"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.RequiresQuestionAndAnswer">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.RequiresQuestionAndAnswer"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipProvider.RequiresUniqueEmail">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipProvider.RequiresUniqueEmail"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.SMembershipUser">
+            <summary>Stub type of <see cref="T:System.Web.Security.MembershipUser"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.#ctor(System.String,System.String,System.Object,System.String,System.String,System.String,System.Boolean,System.Boolean,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.AttachBackingFieldToComment">
+            <summary>Attaches delegates to emulate SMembershipUser.Comment as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.AttachBackingFieldToEmail">
+            <summary>Attaches delegates to emulate SMembershipUser.Email as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.AttachBackingFieldToIsApproved">
+            <summary>Attaches delegates to emulate SMembershipUser.IsApproved as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.AttachBackingFieldToLastActivityDate">
+            <summary>Attaches delegates to emulate SMembershipUser.LastActivityDate as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.AttachBackingFieldToLastLoginDate">
+            <summary>Attaches delegates to emulate SMembershipUser.LastLoginDate as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.ChangePassword(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ChangePasswordQuestionAndAnswerStringStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ChangePasswordStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ChangePassword(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.CommentGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.CommentSetString">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.CreationDateGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.CreationDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.EmailGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.EmailSetString">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.GetPassword">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.GetPassword"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.GetPassword(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.GetPassword01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.GetPassword"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.GetPasswordString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.GetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.InitializeStub">
+            <summary>Initializes a new instance of type SMembershipUser</summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.IsApprovedGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.IsApprovedSetBoolean">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.IsLockedOutGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsLockedOut"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.IsOnlineGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsOnline"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastActivityDateGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastActivityDateSetDateTime">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastLockoutDateGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastLockoutDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastLoginDateGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastLoginDateSetDateTime">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.LastPasswordChangedDateGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.PasswordQuestionGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.PasswordQuestion"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ProviderNameGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.ProviderName"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ProviderUserKeyGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.ProviderUserKey"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.ResetPassword">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ResetPassword"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.ResetPassword(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ResetPassword01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ResetPassword"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ResetPasswordString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ResetPassword(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.ToString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ToString"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.ToString01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.ToString"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SMembershipUser.UnlockUser">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.UnlockUser"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.UnlockUser01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.MembershipUser.UnlockUser"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SMembershipUser.UserNameGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.UserName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.Comment">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Comment"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.CreationDate">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.CreationDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.Email">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.Email"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.IsApproved">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsApproved"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.IsLockedOut">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsLockedOut"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.IsOnline">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.IsOnline"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.LastActivityDate">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastActivityDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.LastLockoutDate">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastLockoutDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.LastLoginDate">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastLoginDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.LastPasswordChangedDate">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.PasswordQuestion">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.PasswordQuestion"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.ProviderName">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.ProviderName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.ProviderUserKey">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.ProviderUserKey"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SMembershipUser.UserName">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.MembershipUser.UserName"/>
+            </summary>
+        </member>
+        <member name="T:System.Web.Security.Moles.SRoleProvider">
+            <summary>Stub type of <see cref="T:System.Web.Security.RoleProvider"/>
+            .</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.AddUsersToRoles(System.String[],System.String[])">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.AddUsersToRoles(System.String[],System.String[])"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.AddUsersToRolesStringArrayStringArray">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.AddUsersToRoles(System.String[],System.String[])"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.ApplicationNameGet">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.RoleProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.ApplicationNameSetString">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.RoleProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.AttachBackingFieldToApplicationName">
+            <summary>Attaches delegates to emulate SRoleProvider.ApplicationName as a property with a backing field</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.CreateRole(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.CreateRole(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.CreateRoleString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.CreateRole(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.DeleteRole(System.String,System.Boolean)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.DeleteRole(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.DeleteRoleStringBoolean">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.DeleteRole(System.String,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.DescriptionGet">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Description"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.FindUsersInRole(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.FindUsersInRole(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.FindUsersInRoleStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.FindUsersInRole(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.GetAllRoles">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetAllRoles"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.GetAllRoles01">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetAllRoles"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.GetRolesForUser(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetRolesForUser(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.GetRolesForUserString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetRolesForUser(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.GetUsersInRole(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetUsersInRole(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.GetUsersInRoleString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.GetUsersInRole(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>Sets the stub of <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.InitializeStringNameValueCollection">
+            <summary>Sets the stub of <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.InitializeStub">
+            <summary>Initializes a new instance of type SRoleProvider</summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.IsUserInRole(System.String,System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.IsUserInRole(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.IsUserInRoleStringString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.IsUserInRole(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.NameGet">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Name"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.RemoveUsersFromRoles(System.String[],System.String[])"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.RemoveUsersFromRolesStringArrayStringArray">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.RemoveUsersFromRoles(System.String[],System.String[])"/>
+            </summary>
+        </member>
+        <member name="M:System.Web.Security.Moles.SRoleProvider.RoleExists(System.String)">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.RoleExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="F:System.Web.Security.Moles.SRoleProvider.RoleExistsString">
+            <summary>Sets the stub of <see cref="M:System.Web.Security.RoleProvider.RoleExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SRoleProvider.ApplicationName">
+            <summary>Sets the stub of <see cref="P:System.Web.Security.RoleProvider.ApplicationName"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SRoleProvider.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SRoleProvider.Description">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Description"/>
+            </summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SRoleProvider.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Web.Security.Moles.SRoleProvider.Name">
+            <summary>Sets the stub of <see cref="P:System.Configuration.Provider.ProviderBase.Name"/>
+            </summary>
+        </member>
+    </members>
+</doc>

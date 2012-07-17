@@ -44,7 +44,10 @@ local.properties
 # Build results
 [Dd]ebug/
 [Rr]elease/
-_ReSharper.WebPresentations
+_ReSharper.WebPresentations/
+TestResults/
+ASPNET.MDF
+aspnet_log.ldf
 *_i.c
 *_p.c
 *.ilk

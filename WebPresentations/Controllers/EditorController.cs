@@ -30,7 +30,7 @@ namespace WebPresentations.Controllers
             if (ModelState.IsValid)
             {
                 var tags = new List<Tag>();
-                foreach (var input in Regex.Split(model.TagString, @"\s|,"))
+                foreach (var input in Regex.Split(model.TagString, @"[,\s+]+"))
                 {
                     var tagText = input.ToLower();
                     var tagExists = Entities.Tags.Any(g => g.Text == tagText);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using WebPresentations.Models;
+using WebPresentations.MembershipLayer;
 using WebPresentations.ViewModels;
 
 namespace WebPresentations.Controllers
@@ -12,13 +12,13 @@ namespace WebPresentations.Controllers
     [Authorize(Roles = "Administrator")]
     public class AdministrativeToolController : Controller
     {
+
         //
         // GET: /AdministrativeTool/
 
         public ActionResult Index()
         {
             var users = Membership.GetAllUsers();
-
             return View(users);
         }
 
@@ -39,7 +39,6 @@ namespace WebPresentations.Controllers
                                     LastActivityDate = user.LastActivityDate,
                                     IsOnline = user.IsOnline,
                                     RolesList = Roles.GetAllRoles().ToList(),
-
                                 };
                 return View(model);
             }
@@ -57,7 +56,7 @@ namespace WebPresentations.Controllers
         {
             try
             {
-                if(!Roles.IsUserInRole(model.UserName, model.Role))
+                if (!Roles.IsUserInRole(model.UserName, model.Role))
                 {
                     var roles = Roles.GetRolesForUser(model.UserName);
                     Roles.RemoveUserFromRoles(model.UserName, roles);
@@ -82,26 +81,14 @@ namespace WebPresentations.Controllers
             }
         }
 
+        //
+        // POST: /AdministrativeTool/PasswordReset
+
         [HttpPost]
         public ActionResult PasswordReset(string userName)
         {
-            try
-            {
-                var user = Membership.GetUser(userName);
-                var newPassword = user.ResetPassword();
-                var message = new MailService.MessageModel
-                {
-                    UserName = userName,
-                    MessageSubject= "Password reset notification",
-                    MessageBody = "Your password had been reset to: " + newPassword
-                };
-                MailService.SendConfrimationEmail(message);
-                return Json(new { message = "Success"});
-            }
-            catch
-            {
-                return Json(new { message = "Error" });
-            }
+            var result = AccountService.PasswordReset(userName);
+            return Json(new { message = result });
         }
     }
 }

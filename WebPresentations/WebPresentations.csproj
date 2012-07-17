@@ -87,17 +87,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="MembershipLayer\AdministrativeLayer.cs" />
+    <Compile Include="MembershipLayer\MembershipLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\PresentationsEntities.cs" />
     <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\WebPresentationsModel.cs" />
-    <Compile Include="Models\WebPresentationsModel.Designer.cs">
-      <DependentUpon>WebPresentationsModel.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,7 +114,6 @@
     <Content Include="App_Data\aspnetdb_log.ldf">
       <DependentUpon>ASPNETDB.MDF</DependentUpon>
     </Content>
-    <Content Include="App_Data\WebPresentations.sdf" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\docs.css" />
@@ -505,10 +500,6 @@
     <None Include="Content\fonts\PressStart2P-Regular.woff" />
     <None Include="Content\fonts\Ubuntu-Bold.woff" />
     <None Include="Content\fonts\Ubuntu.woff" />
-    <EntityDeploy Include="Models\WebPresentationsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebPresentationsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -548,7 +539,6 @@
     <None Include="Scripts\editor\preview_export\fonts\SL0aFUFfkFMMdariYQ3_YbrIa-7acMAeDBVuclsi6Gc.woff" />
     <None Include="Scripts\editor\preview_export\fonts\vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff" />
     <None Include="Scripts\editor\preview_export\fonts\X1g_KwGeBV3ajZIXQ9VnDokaQb-UsZVONjobs91YQtw.woff" />
-    <Content Include="Views\Editor\Success.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
     <Content Include="Views\Editor\Create.cshtml" />
     <Content Include="Views\AdministrativeTool\Index.cshtml" />
