@@ -33,10 +33,10 @@ namespace WebPresentations.Controllers
                 foreach (var input in Regex.Split(model.TagString, @"[,\s+]+"))
                 {
                     var tagText = input.ToLower();
-                    var tagExists = Entities.Tags.Any(g => g.Text == tagText);
+                    var tagExists = TagExists(tagText);
                     if (tagExists)
                     {
-                        var tag = Entities.Tags.First(g => g.Text == tagText);
+                        var tag = GetTag(tagText);
                         tag.Count++;
                         tags.Add(tag);
                     }
@@ -50,13 +50,14 @@ namespace WebPresentations.Controllers
                     Title = model.Title,
                     Description = model.Description,
                     Json = model.Json,
+                    HtmlContents = model.HtmlContents,
+                    TextData = model.TextData,
                     Tags = tags,
                     UserName = User.Identity.Name
                 };
                 try
                 {
-                    Entities.Presentations.Add(presentation);
-                    Entities.SaveChanges();
+                    AddToPresentations(presentation);
                     var cm = new WebPresentationsCacheManager();
                     cm.Flush();
                 }
@@ -75,6 +76,34 @@ namespace WebPresentations.Controllers
         public ActionResult Preview()
         {
             return View();
+        }
+
+        //
+        // GET: /Editor/Edit?id=1
+
+        public ActionResult Edit(int id)
+        {
+            var valid = UserOwnsPresentation(id);
+            return valid ? View(GetPresentation(id)) : View("Error");
+        }
+
+        //
+        // GET: /Editor/Delete?id=1
+
+        public ActionResult Delete(int id)
+        {
+            if (UserOwnsPresentation(id))
+            {
+                try
+                {
+                    RemovePresentation(id);
+                }
+                catch
+                {
+                    return View("Error");
+                }
+            }
+            return View("Error");
         }
     }
 }

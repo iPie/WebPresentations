@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,8 +23,7 @@ namespace WebPresentations.Controllers
             //if (Request.HttpMethod == "GET")
             //    search = currentFilter;
             //else
-            var presentations = Entities.Presentations
-                .Include("Tags").OrderBy(g => g.Title);
+            var presentations = PresentationsWithTags().OrderBy(g => g.Title);
 
             var cm = new WebPresentationsCacheManager();
             var result = new List<Presentation>();
@@ -54,25 +54,21 @@ namespace WebPresentations.Controllers
             return View(result.ToPagedList(pageNumber, pageSize));           
         }
 
+
         //
         // GET: /Gallery/Preview?id=1
 
         public ViewResult Preview (int id)
         {
-            bool exists = Entities.Presentations.Any(g => g.PresentationId == id);
-            if (exists)
+            if (PresentationExists(id))
             {
-                var presentation = Entities.Presentations.Include("Tags").First(g => g.PresentationId == id);
+                var presentation = GetPresentation(id);
                 //ViewBag.PresentationTitle = presentation.Title;
                 //ViewBag.Description = presentation.Description;
                 //ViewBag.Tags = presentation.Tags;
                 return View(presentation);
             }
-            else
-            {
-                return View("Error");
-            }
-
+            return View("Error");
         }
 
         public IOrderedQueryable<Presentation> FindInPresentationData(string search)

@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Settings";
+}
+<div class="page-header">
+    <h2>My Profile</h2>
+</div>
+<ul id="profileTab" class="nav nav-tabs">
+    <li><a href="@Url.Action("Index")">Profile</a></li>
+    <li class="active"><a href="@Url.Action("Settings")">Settings</a></li>
+    <li><a href="@Url.Action("Presentations")">My Presentations</a></li>
+</ul>
+<div id="profileTabContent" class="tab-content">    
+    <div class="tab-pane fade in active" id="settings">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#settings" href="#collapseOne">
+                    Language</a>
+            </div>
+            <div id="collapseOne" class="accordion-body in collapse" style="height: auto;">
+                <div class="accordion-inner">
+                    <h5>Change your language.. maybe</h5>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#settings" href="#collapseTwo">
+                    Change password</a>
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+                <div class="accordion-inner">
+                    <p>
+                        <h5>
+                            <span class="label label-info">Tip!</span> Please don't forget your new password.
+                        </h5>
+                    </p>
+                    <fieldset>
+                        <div class="controls">
+                            <input type="password" class="input-small" placeholder="Old password">
+                        </div>
+                        <div class="controls">
+                            <input type="password" class="input-small" placeholder="New password">
+                        </div>
+                        <div class="controls">
+                            <input type="password" class="input-small" placeholder="Retype password">
+                        </div>
+                    </fieldset>
+                    <button class="btn btn-warning" onclick="" value="Reset">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#settings" href="#collapseThree">Password reset</a>
+            </div>
+            <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+                <div class="accordion-inner">
+                    <div class="alert alert-error">
+                        Reset your password. You will be notified with an e-mail containing the new password.
+                    </div>
+                    <p><button class="btn btn-danger" onclick="" value="Reset">Reset</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

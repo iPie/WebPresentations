@@ -51,7 +51,8 @@
         var json,
           _this = this;
         json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)));
-        localStorage.setItem("jsonString", json);
+        localStorage.setItem("htmlContents", json);
+        localStorage.setItem("jsonString", escape(JSON.stringify(this.model.toJSON(false, true))));
         return this.saveAsDialog.show(function(fileName) {
           if ((fileName != null) && fileName !== "") {
             console.log("Attempting to save " + fileName);

@@ -34,7 +34,7 @@
 </style>
 <script type="text/javascript">
     $(function () {
-        $("body").html(JSON.parse(unescape("@Model.Json")));
+        $("body").html(JSON.parse(unescape("@Model.HtmlContents")));
         console.log("STARTING IMPRESS!");
         startImpress(document, window);
         impress().init();

@@ -648,6 +648,14 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Create(WebPresentations.ViewModels.EditorViewModel)"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.DeleteInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Delete(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.EditInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Edit(System.Int32)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Controllers.Moles.MEditorController.Preview">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Preview"/>
             </summary>
@@ -661,6 +669,14 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.CreateEditorViewModel">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Create(WebPresentations.ViewModels.EditorViewModel)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.DeleteInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Delete(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.EditInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Edit(System.Int32)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.Preview">
@@ -698,6 +714,14 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.Description"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.HtmlContentsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.HtmlContents"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.HtmlContentsSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.HtmlContents"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.JsonGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.Json"/>
             </summary>
@@ -712,6 +736,14 @@
         </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.TagStringSetString">
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TagString"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.TextDataGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TextData"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.TextDataSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TextData"/>
             </summary>
         </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.TitleGet">
@@ -733,6 +765,14 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.Description"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.HtmlContentsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.HtmlContents"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.HtmlContentsSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.HtmlContents"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.JsonGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.Json"/>
             </summary>
@@ -747,6 +787,14 @@
         </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.TagStringSetString">
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TagString"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.TextDataGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TextData"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.TextDataSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.EditorViewModel.TextData"/>
             </summary>
         </member>
         <member name="P:WebPresentations.ViewModels.Moles.MEditorViewModel.AllInstances.TitleGet">
@@ -788,6 +836,10 @@
         <member name="M:WebPresentations.Controllers.Moles.MEntityController.Bind(System.IDisposable)">
             <summary>Binds the members of the interface to the mole.</summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AddToPresentationsPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.AddToPresentations(WebPresentations.Models.Presentation)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
@@ -803,8 +855,44 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Controllers.EntityController.Entities"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetCurrentUserPresentations">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetCurrentUserPresentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetPresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.PresentationExistsInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationExists(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.PresentationsWithTags">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationsWithTags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.RemovePresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.RemovePresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.TagExistsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.TagExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.UserOwnsPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.UserOwnsPresentation(System.Int32)"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MEntityController.AllInstances">
             <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.AddToPresentationsPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.AddToPresentations(WebPresentations.Models.Presentation)"/>
+            </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.DisposeBoolean">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.Dispose(System.Boolean)"/>
@@ -812,6 +900,38 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.EntitiesGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Controllers.EntityController.Entities"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetCurrentUserPresentations">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetCurrentUserPresentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetPresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.PresentationExistsInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationExists(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.PresentationsWithTags">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationsWithTags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.RemovePresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.RemovePresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.TagExistsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.TagExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.UserOwnsPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.UserOwnsPresentation(System.Int32)"/>
             </summary>
         </member>
         <member name="T:WebPresentations.MembershipLayer.Moles.MFormsAuthenticationService">
@@ -1266,6 +1386,14 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Description"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.HtmlContentsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.HtmlContents"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.HtmlContentsSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.HtmlContents"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.JsonGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Json"/>
             </summary>
@@ -1288,6 +1416,14 @@
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.TagsSetICollectionOfTag">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Tags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.TextDataGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.TextDataSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.TitleGet">
@@ -1317,6 +1453,14 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Description"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.HtmlContentsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.HtmlContents"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.HtmlContentsSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.HtmlContents"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.JsonGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Json"/>
             </summary>
@@ -1339,6 +1483,14 @@
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TagsSetICollectionOfTag">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Tags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TextDataGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TextDataSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TitleGet">
@@ -1470,6 +1622,14 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.PasswordReset"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.Presentations">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.Settings">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Settings"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MProfileController.AllInstances">
             <summary>Define moles for all instances members</summary>
         </member>
@@ -1479,6 +1639,14 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.PasswordReset">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.PasswordReset"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.Presentations">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.Settings">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Settings"/>
             </summary>
         </member>
         <member name="T:WebPresentations.Models.Moles.MRegisterModel">

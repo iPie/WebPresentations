@@ -13,8 +13,13 @@ namespace WebPresentations.ViewModels
         [MaxLength(50)]
         public String Description { get; set; }
 
-        [Required(ErrorMessage = "Json string was not submitted.")]
+        //[Required(ErrorMessage = "Json string was not submitted.")]
         public String Json { get; set; }
+
+        //[Required(ErrorMessage = "Json string was not submitted.")]
+        public String HtmlContents { get; set; }
+
+        public String TextData { get; set; }
 
         [Required(ErrorMessage = "At least one tag is required.")]
         public String TagString { get; set; }

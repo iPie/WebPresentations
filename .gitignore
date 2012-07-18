@@ -44,10 +44,11 @@ local.properties
 # Build results
 [Dd]ebug/
 [Rr]elease/
+obj/
 _ReSharper.WebPresentations/
 TestResults/
 ASPNET.MDF
-aspnet_log.ldf
+aspnetdb_log.ldf
 *_i.c
 *_p.c
 *.ilk

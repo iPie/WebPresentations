@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebPresentations.Models.Presentation>
+@{
+    ViewBag.Title = "My Presentations";
+}
+<div class="page-header">
+    <h2>My Profile</h2>
+</div>
+<ul id="profileTab" class="nav nav-tabs">
+    <li><a href="@Url.Action("Index")">Profile</a></li>
+    <li><a href="@Url.Action("Settings")">Settings</a></li>
+    <li class="active"><a href="@Url.Action("Presentations")">My Presentations</a></li>
+</ul>
+<div id="profileTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="presentations">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Tags
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var counter = 0; }
+                @foreach (var item in Model)
+                {    
+                    <tr>
+                        <td>
+                            @{ ++counter; @counter }
+                        </td>
+                        <td>@item.Title
+                        </td>
+                        <td>@item.Description
+                        </td>
+                        <td>
+                            @foreach( var tag in item.Tags)
+                            {
+                                @tag.Text <em></em>
+                            }
+                        </td>
+
+                        <td>
+                            <a class="btn btn-mini btn-warning" href = "@Url.Action("Edit","Editor", new {id = item.PresentationId})" value="Reset">Edit</a>
+                            <button class="btn btn-mini btn-danger" onclick="" value="Reset">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

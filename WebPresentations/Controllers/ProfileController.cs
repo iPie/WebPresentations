@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebPresentations.MembershipLayer;
+using WebPresentations.Models;
 
 namespace WebPresentations.Controllers
 {
@@ -16,17 +17,38 @@ namespace WebPresentations.Controllers
 
         public ActionResult Index()
         {
-            var presentations = Entities.Presentations
-                .Where(p => p.UserName == User.Identity.Name).ToList();
+            return View();
+        }
+
+        //
+        // GET: /Profile/Settings
+
+        public ActionResult Settings()
+        {
+            var presentations = GetCurrentUserPresentations();
             return View(presentations);
         }
 
-        public ActionResult PasswordReset()
+        //
+        // GET: /Profile/Presentations
+
+        public ActionResult Presentations()
+        {
+            var presentations = GetCurrentUserPresentations();
+            return View(presentations);
+        }
+
+        //
+        // POST: /Profile/PasswordReset
+
+        [HttpPost]
+        public JsonResult PasswordReset()
         {
             var userName = User.Identity.Name;
             var result = AccountService.PasswordReset(userName);
             return Json(new { message = result });
         }
+
 
     }
 }

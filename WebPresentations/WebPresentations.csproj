@@ -83,12 +83,13 @@
     <Compile Include="Controllers\EntityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="DatabaseEntities\DatabaseContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="MembershipLayer\AdministrativeLayer.cs" />
-    <Compile Include="MembershipLayer\MembershipLayer.cs" />
+    <Compile Include="MembershipLayer\MembershipServiceLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Models\Presentation.cs" />
@@ -240,6 +241,9 @@
     <Content Include="Scripts\editor\main.js">
       <DependentUpon>main.coffee</DependentUpon>
     </Content>
+    <Content Include="Scripts\editor\main_supress.js">
+      <DependentUpon>main_supress.coffee</DependentUpon>
+    </Content>
     <Content Include="Scripts\editor\model\common_application\AutoSaver.js">
       <DependentUpon>AutoSaver.coffee</DependentUpon>
     </Content>
@@ -330,6 +334,9 @@
     </Content>
     <Content Include="Scripts\editor\ui\editor\Editor.js">
       <DependentUpon>Editor.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\editor\ui\editor\Editor_supress.js">
+      <DependentUpon>Editor_supress.coffee</DependentUpon>
     </Content>
     <Content Include="Scripts\editor\ui\editor\main.js">
       <DependentUpon>main.coffee</DependentUpon>
@@ -507,11 +514,13 @@
     <None Include="Scripts\bootstrap\README.md" />
     <Content Include="Views\Editor\Index.cshtml" />
     <Content Include="Views\Shared\_PageNavigatorPartial.cshtml" />
+    <None Include="Scripts\editor\main.coffee" />
+    <None Include="Scripts\editor\main_supress.coffee" />
+    <None Include="Scripts\editor\ui\editor\Editor_supress.coffee" />
     <None Include="Views\Editor\Create.cshtml" />
     <None Include="Scripts\editor\common\collections\LinkedList.coffee" />
     <None Include="Scripts\editor\common\FileUtils.coffee" />
     <None Include="Scripts\editor\common\Math2.coffee" />
-    <None Include="Scripts\editor\main.coffee" />
     <None Include="Scripts\editor\model\common_application\AutoSaver.coffee" />
     <None Include="Scripts\editor\model\common_application\UndoHistory.coffee" />
     <None Include="Scripts\editor\model\editor\button_bar\ButtonBarModel.coffee" />
@@ -556,12 +565,6 @@
       <Iced>False</Iced>
     </None>
     <None Include="Scripts\editor\common\Math2.coffee">
-      <Compile>True</Compile>
-      <Minify>True</Minify>
-      <Bare>False</Bare>
-      <Iced>False</Iced>
-    </None>
-    <None Include="Scripts\editor\main.coffee">
       <Compile>True</Compile>
       <Minify>True</Minify>
       <Bare>False</Bare>
@@ -897,6 +900,9 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\Preview.cshtml" />
+    <Content Include="Views\Profile\Settings.cshtml" />
+    <Content Include="Views\Profile\Presentations.cshtml" />
+    <Content Include="Views\Editor\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

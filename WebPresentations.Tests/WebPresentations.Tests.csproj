@@ -120,13 +120,11 @@
     <Moles Include="System.Net.moles" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WebPresentations.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App.config">
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebPresentations.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup />

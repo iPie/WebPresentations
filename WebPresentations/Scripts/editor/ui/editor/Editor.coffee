@@ -50,9 +50,9 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 				FileStorage.save(fileName, @model.toJSON(false, true))
 
 		saveAs: (e) ->
-			#json = JSON.stringify(@model.toJSON(false, true))
 			json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)))
-			localStorage.setItem("jsonString", json)
+			localStorage.setItem("htmlContents", json)
+			localStorage.setItem("jsonString", escape(JSON.stringify(@model.toJSON(false, true))))
 			@saveAsDialog.show((fileName) =>
 				if fileName? and fileName isnt ""
 					console.log "Attempting to save #{fileName}"
