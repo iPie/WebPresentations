@@ -13,14 +13,8 @@ namespace WebPresentations.Controllers
     //[HandleErrorWithELMAH]
     public class AccountController : Controller
     {
-        // This constructor is used by the MVC framework to instantiate the controller using
-        // the default forms authentication and membership providers.
-
         public AccountController() : this(null, null) { }
 
-        // This constructor is not used by the MVC framework but is instead provided for ease
-        // of unit testing this type. See the comments at the end of this file for more
-        // information.
         public AccountController(IFormsAuthentication formsAuth, IMembershipService service)
         {
             FormsAuth = formsAuth ?? new FormsAuthenticationService();
@@ -54,13 +48,8 @@ namespace WebPresentations.Controllers
             {
                 if (ValidateLogOn(model.UserName, model.Password))
                 {
-                    // Make sure we have the username with the right capitalization
-                    // since we do case sensitive checks for OpenID Claimed Identifiers later.
                     string userName = MembershipService.GetCanonicalUsername(model.UserName);
-
                     FormsAuth.SignIn(userName, model.RememberMe);
-
-                    // Make sure we only follow relative returnUrl parameters to protect against having an open redirector
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -102,7 +91,6 @@ namespace WebPresentations.Controllers
 
                 if (ValidateRegistration(model.UserName, model.Email, model.Password, model.ConfirmPassword))
                 {
-                    // Attempt to register the user
                     MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
 
                     if (createStatus == MembershipCreateStatus.Success)
@@ -157,13 +145,11 @@ namespace WebPresentations.Controllers
                     user.IsApproved = true;
                     Membership.UpdateUser(user);
                     FormsAuthentication.SetAuthCookie(user.UserName, false /* createPersistentCookie */);
-                    //FormsService.SignIn(user.UserName, false);
                     return RedirectToAction("RegistrationSuccess");
                 }
                 else
                 {
                     FormsAuthentication.SignOut();
-                    //FormsService.SignOut();
                     TempData["errorMessage"] = "You have already confirmed your email address.";
                     return RedirectToAction("LogOn");
                 }
@@ -189,34 +175,31 @@ namespace WebPresentations.Controllers
 
         [Authorize]
         [HttpPost]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
-            Justification = "Exceptions result in password not being changed.")]
         public ActionResult ChangePassword(string currentPassword, string newPassword, string confirmPassword)
         {
-
             ViewBag.PasswordLength = MembershipService.MinPasswordLength;
 
             if (!ValidateChangePassword(currentPassword, newPassword, confirmPassword))
             {
-                return View();
+                return Json("Fail");
             }
 
             try
             {
                 if (MembershipService.ChangePassword(User.Identity.Name, currentPassword, newPassword))
                 {
-                    return RedirectToAction("ChangePasswordSuccess");
+                    return Json("Success");
                 }
                 else
                 {
                     ModelState.AddModelError("_FORM", "The current password is incorrect or the new password is invalid.");
-                    return View();
+                    return Json("Fail");
                 }
             }
             catch
             {
                 ModelState.AddModelError("_FORM", "The current password is incorrect or the new password is invalid.");
-                return View();
+                return Json("Fail");
             }
         }
 

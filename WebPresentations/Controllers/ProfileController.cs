@@ -17,6 +17,10 @@ namespace WebPresentations.Controllers
 
         public ActionResult Index()
         {
+            var user = Membership.GetUser(User.Identity.Name);
+            ViewBag.Email = user.Email;
+            ViewBag.MemberSince = user.CreationDate;
+            ViewBag.PresentationsCount = Entities.GetUserPresentations(User.Identity.Name).Count();
             return View();
         }
 
@@ -25,7 +29,7 @@ namespace WebPresentations.Controllers
 
         public ActionResult Settings()
         {
-            var presentations = GetCurrentUserPresentations();
+            var presentations = Entities.GetUserPresentations(User.Identity.Name);
             return View(presentations);
         }
 
@@ -34,7 +38,7 @@ namespace WebPresentations.Controllers
 
         public ActionResult Presentations()
         {
-            var presentations = GetCurrentUserPresentations();
+            var presentations = Entities.GetUserPresentations(User.Identity.Name);
             return View(presentations);
         }
 

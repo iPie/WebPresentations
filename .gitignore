@@ -47,8 +47,6 @@ local.properties
 obj/
 _ReSharper.WebPresentations/
 TestResults/
-ASPNET.MDF
-aspnetdb_log.ldf
 *_i.c
 *_p.c
 *.ilk

@@ -33,10 +33,10 @@ namespace WebPresentations.Controllers
                 foreach (var input in Regex.Split(model.TagString, @"[,\s+]+"))
                 {
                     var tagText = input.ToLower();
-                    var tagExists = TagExists(tagText);
+                    var tagExists = Entities.TagExists(tagText);
                     if (tagExists)
                     {
-                        var tag = GetTag(tagText);
+                        var tag = Entities.GetTag(tagText);
                         tag.Count++;
                         tags.Add(tag);
                     }
@@ -57,7 +57,7 @@ namespace WebPresentations.Controllers
                 };
                 try
                 {
-                    AddToPresentations(presentation);
+                    Entities.AddToPresentations(presentation);
                     var cm = new WebPresentationsCacheManager();
                     cm.Flush();
                 }
@@ -83,27 +83,28 @@ namespace WebPresentations.Controllers
 
         public ActionResult Edit(int id)
         {
-            var valid = UserOwnsPresentation(id);
-            return valid ? View(GetPresentation(id)) : View("Error");
+            var valid = Entities.UserOwnsPresentation(id,User.Identity.Name);
+            return valid ? View(Entities.GetPresentation(id)) : View("Error");
         }
 
         //
         // GET: /Editor/Delete?id=1
 
-        public ActionResult Delete(int id)
+        public JsonResult Delete(int id)
         {
-            if (UserOwnsPresentation(id))
+            if (Entities.UserOwnsPresentation(id,User.Identity.Name))
             {
                 try
                 {
-                    RemovePresentation(id);
+                    Entities.RemovePresentation(id);
                 }
                 catch
                 {
-                    return View("Error");
+                    return Json(new { message = "Fail" });
                 }
+                return Json(new { message = "Success" });
             }
-            return View("Error");
+            return Json(new { message = "Fail" });
         }
     }
 }

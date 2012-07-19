@@ -19,11 +19,7 @@ namespace WebPresentations.Controllers
         
         public ViewResult Index(/*string sortOrder, string currentFilter,*/ string search, int? page)
         {
-            // TODO: future search support
-            //if (Request.HttpMethod == "GET")
-            //    search = currentFilter;
-            //else
-            var presentations = PresentationsWithTags().OrderBy(g => g.Title);
+            var presentations = Entities.PresentationsWithTags().OrderBy(g => g.Title);
 
             var cm = new WebPresentationsCacheManager();
             var result = new List<Presentation>();
@@ -35,8 +31,8 @@ namespace WebPresentations.Controllers
                 }
                 else
                 {
-                    presentations = FindInPresentationData(search);
-                    presentations = FindInTags(search, presentations);
+                    presentations = Entities.FindInPresentationData(search);
+                    presentations = Entities.FindInTags(search, presentations);
                     result = presentations.ToList();
                     cm.Add(search, result);
                 }
@@ -56,48 +52,16 @@ namespace WebPresentations.Controllers
 
 
         //
-        // GET: /Gallery/Preview?id=1
+        // GET: /Gallery/Preview/1
 
         public ViewResult Preview (int id)
         {
-            if (PresentationExists(id))
+            if (Entities.PresentationExists(id))
             {
-                var presentation = GetPresentation(id);
-                //ViewBag.PresentationTitle = presentation.Title;
-                //ViewBag.Description = presentation.Description;
-                //ViewBag.Tags = presentation.Tags;
+                var presentation = Entities.GetPresentation(id);
                 return View(presentation);
             }
             return View("Error");
-        }
-
-        public IOrderedQueryable<Presentation> FindInPresentationData(string search)
-        {
-            return Entities.Presentations
-                     .Where(p => p.Title.Contains(search) || p.Description.Contains(search) || p.Json.Contains(search)).OrderBy(p => p.Title);
-        }
-
-        public IOrderedQueryable<Presentation> FindInTags(string search, IOrderedQueryable<Presentation> presentations)
-        {
-            var ids = Entities.Tags.Where(tag => tag.Text == search).OrderBy(tag => (tag.Text)).Select(
-                        tag => tag.Presentations);
-
-            foreach (var collection in ids)
-            {
-                foreach (var currentPresentation in collection)
-                {
-                    if (!presentations.Any(p => p.PresentationId == currentPresentation.PresentationId))
-                    {
-                        var tmp = from p in Entities.Presentations
-                                  where p.PresentationId == currentPresentation.PresentationId
-                                  orderby p.Title
-                                  select p;
-
-                        presentations = presentations.Concat(tmp).OrderBy(t => t.Title);
-                    }
-                }
-            }
-            return presentations;
         }
     }
 }

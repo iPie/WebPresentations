@@ -34,7 +34,7 @@
                 @{ var counter = 0; }
                 @foreach (var item in Model)
                 {    
-                    <tr>
+                    <tr id="row-@item.PresentationId">
                         <td>
                             @{ ++counter; @counter }
                         </td>
@@ -51,11 +51,66 @@
 
                         <td>
                             <a class="btn btn-mini btn-warning" href = "@Url.Action("Edit","Editor", new {id = item.PresentationId})" value="Reset">Edit</a>
-                            <button class="btn btn-mini btn-danger" onclick="" value="Reset">Delete</button>
+                            <button class="btn btn-mini btn-danger" onclick="Delete(@item.PresentationId)" value="Delete">Delete</button>
+                            <a class="btn btn-mini btn-success" href = "@Url.Action("Preview","Editor", new {id = item.PresentationId})" value="Preview">Preview</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var id;
+    
+    function handleUpdate(_id) {
+        $('#row-' + _id).fadeOut('slow');
+    }
+    function Delete(_id) {
+        $('#YesNoModal').modal('show');
+        id = _id;
+    };
+        
+    function DeletePost() {
+        $.post("/Editor/Delete", { "id": id },
+            function (data) {
+                var resultJson = data.message;
+                $('#YesNoModal').modal('hide');
+                if (resultJson == "Success") {                    
+                    handleUpdate(id);
+                } else {
+                    $('#statusMessage').modal('show');
+                    $("#statusMessageHeader").html('<h3 style="color:red">Error!</h3>');
+                    $("#statusMessageText").html('<h5>Could not delete presentation. Something went wrong..</h5>');
+                }
+            });
+    };
+</script>
+
+<div class="modal hide" id="statusMessage">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3 id = statusMessageHeader></h3>
+    </div>
+    <div class="modal-body">
+        <p id="statusMessageText"></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">OK</a>
+    </div>
+</div>
+
+<div class="modal hide" id="YesNoModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 style="color:red">Warning</h3>
+  </div>
+  <div class="modal-body">
+    <h5>Are you sure you want to delete this presentation?</h5>
+  </div>
+    <div class="modal-footer">
+        <a href="#"  onclick="DeletePost()" class="btn btn-danger">Delete</a>
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
     </div>
 </div>

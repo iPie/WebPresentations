@@ -599,6 +599,162 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.ChangePasswordModel.OldPassword"/>
             </summary>
         </member>
+        <member name="T:WebPresentations.DatabaseEntities.Moles.MDatabaseContext">
+            <summary>Mole type of <see cref="T:WebPresentations.DatabaseEntities.DatabaseContext"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.#ctor(WebPresentations.DatabaseEntities.DatabaseContext)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.Bind(System.Data.Entity.Infrastructure.IObjectContextAdapter)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AddToPresentationsPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddToPresentations(WebPresentations.Models.Presentation)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.Constructor">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.ConstructorPresentationsEntities">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.#ctor(WebPresentations.Models.PresentationsEntities)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.DisposeBoolean">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.Dispose(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.EntitiesGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.EntitiesSetPresentationsEntities">
+            <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.FindInPresentationDataString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInPresentationData(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.FindInTagsStringIOrderedQueryableOfPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInTags(System.String,System.Linq.IOrderedQueryable`1{WebPresentations.Models.Presentation})"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetPresentationsForTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentationsForTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetUserPresentationsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetUserPresentations(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.PresentationExistsInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.PresentationExists(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.PresentationsWithTags">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.PresentationsWithTags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.RemovePresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.RemovePresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.TagExistsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.TagExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.UserOwnsPresentationInt32String">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.UserOwnsPresentation(System.Int32,System.String)"/>
+            </summary>
+        </member>
+        <member name="T:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.AddToPresentationsPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddToPresentations(WebPresentations.Models.Presentation)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.DisposeBoolean">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.Dispose(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.EntitiesGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.EntitiesSetPresentationsEntities">
+            <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.FindInPresentationDataString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInPresentationData(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.FindInTagsStringIOrderedQueryableOfPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInTags(System.String,System.Linq.IOrderedQueryable`1{WebPresentations.Models.Presentation})"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetPresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetPresentationsForTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentationsForTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetTagString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetTag(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetUserPresentationsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetUserPresentations(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.PresentationExistsInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.PresentationExists(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.PresentationsWithTags">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.PresentationsWithTags"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.RemovePresentationInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.RemovePresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.TagExistsString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.TagExists(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.UserOwnsPresentationInt32String">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.UserOwnsPresentation(System.Int32,System.String)"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MEditorController">
             <summary>Mole type of <see cref="T:WebPresentations.Controllers.EditorController"/>
             .</summary>
@@ -836,10 +992,6 @@
         <member name="M:WebPresentations.Controllers.Moles.MEntityController.Bind(System.IDisposable)">
             <summary>Binds the members of the interface to the mole.</summary>
         </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AddToPresentationsPresentation">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.AddToPresentations(WebPresentations.Models.Presentation)"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
@@ -855,44 +1007,8 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Controllers.EntityController.Entities"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetCurrentUserPresentations">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetCurrentUserPresentations"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetPresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetPresentation(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.GetTagString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetTag(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.PresentationExistsInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationExists(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.PresentationsWithTags">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationsWithTags"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.RemovePresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.RemovePresentation(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.TagExistsString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.TagExists(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.UserOwnsPresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.UserOwnsPresentation(System.Int32)"/>
-            </summary>
-        </member>
         <member name="T:WebPresentations.Controllers.Moles.MEntityController.AllInstances">
             <summary>Define moles for all instances members</summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.AddToPresentationsPresentation">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.AddToPresentations(WebPresentations.Models.Presentation)"/>
-            </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.DisposeBoolean">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.Dispose(System.Boolean)"/>
@@ -900,38 +1016,6 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.EntitiesGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Controllers.EntityController.Entities"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetCurrentUserPresentations">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetCurrentUserPresentations"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetPresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetPresentation(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.GetTagString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.GetTag(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.PresentationExistsInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationExists(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.PresentationsWithTags">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.PresentationsWithTags"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.RemovePresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.RemovePresentation(System.Int32)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.TagExistsString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.TagExists(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MEntityController.AllInstances.UserOwnsPresentationInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EntityController.UserOwnsPresentation(System.Int32)"/>
             </summary>
         </member>
         <member name="T:WebPresentations.MembershipLayer.Moles.MFormsAuthenticationService">
@@ -1020,14 +1104,6 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.#ctor"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.Controllers.Moles.MGalleryController.FindInPresentationDataString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.FindInPresentationData(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MGalleryController.FindInTagsStringIOrderedQueryableOfPresentation">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.FindInTags(System.String,System.Linq.IOrderedQueryable`1{WebPresentations.Models.Presentation})"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.Controllers.Moles.MGalleryController.IndexStringNullableOfInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.Index(System.String,System.Nullable`1{System.Int32})"/>
             </summary>
@@ -1038,14 +1114,6 @@
         </member>
         <member name="T:WebPresentations.Controllers.Moles.MGalleryController.AllInstances">
             <summary>Define moles for all instances members</summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MGalleryController.AllInstances.FindInPresentationDataString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.FindInPresentationData(System.String)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Controllers.Moles.MGalleryController.AllInstances.FindInTagsStringIOrderedQueryableOfPresentation">
-            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.FindInTags(System.String,System.Linq.IOrderedQueryable`1{WebPresentations.Models.Presentation})"/>
-            </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MGalleryController.AllInstances.IndexStringNullableOfInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.Index(System.String,System.Nullable`1{System.Int32})"/>
@@ -2594,6 +2662,33 @@
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.SChangePasswordModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:WebPresentations.DatabaseEntities.Moles.SDatabaseContext">
+            <summary>Stub type of <see cref="T:WebPresentations.DatabaseEntities.DatabaseContext"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.#ctor(WebPresentations.Models.PresentationsEntities)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.Dispose(System.Boolean)">
+            <summary>Sets the stub of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.Dispose(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="F:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.DisposeBoolean">
+            <summary>Sets the stub of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.Dispose(System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.InitializeStub">
+            <summary>Initializes a new instance of type SDatabaseContext</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.SDatabaseContext.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="T:WebPresentations.Controllers.Moles.SEditorController">

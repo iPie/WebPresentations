@@ -11,8 +11,16 @@
 </ul>
 <div id="profileTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="profile">
-        <p>
-            <h5>Hello, <strong>@User.Identity.Name</strong></h5>
-        </p>
+        <p></p>
+        <h3>Hello, <strong>@User.Identity.Name</strong></h3>
+        <p></p>
+        <p><span class="label label-info">Information</span></p>
+        <h5>Email:</h5><h6>@ViewBag.Email</h6>
+        <h5>Member since:</h5><h6>@ViewBag.MemberSince</h6>
+        <p></p>
+        <span class="label label-success">Presentations: </span>
+        <p></p>
+        You have <span class="badge badge-success">@ViewBag.PresentationsCount</span> presentations in your profile
+        <p></p>
     </div>    
 </div>
