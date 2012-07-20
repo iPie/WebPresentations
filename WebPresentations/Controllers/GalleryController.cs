@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Linq.Expressions;
 using PagedList;
+using WebPresentations.DatabaseEntities;
 using WebPresentations.Models;
 using WebPresentations.Caching;
 
@@ -20,9 +21,8 @@ namespace WebPresentations.Controllers
         public ViewResult Index(/*string sortOrder, string currentFilter,*/ string search, int? page)
         {
             var presentations = Entities.PresentationsWithTags().OrderBy(g => g.Title);
-
             var cm = new WebPresentationsCacheManager();
-            var result = new List<Presentation>();
+            List<Presentation> result;
             if (!String.IsNullOrEmpty(search))
             {
                 if (cm.Contains(search))
@@ -31,17 +31,14 @@ namespace WebPresentations.Controllers
                 }
                 else
                 {
-                    presentations = Entities.FindInPresentationData(search);
-                    presentations = Entities.FindInTags(search, presentations);
-                    result = presentations.ToList();
+                    result = EntitiesIndexer.QueryPresentations(search);
                     cm.Add(search, result);
                 }
             }
             else
             {
                 result = presentations.ToList();
-            }
-            page = 1;
+            }            
             ViewBag.CurrentFilter = search;
             
             // TODO: number of pages in the _PageNavigatorPartial must be trunctated

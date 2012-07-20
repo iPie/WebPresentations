@@ -20,6 +20,9 @@ http://www.microsoft.com/en-us/download/details.aspx?id=15104
 
 ### Used for development (included)
 
+* **Lucene.Net 2.9.4g**
+http://www.apache.org/dist/incubator/lucene.net/binaries/2.9.4g-incubating/
+
 * **PagedList 1.14**
 
 * **SQL Server Compact Toolbox**

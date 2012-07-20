@@ -88,19 +88,6 @@ namespace WebPresentations.Tests.DatabaseEntities
             Assert.IsTrue(result);
         }
 
-        // Probably will be removed
-        public void FindInPresentationDataTest() { }
-
-        public void FindInTagsTest()
-        {
-            DatabaseContext target = new DatabaseContext(); // TODO: Initialize to an appropriate value
-            string search = string.Empty; // TODO: Initialize to an appropriate value
-            IOrderedQueryable<Presentation> presentations = null; // TODO: Initialize to an appropriate value
-            IOrderedQueryable<Presentation> expected = null; // TODO: Initialize to an appropriate value
-            IOrderedQueryable<Presentation> actual;
-            actual = target.FindInTags(search, presentations);
-            Assert.AreEqual(expected, actual);
-        }
 
         [TestMethod]
         [DeploymentItem("WebPresentations.sdf")]
@@ -122,63 +109,6 @@ namespace WebPresentations.Tests.DatabaseEntities
         {
             var target = new DatabaseContext();
             target.GetPresentation(99);
-        }
-
-        [TestMethod]
-        [DeploymentItem("WebPresentations.sdf")]
-        public void GetPresentationsForTagReturnsQueryIfTagExists()
-        {
-            var target = new DatabaseContext();
-            var tag = TestTag("testTag11");
-            var differentTag = TestTag("testTag2");
-            var presentation1 = TestPresentation("testPresentation1");
-            var presentation2 = TestPresentation("testPresentation2");
-            var presentation3 = TestPresentation("testPresentation3");
-            presentation1.Tags.Add(tag);
-            presentation2.Tags.Add(tag);
-            presentation3.Tags.Add(differentTag);
-            var db = new PresentationsEntities();
-            db.Tags.Add(tag);
-            db.Tags.Add(differentTag);
-            db.Presentations.Add(presentation1);
-            db.Presentations.Add(presentation2);
-            db.Presentations.Add(presentation3);
-            db.SaveChanges();
-            var outputPresentations = target.GetPresentationsForTag(tag.Text).ToList();
-            foreach (var p in outputPresentations)
-            {
-                var contains = p.Tags.Any(t => t.Text.Equals(tag.Text));
-                Assert.IsTrue(contains);
-            }
-
-
-        }
-
-        [TestMethod]
-        [DeploymentItem("WebPresentations.sdf")]
-        public void GetPresentationsForTagReturnsEmptyQueryIfTagHasNoPresentations()
-        {
-            var target = new DatabaseContext();
-            var tag = TestTag("newTestTag001");
-            tag.Presentations.Clear();
-            var db = new PresentationsEntities();
-            target.Entities = db;
-            db.Tags.Add(tag);
-            db.SaveChanges();
-            var outputPresentations = target.GetPresentationsForTag(tag.Text).ToList();
-            Assert.AreEqual(outputPresentations.Count, 0);
-
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException), "Sequence contains no elements.")]
-        [DeploymentItem("WebPresentations.sdf")]
-        public void GetPresentationsForTagThrowsExceptionIfTagDoesNotExist()
-        {
-            var target = new DatabaseContext();
-            var outputPresentations = target.GetPresentationsForTag("balbla").ToList();
-            Assert.IsNull(outputPresentations);
-
         }
 
         [TestMethod]

@@ -20,7 +20,7 @@ namespace WebPresentations.DatabaseEntities
 
         public PresentationsEntities Entities
         {
-            get { return _entities ?? (_entities = new PresentationsEntities());}
+            get { return _entities ?? (_entities = new PresentationsEntities()); }
             set { _entities = value; }
         }
 
@@ -51,14 +51,25 @@ namespace WebPresentations.DatabaseEntities
 
         public void AddToPresentations(Presentation presentation)
         {
-             Entities.Presentations.Add(presentation);
-             Entities.SaveChanges();
-            
+            Entities.Presentations.Add(presentation);
+            Entities.SaveChanges();
+
         }
 
         public void RemovePresentation(int id)
         {
             var presentation = Entities.Presentations.Single(p => p.PresentationId == id);
+            foreach (var tag in presentation.Tags.ToList())
+            {
+                if (tag.Count > 1)
+                {
+                    tag.Count--;
+                }
+                else
+                {
+                    Entities.Tags.Remove(tag);
+                }
+            }
             Entities.Presentations.Remove(presentation);
             Entities.SaveChanges();
         }
@@ -90,30 +101,5 @@ namespace WebPresentations.DatabaseEntities
             return Entities.Tags.Any(g => g.Text == tagText);
         }
 
-        public ICollection<Presentation> GetPresentationsForTag(string search)
-        {
-            var tag = Entities.Tags.Include("Presentations").First(t => t.Text.Equals(search));
-            return tag.Presentations;
-            //return Entities.Tags.Where(tag => tag.Text == search).OrderBy(tag => (tag.Text))
-            //    .Select(tag => tag.Presentations);
-        }
-
-        public IOrderedQueryable<Presentation> FindInTags(string search, IOrderedQueryable<Presentation> presentations)
-        {
-            var ids = GetPresentationsForTag(search).ToList();
-            foreach (var currentPresentation in ids)
-            {
-                if (!presentations.Any(p => p.PresentationId == currentPresentation.PresentationId))
-                {
-                    var tmp = from p in Entities.Presentations
-                              where p.PresentationId == currentPresentation.PresentationId
-                              orderby p.Title
-                              select p;
-
-                    presentations = presentations.Concat(tmp).OrderBy(t => t.Title);
-                }
-            }
-            return presentations;
-        }
     }
 }
