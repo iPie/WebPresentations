@@ -15,7 +15,7 @@ namespace WebPresentations.Controllers
     {
 
         //
-        // GET: /Editor/Create
+        // GET: /Editor/Create/
 
         public ActionResult Create()
         {
@@ -31,6 +31,7 @@ namespace WebPresentations.Controllers
             if (ModelState.IsValid)
             {
                 var tags = new List<Tag>();
+                
                 foreach (var input in Regex.Split(model.TagString, @"[,\s+]+"))
                 {
                     var tagText = input.ToLower();
@@ -43,7 +44,11 @@ namespace WebPresentations.Controllers
                     }
                     else
                     {
-                        tags.Add(new Tag { Text = tagText });
+                        var exists = tags.Any(t => t.Text.Equals(tagText));
+                        if (!exists)
+                        {
+                            tags.Add(new Tag {Text = tagText});
+                        }
                     }
                 }
                 var presentation = new Presentation
@@ -52,12 +57,13 @@ namespace WebPresentations.Controllers
                     Description = model.Description,
                     Json = model.Json,
                     HtmlContents = model.HtmlContents,
-                    TextData = model.TextData,
                     Tags = tags,
                     UserName = User.Identity.Name
                 };
                 try
                 {
+                    // TODO: fix regex
+                    //presentation.TextData = EntitiesIndexer.ParseTextData(model.Json);
                     Entities.AddToPresentations(presentation);
                     EntitiesIndexer.AddPresentationToIndex(presentation);
                     var cm = new WebPresentationsCacheManager();
@@ -85,7 +91,7 @@ namespace WebPresentations.Controllers
 
         public ActionResult Edit(int id)
         {
-            var valid = Entities.UserOwnsPresentation(id,User.Identity.Name);
+            var valid = Entities.UserOwnsPresentation(id, User.Identity.Name);
             return valid ? View(Entities.GetPresentation(id)) : View("Error");
         }
 
@@ -94,7 +100,7 @@ namespace WebPresentations.Controllers
 
         public JsonResult Delete(int id)
         {
-            if (Entities.UserOwnsPresentation(id,User.Identity.Name))
+            if (Entities.UserOwnsPresentation(id, User.Identity.Name))
             {
                 try
                 {

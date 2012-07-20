@@ -10,6 +10,7 @@
     <li><a href="@Url.Action("Settings")">Settings</a></li>
     <li class="active"><a href="@Url.Action("Presentations")">My Presentations</a></li>
 </ul>
+<script src="../../Scripts/views/profile-presentation.js" type="text/javascript"></script>
 <div id="profileTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="presentations">
         <table class="table table-striped">
@@ -60,34 +61,6 @@
         </table>
     </div>
 </div>
-
-<script type="text/javascript">
-    var id;
-    
-    function handleUpdate(_id) {
-        $('#row-' + _id).fadeOut('slow');
-    }
-    function Delete(_id) {
-        $('#YesNoModal').modal('show');
-        id = _id;
-    };
-        
-    function DeletePost() {
-        $.post("/Editor/Delete", { "id": id },
-            function (data) {
-                var resultJson = data.message;
-                $('#YesNoModal').modal('hide');
-                if (resultJson == "Success") {                    
-                    handleUpdate(id);
-                } else {
-                    $('#statusMessage').modal('show');
-                    $("#statusMessageHeader").html('<h3 style="color:red">Error!</h3>');
-                    $("#statusMessageText").html('<h5>Could not delete presentation. Something went wrong..</h5>');
-                }
-            });
-    };
-</script>
-
 <div class="modal hide" id="statusMessage">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>

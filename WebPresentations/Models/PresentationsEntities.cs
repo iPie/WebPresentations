@@ -6,5 +6,6 @@ namespace WebPresentations.Models
     {
         public DbSet<Presentation> Presentations { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<LikedUser> LikedUsers { get; set; }
     }
 }

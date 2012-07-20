@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,29 +30,11 @@ namespace WebPresentations.DatabaseEntities
             }
         }
 
-        [Obsolete("Should not be used",true)]
-        public static void AddTagToIndex(Tag tag)
-        {
-            var document = new Document();
-            var presentations = new StringBuilder();
-            foreach (var presentation in tag.Presentations)
-            {
-                presentations.Append(presentation.Title);
-                presentations.Append(" ");
-            }
-            document.Add(new Field("Title", tag.Text, Field.Store.YES, Field.Index.ANALYZED));
-            document.Add(new Field("Presentations", presentations.ToString(), Field.Store.YES, Field.Index.ANALYZED));
-            using (var indexer = new LuceneIndexer())
-            {
-                indexer.AddDocument(document);
-            }
-        }
-
         private static IEnumerable<int> FullTextSearch(string search)
         {
             using (var indexer = new LuceneIndexer())
             {
-                string[] fields = {"Title", "Tags", "Description"};
+                string[] fields = { "Title", "Tags", "Description" };
                 var query = indexer.MultiQuery(search, fields);
                 return query.Select(document => int.Parse(document.Get("Id"))).ToList();
             }
@@ -63,7 +45,7 @@ namespace WebPresentations.DatabaseEntities
             var indexes = FullTextSearch(search);
             using (var db = new PresentationsEntities())
             {
-                return indexes.Select(id => db.Presentations.Include("Tags").Single(p => p.PresentationId == id)).ToList();
+                return indexes.Select(id => db.Presentations.Include("Tags").Include("LikedUsers").Single(p => p.PresentationId == id)).ToList();
             }
         }
 

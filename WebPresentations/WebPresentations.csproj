@@ -95,6 +95,7 @@
     <Compile Include="MembershipLayer\MembershipServiceLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Models\LikedUser.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\PresentationsEntities.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="TagCloud\TagCloud.cs" />
     <Compile Include="ViewModels\AdministrativeToolViewModel.cs" />
     <Compile Include="ViewModels\EditorViewModel.cs" />
+    <Compile Include="ViewModels\GalleryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ASPNETDB.MDF" />
@@ -448,6 +450,9 @@
     <Content Include="Scripts\editor\model\presentation\domain_model.txt" />
     <Content Include="Scripts\preview\impress.js" />
     <Content Include="Scripts\preview\jquery.js" />
+    <Content Include="Scripts\views\gallery.js" />
+    <Content Include="Scripts\views\profile-presentation.js" />
+    <Content Include="Scripts\views\profile-settings.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

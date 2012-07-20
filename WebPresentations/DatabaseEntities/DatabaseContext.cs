@@ -85,12 +85,6 @@ namespace WebPresentations.DatabaseEntities
                 .Any(p => p.PresentationId == id && p.UserName.Equals(userName));
         }
 
-        public IOrderedQueryable<Presentation> FindInPresentationData(string search)
-        {
-            return Entities.Presentations
-                     .Where(p => p.Title.Contains(search) || p.Description.Contains(search) || p.Json.Contains(search)).OrderBy(p => p.Title);
-        }
-
         public Tag GetTag(string tagText)
         {
             return Entities.Tags.First(g => g.Text.Equals(tagText));
@@ -101,5 +95,24 @@ namespace WebPresentations.DatabaseEntities
             return Entities.Tags.Any(g => g.Text == tagText);
         }
 
+        public int AddLike (Presentation presentation, string userName)
+        {
+            if (!IsLikedByUser(presentation,userName))
+            {
+                if (!UserOwnsPresentation(presentation.PresentationId, userName))
+                {
+                    presentation.LikedUsers.Add(new LikedUser(userName));
+                    Entities.SaveChanges();
+                    return 0;
+                }
+                return 1;
+            }
+            return 2;
+        }
+
+        public bool IsLikedByUser (Presentation presentation, string userName)
+        {
+            return presentation.LikedUsers.Any(l => l.UserName.Equals(userName));
+        }
     }
 }

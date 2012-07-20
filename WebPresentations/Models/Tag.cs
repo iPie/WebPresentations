@@ -18,8 +18,9 @@ namespace WebPresentations.Models
 
         public Tag(string text)
         {
-            this.Text = text;
-            this.Count = 0;
+            Text = text;
+            Count = 0;
+            Presentations = new HashSet<Presentation>();
         }
     }
 }

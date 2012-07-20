@@ -53,6 +53,30 @@ namespace WebPresentations.Controllers
             return Json(new { message = result });
         }
 
+        //
+        // POST: /Profile/PasswordReset
+
+        [HttpPost]
+        public JsonResult AddLike(int id)
+        {
+            var presentation = Entities.GetPresentation(id);
+            var userName = User.Identity.Name;
+            try
+            {
+                var result = Entities.AddLike(presentation, userName);
+                switch (result)
+                {
+                    case 0:
+                        return Json("Success");
+                    case 1:
+                        return Json("IsOwned");
+                    case 2:
+                        return Json("IsLiked");
+                }
+            }
+            catch { }
+            return Json("Fail");
+        }
 
     }
 }

@@ -9,6 +9,7 @@ using PagedList;
 using WebPresentations.DatabaseEntities;
 using WebPresentations.Models;
 using WebPresentations.Caching;
+using WebPresentations.ViewModels;
 
 namespace WebPresentations.Controllers
 {
@@ -40,11 +41,30 @@ namespace WebPresentations.Controllers
                 result = presentations.ToList();
             }            
             ViewBag.CurrentFilter = search;
+            var gallery = new List<GalleryViewModel>();
+                foreach (var presentation in result)
+                {
+                    var model = new GalleryViewModel {Presentation = presentation, IsUserDependant = true};
+                    if (Request.IsAuthenticated)
+                    {
+                        if
+                            (Entities.UserOwnsPresentation(presentation.PresentationId, User.Identity.Name) ||
+                             Entities.IsLikedByUser(presentation, User.Identity.Name))
+                        {
+                            model.IsUserDependant = true;
+                        }
+                        else
+                        {
+                            model.IsUserDependant = false;
+                        }
+                    }
+                    gallery.Add(model);
+                }
             
             // TODO: number of pages in the _PageNavigatorPartial must be trunctated
             int pageSize = 6;
             int pageNumber = (page ?? 1);
-            return View(result.ToPagedList(pageNumber, pageSize));           
+            return View(gallery.ToPagedList(pageNumber, pageSize));           
         }
 
 

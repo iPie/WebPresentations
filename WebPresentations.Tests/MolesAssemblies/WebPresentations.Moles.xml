@@ -621,6 +621,10 @@
         <member name="M:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.Bind(System.IDisposable)">
             <summary>Binds the members of the interface to the mole.</summary>
         </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AddLikePresentationString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddLike(WebPresentations.Models.Presentation,System.String)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AddToPresentationsPresentation">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddToPresentations(WebPresentations.Models.Presentation)"/>
             </summary>
@@ -648,10 +652,6 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.FindInPresentationDataString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInPresentationData(System.String)"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetPresentationInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
             </summary>
@@ -662,6 +662,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetUserPresentationsString">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetUserPresentations(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.IsLikedByUserPresentationString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.IsLikedByUser(WebPresentations.Models.Presentation,System.String)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.PresentationExistsInt32">
@@ -687,6 +691,10 @@
         <member name="T:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances">
             <summary>Define moles for all instances members</summary>
         </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.AddLikePresentationString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddLike(WebPresentations.Models.Presentation,System.String)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.AddToPresentationsPresentation">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddToPresentations(WebPresentations.Models.Presentation)"/>
             </summary>
@@ -703,10 +711,6 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.DatabaseEntities.DatabaseContext.Entities"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.FindInPresentationDataString">
-            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.FindInPresentationData(System.String)"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetPresentationInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
             </summary>
@@ -717,6 +721,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetUserPresentationsString">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetUserPresentations(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.IsLikedByUserPresentationString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.IsLikedByUser(WebPresentations.Models.Presentation,System.String)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.PresentationExistsInt32">
@@ -1153,6 +1161,64 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.GalleryController.Preview(System.Int32)"/>
             </summary>
         </member>
+        <member name="T:WebPresentations.ViewModels.Moles.MGalleryViewModel">
+            <summary>Mole type of <see cref="T:WebPresentations.ViewModels.GalleryViewModel"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.MGalleryViewModel.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.MGalleryViewModel.#ctor(WebPresentations.ViewModels.GalleryViewModel)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.MGalleryViewModel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.MGalleryViewModel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.Constructor">
+            <summary>Sets the mole of <see cref="M:WebPresentations.ViewModels.GalleryViewModel.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.IsUserDependantGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.IsUserDependant"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.IsUserDependantSetBoolean">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.IsUserDependant"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.PresentationGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.Presentation"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.PresentationSetPresentation">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.Presentation"/>
+            </summary>
+        </member>
+        <member name="T:WebPresentations.ViewModels.Moles.MGalleryViewModel.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.AllInstances.IsUserDependantGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.IsUserDependant"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.AllInstances.IsUserDependantSetBoolean">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.IsUserDependant"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.AllInstances.PresentationGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.Presentation"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.MGalleryViewModel.AllInstances.PresentationSetPresentation">
+            <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.Presentation"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MHomeController">
             <summary>Mole type of <see cref="T:WebPresentations.Controllers.HomeController"/>
             .</summary>
@@ -1219,6 +1285,84 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MHomeController.AllInstances.Index">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.HomeController.Index"/>
+            </summary>
+        </member>
+        <member name="T:WebPresentations.Models.Moles.MLikedUser">
+            <summary>Mole type of <see cref="T:WebPresentations.Models.LikedUser"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.MLikedUser.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.MLikedUser.#ctor(WebPresentations.Models.LikedUser)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.MLikedUser.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.MLikedUser.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.Constructor">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Models.LikedUser.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.ConstructorString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Models.LikedUser.#ctor(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.LikedUserIdGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.LikedUserId"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.LikedUserIdSetInt32">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.LikedUserId"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.PresentationsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.PresentationsSetICollectionOfPresentation">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.UserNameGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.UserName"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.UserNameSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.UserName"/>
+            </summary>
+        </member>
+        <member name="T:WebPresentations.Models.Moles.MLikedUser.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.LikedUserIdGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.LikedUserId"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.LikedUserIdSetInt32">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.LikedUserId"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.PresentationsGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.PresentationsSetICollectionOfPresentation">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.Presentations"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.UserNameGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.UserName"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MLikedUser.AllInstances.UserNameSetString">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.LikedUser.UserName"/>
             </summary>
         </member>
         <member name="T:WebPresentations.Models.Moles.MLogOnModel">
@@ -1573,6 +1717,14 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Json"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.LikedUsersGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.LikedUsers"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.LikedUsersSetICollectionOfLikedUser">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.LikedUsers"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.PresentationIdGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.PresentationId"/>
             </summary>
@@ -1638,6 +1790,14 @@
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.JsonSetString">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Json"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.LikedUsersGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.LikedUsers"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.LikedUsersSetICollectionOfLikedUser">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.LikedUsers"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.PresentationIdGet">
@@ -1709,6 +1869,14 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Models.PresentationsEntities.#ctor"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.LikedUsersGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.LikedUsers"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.LikedUsersSetDbSetOfLikedUser">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.LikedUsers"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.PresentationsGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.Presentations"/>
             </summary>
@@ -1727,6 +1895,14 @@
         </member>
         <member name="T:WebPresentations.Models.Moles.MPresentationsEntities.AllInstances">
             <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.AllInstances.LikedUsersGet">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.LikedUsers"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.AllInstances.LikedUsersSetDbSetOfLikedUser">
+            <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.LikedUsers"/>
+            </summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentationsEntities.AllInstances.PresentationsGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.PresentationsEntities.Presentations"/>
@@ -1778,6 +1954,10 @@
         <member name="M:WebPresentations.Controllers.Moles.MProfileController.Bind(System.IDisposable)">
             <summary>Binds the members of the interface to the mole.</summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.AddLikeInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.AddLike(System.Int32)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
@@ -1803,6 +1983,10 @@
         </member>
         <member name="T:WebPresentations.Controllers.Moles.MProfileController.AllInstances">
             <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.AddLikeInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.AddLike(System.Int32)"/>
+            </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.Index">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Index"/>
@@ -3594,6 +3778,22 @@
         <member name="P:WebPresentations.Controllers.Moles.SGalleryController.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
         </member>
+        <member name="T:WebPresentations.ViewModels.Moles.SGalleryViewModel">
+            <summary>Stub type of <see cref="T:WebPresentations.ViewModels.GalleryViewModel"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.SGalleryViewModel.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.ViewModels.Moles.SGalleryViewModel.InitializeStub">
+            <summary>Initializes a new instance of type SGalleryViewModel</summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.SGalleryViewModel.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WebPresentations.ViewModels.Moles.SGalleryViewModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.SHomeController">
             <summary>Stub type of <see cref="T:WebPresentations.Controllers.HomeController"/>
             .</summary>
@@ -3919,6 +4119,25 @@
         <member name="P:WebPresentations.MembershipLayer.Moles.SIMembershipService.wp::WebPresentations#MembershipLayer#IMembershipService#MinPasswordLength">
             <summary>Sets the stub of <see cref="P:WebPresentations.MembershipLayer.IMembershipService.MinPasswordLength"/>
             </summary>
+        </member>
+        <member name="T:WebPresentations.Models.Moles.SLikedUser">
+            <summary>Stub type of <see cref="T:WebPresentations.Models.LikedUser"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.SLikedUser.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.SLikedUser.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.Models.Moles.SLikedUser.InitializeStub">
+            <summary>Initializes a new instance of type SLikedUser</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.SLikedUser.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WebPresentations.Models.Moles.SLikedUser.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="T:WebPresentations.Models.Moles.SLogOnModel">
             <summary>Stub type of <see cref="T:WebPresentations.Models.LogOnModel"/>

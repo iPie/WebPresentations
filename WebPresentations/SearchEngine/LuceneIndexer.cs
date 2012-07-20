@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace WebPresentations.SearchEngine
 
         public LuceneIndexer()
         {
-            _directory = FSDirectory.Open(new DirectoryInfo(Environment.CurrentDirectory + "\\LuceneIndex"));
+            _directory = Directory;
         }
 
         public LuceneIndexer(Directory luceneIndexPath)
@@ -37,7 +37,7 @@ namespace WebPresentations.SearchEngine
 
         private Directory Directory
         {
-            get { return _directory ?? (_directory = FSDirectory.Open(new DirectoryInfo(Environment.CurrentDirectory + "\\LuceneIndex"))); }
+            get { return _directory ?? (_directory = FSDirectory.Open((new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\LuceneIndex")))); }
         }
 
         public void Dispose()
@@ -52,7 +52,7 @@ namespace WebPresentations.SearchEngine
             writer.AddDocument(document);
             writer.Optimize();
             writer.Close();
-            Directory.Close();
+            writer.Commit();
         }
 
         public List<Document> MultiQuery(string search, string[] searchFields)

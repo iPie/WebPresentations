@@ -21,6 +21,7 @@
               break;
             case "TextBox":
               result = Templates.TextBox(_this.convertTextBoxData(componentModel.attributes));
+              localStorage.setItem("textData", localStorage.getItem("textData") + componentModel.attributes);
               break;
             case "Video":
               result = Templates.Video(componentModel.attributes);
