@@ -973,10 +973,6 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.AddPresentationToIndex(WebPresentations.Models.Presentation)"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.AddTagToIndexTag">
-            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.AddTagToIndex(WebPresentations.Models.Tag)"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
@@ -986,6 +982,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.FullTextSearchString">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.FullTextSearch(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.ParseTextDataString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.ParseTextData(System.String)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.QueryPresentationsString">
@@ -1455,15 +1455,8 @@
         <member name="M:WebPresentations.SearchEngine.Moles.MLuceneIndexer.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
         </member>
-        <member name="M:WebPresentations.SearchEngine.Moles.MLuceneIndexer.Bind(System.IDisposable)">
-            <summary>Binds the members of the interface to the mole.</summary>
-        </member>
         <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AddDocumentDocument">
             <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.AddDocument(Lucene.Net.Documents.Document)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AnalyzerGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.SearchEngine.LuceneIndexer.Analyzer"/>
             </summary>
         </member>
         <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.Behavior">
@@ -1473,16 +1466,12 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.#ctor"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.ConstructorDirectory">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.#ctor(Lucene.Net.Store.Directory)"/>
+        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.GetAnalyzer">
+            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.GetAnalyzer"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.DirectoryGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.SearchEngine.LuceneIndexer.Directory"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.Dispose">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.Dispose"/>
+        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.GetDirectory">
+            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.GetDirectory"/>
             </summary>
         </member>
         <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.MultiQueryStringStringArray">
@@ -1491,26 +1480,6 @@
         </member>
         <member name="T:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances">
             <summary>Define moles for all instances members</summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances.AddDocumentDocument">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.AddDocument(Lucene.Net.Documents.Document)"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances.AnalyzerGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.SearchEngine.LuceneIndexer.Analyzer"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances.DirectoryGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.SearchEngine.LuceneIndexer.Directory"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances.Dispose">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.Dispose"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.AllInstances.MultiQueryStringStringArray">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.MultiQuery(System.String,System.String[])"/>
-            </summary>
         </member>
         <member name="T:WebPresentations.MembershipLayer.Moles.MMailService">
             <summary>Mole type of <see cref="T:WebPresentations.MembershipLayer.MailService"/>
@@ -1741,14 +1710,6 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Tags"/>
             </summary>
         </member>
-        <member name="P:WebPresentations.Models.Moles.MPresentation.TextDataGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Models.Moles.MPresentation.TextDataSetString">
-            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
-            </summary>
-        </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.TitleGet">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Title"/>
             </summary>
@@ -1814,14 +1775,6 @@
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TagsSetICollectionOfTag">
             <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.Tags"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TextDataGet">
-            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
-            </summary>
-        </member>
-        <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TextDataSetString">
-            <summary>Sets the mole of <see cref="P:WebPresentations.Models.Presentation.TextData"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Models.Moles.MPresentation.AllInstances.TitleGet">
@@ -3250,6 +3203,22 @@
         <member name="P:WebPresentations.ViewModels.Moles.SEditorViewModel.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
         </member>
+        <member name="T:WebPresentations.DatabaseEntities.Moles.SEntitiesIndexer">
+            <summary>Stub type of <see cref="T:WebPresentations.DatabaseEntities.EntitiesIndexer"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SEntitiesIndexer.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.DatabaseEntities.Moles.SEntitiesIndexer.InitializeStub">
+            <summary>Initializes a new instance of type SEntitiesIndexer</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.SEntitiesIndexer.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.SEntitiesIndexer.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.SEntityController">
             <summary>Stub type of <see cref="T:WebPresentations.Controllers.EntityController"/>
             .</summary>
@@ -4160,9 +4129,6 @@
             .</summary>
         </member>
         <member name="M:WebPresentations.SearchEngine.Moles.SLuceneIndexer.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:WebPresentations.SearchEngine.Moles.SLuceneIndexer.#ctor(Lucene.Net.Store.Directory)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:WebPresentations.SearchEngine.Moles.SLuceneIndexer.InitializeStub">

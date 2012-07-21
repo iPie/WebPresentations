@@ -1,7 +1,8 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Lucene.Net.Documents;
 using WebPresentations.Models;
 using WebPresentations.SearchEngine;
@@ -23,21 +24,33 @@ namespace WebPresentations.DatabaseEntities
             document.Add(new Field("Title", presentation.Title, Field.Store.YES, Field.Index.ANALYZED));
             document.Add(new Field("Tags", tags.ToString(), Field.Store.YES, Field.Index.ANALYZED));
             document.Add(new Field("Description", presentation.Description, Field.Store.YES, Field.Index.ANALYZED));
-            //document.Add(new Field("TextData", presentation.TextData, Field.Store.YES, Field.Index.ANALYZED));
-            using (var indexer = new LuceneIndexer())
+            document.Add(new Field("TextData", ParseTextData(presentation.Json), Field.Store.YES, Field.Index.ANALYZED));
+            LuceneIndexer.AddDocument(document);
+
+        }
+
+        private static string ParseTextData(string data)
+        {
+            var output = new StringBuilder();
+            string pattern = "(?<=\"text\":\")([^\"])*(?=\")";
+            foreach (var token in Regex.Matches(System.Web.HttpUtility.UrlDecode(data), pattern))
             {
-                indexer.AddDocument(document);
+                foreach (var word in Regex.Split(token.ToString(), "<\\w+>?"))
+                {
+                    if (!string.IsNullOrEmpty(word))
+                        output.Append(word).Append(" ");
+                }
             }
+            return output.ToString();
         }
 
         private static IEnumerable<int> FullTextSearch(string search)
         {
-            using (var indexer = new LuceneIndexer())
-            {
-                string[] fields = { "Title", "Tags", "Description" };
-                var query = indexer.MultiQuery(search, fields);
-                return query.Select(document => int.Parse(document.Get("Id"))).ToList();
-            }
+
+            string[] fields = { "Title", "Tags", "Description", "TextData" };
+            var query = LuceneIndexer.MultiQuery(search, fields);
+            return query.Select(document => int.Parse(document.Get("Id"))).ToList();
+
         }
 
         public static List<Presentation> QueryPresentations(string search)

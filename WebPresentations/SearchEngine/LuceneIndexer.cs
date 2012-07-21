@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,58 +14,42 @@ using Version = Lucene.Net.Util.Version;
 
 namespace WebPresentations.SearchEngine
 {
-    public class LuceneIndexer : IDisposable
+    public class LuceneIndexer
     {
-        private Directory _directory;
-
-        private Analyzer _analyzer;
-
-        public LuceneIndexer()
+        private static Directory GetDirectory()
         {
-            _directory = Directory;
+            return FSDirectory.Open(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\LuceneIndex"));
         }
 
-        public LuceneIndexer(Directory luceneIndexPath)
+        private static Analyzer GetAnalyzer()
         {
-            _directory = luceneIndexPath;
-        }
+            return new StandardAnalyzer(Version.LUCENE_29);
+        } 
 
-        private Analyzer Analyzer
+        public static void AddDocument(Document document)
         {
-            get { return _analyzer ?? (_analyzer = new StandardAnalyzer(Version.LUCENE_29)); }
-        }
-
-        private Directory Directory
-        {
-            get { return _directory ?? (_directory = FSDirectory.Open((new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\LuceneIndex")))); }
-        }
-
-        public void Dispose()
-        {
-            _analyzer.Dispose();
-            _directory.Close();
-        }
-
-        public void AddDocument(Document document)
-        {
-            var writer = new IndexWriter(Directory, Analyzer, true, IndexWriter.MaxFieldLength.LIMITED);
+            var directory = GetDirectory();
+            var analyzer = GetAnalyzer();
+            var writer = new IndexWriter(directory, analyzer, IndexWriter.MaxFieldLength.LIMITED);
             writer.AddDocument(document);
             writer.Optimize();
-            writer.Close();
             writer.Commit();
+            writer.Close();
         }
 
-        public List<Document> MultiQuery(string search, string[] searchFields)
+        public static List<Document> MultiQuery(string search, string[] searchFields)
         {
-            var indexReader = IndexReader.Open(Directory, true);
-            using (var indexSearch = new IndexSearcher(indexReader))
-            {
-                var queryParser = new MultiFieldQueryParser(Version.LUCENE_29, searchFields, Analyzer);
-                var query = queryParser.Parse(search);
-                var resultDocs = indexSearch.Search(query, indexReader.MaxDoc());
-                var hits = resultDocs.ScoreDocs;
-                return hits.Select(hit => indexSearch.Doc(hit.Doc)).ToList();
-            }
+            var directory = GetDirectory();
+            var analyzer = GetAnalyzer();
+            var indexReader = IndexReader.Open(directory, true);
+            var indexSearch = new IndexSearcher(indexReader);
+
+            var queryParser = new MultiFieldQueryParser(Version.LUCENE_29, searchFields, analyzer);
+            var query = queryParser.Parse(search);
+            var resultDocs = indexSearch.Search(query, indexReader.MaxDoc());
+            var hits = resultDocs.ScoreDocs;
+            return hits.Select(hit => indexSearch.Doc(hit.Doc)).ToList();
+
         }
     }
 }

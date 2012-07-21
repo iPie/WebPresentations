@@ -9,26 +9,26 @@ namespace WebPresentations.DatabaseEntities
 {
     public class DatabaseContext : DbContext
     {
-        private PresentationsEntities _entities;
+        private PresentationsEntities entities;
 
         public DatabaseContext() { }
 
         public DatabaseContext(PresentationsEntities entities)
         {
-            _entities = entities;
+            this.entities = entities;
         }
 
         public PresentationsEntities Entities
         {
-            get { return _entities ?? (_entities = new PresentationsEntities()); }
-            set { _entities = value; }
+            get { return entities ?? (entities = new PresentationsEntities()); }
+            set { entities = value; }
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _entities != null)
+            if (disposing && entities != null)
             {
-                _entities.Dispose();
+                entities.Dispose();
             }
             base.Dispose(disposing);
         }

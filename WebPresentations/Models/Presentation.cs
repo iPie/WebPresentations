@@ -14,11 +14,7 @@ namespace WebPresentations.Models
         public String HtmlContents { get; set; }
         [MaxLength]
         public String Json { get; set; }
-        [MaxLength]
-        public String TextData { get; set; }
-
         public virtual ICollection<LikedUser> LikedUsers { get; set; }
-
         public virtual ICollection<Tag> Tags { get; set; }
 
         public Presentation()
