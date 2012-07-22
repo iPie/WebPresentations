@@ -11,7 +11,15 @@
         }
         @for (int i = 1; i <= Model.PageCount; i++)
         {
-            @Html.ActionLink(i.ToString(), "Index", new { page = i, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            if (Model.PageNumber == i)
+            {
+                <li class="active"><a>@i</a></li>
+            }
+            else
+            {
+                <li>@Html.ActionLink(i.ToString(), "Index", new { page = i, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })</li>
+            }
+
         }
         @if (Model.HasNextPage)
         {

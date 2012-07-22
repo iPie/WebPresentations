@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Principal;
+using System.Text.RegularExpressions;
 using WebPresentations.Models;
 
 namespace WebPresentations.DatabaseEntities
@@ -40,7 +41,7 @@ namespace WebPresentations.DatabaseEntities
 
         public Presentation GetPresentation(int id)
         {
-            return Entities.Presentations.Include("Tags").Single(g => g.PresentationId == id);
+            return Entities.Presentations.Include("Tags").SingleOrDefault(g => g.PresentationId == id);
         }
 
         public IQueryable<Presentation> GetUserPresentations(string userName)
@@ -53,7 +54,17 @@ namespace WebPresentations.DatabaseEntities
         {
             Entities.Presentations.Add(presentation);
             Entities.SaveChanges();
+        }
 
+        public void UpdatePresentationTags(Presentation presentation, string tagString)
+        {
+            presentation.Tags = ParseTags(tagString);
+            Entities.SaveChanges();
+        }
+
+        public void Update()
+        {
+            Entities.SaveChanges();
         }
 
         public void RemovePresentation(int id)
@@ -108,6 +119,31 @@ namespace WebPresentations.DatabaseEntities
                 return 1;
             }
             return 2;
+        }
+
+        public List<Tag> ParseTags(string tagString)
+        {
+            var tags = new List<Tag>();
+            foreach (var input in Regex.Split(tagString, @"[,\s+]+"))
+            {
+                var tagText = input.ToLower();
+                var tagExists = TagExists(tagText);
+                if (tagExists)
+                {
+                    var tag = GetTag(tagText);
+                    tag.Count++;
+                    tags.Add(tag);
+                }
+                else
+                {
+                    var exists = tags.Any(t => t.Text.Equals(tagText));
+                    if (!exists)
+                    {
+                        tags.Add(new Tag { Text = tagText });
+                    }
+                }
+            }
+            return tags;
         }
 
         public bool IsLikedByUser (Presentation presentation, string userName)

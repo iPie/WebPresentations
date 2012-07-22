@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using WebPresentations.DatabaseEntities;
 using WebPresentations.MembershipLayer;
 using WebPresentations.Models;
 
@@ -54,7 +55,7 @@ namespace WebPresentations.Controllers
         }
 
         //
-        // POST: /Profile/PasswordReset
+        // POST: /Profile/AddLike/1
 
         [HttpPost]
         public JsonResult AddLike(int id)
@@ -74,9 +75,48 @@ namespace WebPresentations.Controllers
                         return Json("IsLiked");
                 }
             }
-            catch { }
+            catch
+            {
+                return Json("Fail");
+            }
             return Json("Fail");
         }
 
+        //
+        // POST: /Profile/Update
+
+        [HttpPost]
+        public JsonResult Update(int id, string field, string value)
+        {
+            if (Entities.UserOwnsPresentation(id, User.Identity.Name))
+            {
+                try
+                {
+                    var presentation = Entities.GetPresentation(id);
+
+                    switch (field)
+                    {
+                        case "Title":
+                            presentation.Title = value;
+                            Entities.Update();
+                            break;
+                        case "Tags":
+                            Entities.UpdatePresentationTags(presentation, value);
+                            break;
+                        case "Description":
+                            presentation.Description = value;
+                            Entities.Update();
+                            break;
+                    }
+                    EntitiesIndexer.AddPresentationToIndex(presentation);
+                    return Json("Success");
+                }
+                catch
+                {
+                    return Json("Fail");
+                }
+            }
+            return Json("Fail");
+        }
     }
 }

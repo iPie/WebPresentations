@@ -6,15 +6,15 @@
         @if (User.IsInRole("Administrator"))
         {
             
-            <li><a href="@Url.Action("Index", "AdministrativeTool")" style="color:red">Administrative tool</a></li>
+            <li><a href="@Url.Action("Index", "AdministrativeTool")" style="color:red"><i class="icon-wrench"></i> <b>Administrative tool</b></a></li>
             <li class="divider"></li>            
         }
-        <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+        <li><a href="@Url.Action("Index", "Profile")"><i class="icon-briefcase"></i> Profile</a></li>
         <li class="divider"></li>
-        <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
+        <li><a href="@Url.Action("LogOff", "Account")"><i class="icon-off"></i> Logout</a></li>
     </ul>    
 }
 else
 {    
-    <a class="btn dropdown-toggle" href="@Url.Action("LogOn", "Account")">Log On</a>
+    <a class="btn dropdown-toggle" href="@Url.Action("LogOn", "Account")"><i class="icon-lock"></i> Log On</a>
 }

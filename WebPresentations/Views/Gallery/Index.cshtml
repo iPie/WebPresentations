@@ -4,40 +4,34 @@
     ViewBag.Title = "Gallery";
     ViewBag.RedirectRoute = "Index";
 }
+<link href="../../Content/mini-tag.css" rel="stylesheet" type="text/css" />
 <script src="../../Scripts/views/gallery.js" type="text/javascript"></script>
-<style>
-    p.description
-    {
-        font-size: 10px;
-    }
-    .title
-    {
-        font-size: 12px;
-        margin: 0;
-    }
-</style>
 <div class="page-header">
-    <h2>
-        Presentations gallery</h2>
+    <h2>Presentations gallery</h2>
 </div>
 @if (Model.Count != 0)
 {    
-    <div class="hero-unit">
-        <div class="container-fluid">
+
+        <ul class="thumbnails">
             @foreach (var item in Model)
             {
-                <div class="span3" >
-                    <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="thumbnail">
-                        <img src="http://placehold.it/260x180" alt="" />
-                    </a>
-                    <h2 class="title">@Html.Truncate(item.Presentation.Title, 30)</h2>
-                    <p class="description">@Html.Truncate(item.Presentation.Description, 20)</p>
-                    <div class="row">
-                        <div class="span0">
+                <li class="span4" >
+                    <div class="thumbnail">
+                    <div class="row-fluid">
+                        <div class="span10">  <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="thumbnail">
+                            <img src="http://placehold.it/260x180" alt="" /></a> 
+                        </div> 
+                        <div class="span1">
+                            @foreach (var tag in item.Tags)
+                            {
+                                <a href="@Url.Action("Index","Gallery", new { search = tag.Text })" class="tag">@Html.Truncate(tag.Text, 6)</a>
+                            }
+                        </div>                                                                                                                                     
+                    </div>
+                        <p><h5>@Html.Truncate(item.Presentation.Title, 30)</h5></p>
+                        <p>
                             <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="btn btn-primary btn-small">
-                                Preview &raquo;</a>
-                        </div>
-                        <div class="span0">
+                                <i class="icon-play-circle icon-white"></i> Preview</a>
                             @if (Request.IsAuthenticated)
                             {
                                 if(!item.IsUserDependant)
@@ -46,24 +40,19 @@
                                 }
                                 else
                                 {
-                                    <a id="likeDisabled" class="btn btn-success btn-small disabled"><i class="icon-thumbs-up icon-ok-sign">
-                                    </i></a>                                        
+                                    <a id="likeDisabled" class="btn btn-success btn-small disabled"><i class="icon-thumbs-up icon-ok-sign"></i></a>                                        
                                 }
                             }
                             else
                             {
-                                <a id="likeDisabled" class="btn btn-success btn-small disabled"><i class="icon-thumbs-up icon-ok-sign">
-                                </i></a>                                
+                                <a id="likeDisabled" class="btn btn-success btn-small disabled"><i class="icon-thumbs-up icon-ok-sign"></i></a>                                
                             }
-                            <b id="qtext-@item.Presentation.PresentationId">@item.Presentation.LikedUsers.Count Liked</b>
-                        </div>
+                            <b id="qtext-@item.Presentation.PresentationId">@item.Presentation.LikedUsers.Count Liked</b>                                                        
+                        </p>
                     </div>
-                    <br />
-                    <br />
-                </div>
+                </li>
             }
-        </div>
-    </div>
+        </ul>
     @Html.Partial("_PageNavigatorPartial")
 }
 else

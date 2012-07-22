@@ -30,27 +30,7 @@ namespace WebPresentations.Controllers
         {
             if (ModelState.IsValid)
             {
-                var tags = new List<Tag>();
-                
-                foreach (var input in Regex.Split(model.TagString, @"[,\s+]+"))
-                {
-                    var tagText = input.ToLower();
-                    var tagExists = Entities.TagExists(tagText);
-                    if (tagExists)
-                    {
-                        var tag = Entities.GetTag(tagText);
-                        tag.Count++;
-                        tags.Add(tag);
-                    }
-                    else
-                    {
-                        var exists = tags.Any(t => t.Text.Equals(tagText));
-                        if (!exists)
-                        {
-                            tags.Add(new Tag {Text = tagText});
-                        }
-                    }
-                }
+                var tags = Entities.ParseTags(model.TagString);
                 var presentation = new Presentation
                 {
                     Title = model.Title,
@@ -62,8 +42,6 @@ namespace WebPresentations.Controllers
                 };
                 try
                 {
-                    // TODO: fix regex
-                    //presentation.TextData = EntitiesIndexer.ParseTextData(model.Json);
                     Entities.AddToPresentations(presentation);
                     EntitiesIndexer.AddPresentationToIndex(presentation);
                     var cm = new WebPresentationsCacheManager();
@@ -77,6 +55,8 @@ namespace WebPresentations.Controllers
             }
             return Json("Fail");
         }
+
+
 
         //
         // GET: /Editor/Preview/
@@ -105,6 +85,7 @@ namespace WebPresentations.Controllers
                 try
                 {
                     Entities.RemovePresentation(id);
+                    EntitiesIndexer.RemovePresentationFromIndex(id);
                 }
                 catch
                 {

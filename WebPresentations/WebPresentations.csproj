@@ -50,6 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -135,6 +138,7 @@
     <Content Include="Content\editor\css\bootstrap.css" />
     <Content Include="Content\editor\css\close-btn.css" />
     <Content Include="Content\editor\css\main.css" />
+    <Content Include="Content\mini-tag.css" />
     <Content Include="Content\preview\main.css" />
     <Content Include="Content\preview\web-fonts.css" />
     <Content Include="Content\tagcloud.css" />
@@ -436,6 +440,7 @@
     <Content Include="Scripts\editor\vendor\D-bootstrap.js" />
     <Content Include="Scripts\editor\vendor\E-bootstrapDropdown.js" />
     <Content Include="Scripts\editor\vendor\vendor-built.js" />
+    <Content Include="Scripts\jquery.editinplace.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />

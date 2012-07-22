@@ -9,47 +9,59 @@ using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Store;
-using Directory = Lucene.Net.Store.Directory;
 using Version = Lucene.Net.Util.Version;
 
 namespace WebPresentations.SearchEngine
 {
-    public class LuceneIndexer
+    public static class LuceneIndexer
     {
-        private static Directory GetDirectory()
-        {
-            return FSDirectory.Open(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\LuceneIndex"));
-        }
+        private static FSDirectory directory = null;
 
-        private static Analyzer GetAnalyzer()
+        private static FSDirectory Directory
         {
-            return new StandardAnalyzer(Version.LUCENE_29);
-        } 
+            get
+            {
+                return directory ??
+                       (directory =
+                        FSDirectory.Open(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\LuceneIndex")));
+            }
+            set { directory = value; }
+        }
 
         public static void AddDocument(Document document)
         {
-            var directory = GetDirectory();
-            var analyzer = GetAnalyzer();
-            var writer = new IndexWriter(directory, analyzer, IndexWriter.MaxFieldLength.LIMITED);
-            writer.AddDocument(document);
-            writer.Optimize();
-            writer.Commit();
-            writer.Close();
+            var analyzer = new StandardAnalyzer(Version.LUCENE_29);
+            using (var writer = new IndexWriter(Directory, analyzer, IndexWriter.MaxFieldLength.UNLIMITED))
+            {
+                writer.AddDocument(document);
+                writer.Optimize();
+                writer.Commit();
+                analyzer.Close();
+            }
+        }
+
+        public static void ClearLuceneIndexRecord(int id)
+        {
+            var analyzer = new StandardAnalyzer(Version.LUCENE_29);
+            using (var writer = new IndexWriter(Directory, analyzer, IndexWriter.MaxFieldLength.UNLIMITED))
+            {
+                var searchQuery = new TermQuery(new Term("Id", Convert.ToString(id)));
+                writer.DeleteDocuments(searchQuery);
+                analyzer.Close();
+            }
         }
 
         public static List<Document> MultiQuery(string search, string[] searchFields)
         {
-            var directory = GetDirectory();
-            var analyzer = GetAnalyzer();
-            var indexReader = IndexReader.Open(directory, true);
-            var indexSearch = new IndexSearcher(indexReader);
-
-            var queryParser = new MultiFieldQueryParser(Version.LUCENE_29, searchFields, analyzer);
-            var query = queryParser.Parse(search);
-            var resultDocs = indexSearch.Search(query, indexReader.MaxDoc());
-            var hits = resultDocs.ScoreDocs;
-            return hits.Select(hit => indexSearch.Doc(hit.Doc)).ToList();
-
+            var analyzer = new StandardAnalyzer(Version.LUCENE_29);
+            using (var indexSearcher = new IndexSearcher(Directory, false))
+            {
+                var queryParser = new MultiFieldQueryParser(Version.LUCENE_29, searchFields, analyzer);
+                var query = queryParser.Parse(search);
+                var hits = indexSearcher.Search(query,null,999,Sort.RELEVANCE).ScoreDocs;
+                analyzer.Close();                
+                return hits.Select(hit => indexSearcher.Doc(hit.Doc)).ToList();
+            }
         }
     }
 }

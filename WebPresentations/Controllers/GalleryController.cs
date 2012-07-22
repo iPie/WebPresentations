@@ -19,54 +19,68 @@ namespace WebPresentations.Controllers
         //
         // GET: /Gallery/
         
-        public ViewResult Index(/*string sortOrder, string currentFilter,*/ string search, int? page)
+        public ViewResult Index(string search, int? page)
         {
             var presentations = Entities.PresentationsWithTags().OrderBy(g => g.Title);
             var cm = new WebPresentationsCacheManager();
             List<Presentation> result;
-            if (!String.IsNullOrEmpty(search))
+            try
             {
-                if (cm.Contains(search))
+                if (!String.IsNullOrEmpty(search))
                 {
-                    result = (List<Presentation>)cm.GetData(search);
+                    if (cm.Contains(search))
+                    {
+                        result = (List<Presentation>) cm.GetData(search);
+                    }
+                    else
+                    {
+                        result = EntitiesIndexer.QueryPresentations(search);
+                        cm.Add(search, result);
+                    }
                 }
                 else
                 {
-                    result = EntitiesIndexer.QueryPresentations(search);
-                    cm.Add(search, result);
+                    result = presentations.ToList();
                 }
             }
-            else
+            catch
             {
-                result = presentations.ToList();
-            }            
-            ViewBag.CurrentFilter = search;
-            var gallery = new List<GalleryViewModel>();
-                foreach (var presentation in result)
-                {
-                    var model = new GalleryViewModel {Presentation = presentation, IsUserDependant = true};
-                    if (Request.IsAuthenticated)
-                    {
-                        if
-                            (Entities.UserOwnsPresentation(presentation.PresentationId, User.Identity.Name) ||
-                             Entities.IsLikedByUser(presentation, User.Identity.Name))
-                        {
-                            model.IsUserDependant = true;
-                        }
-                        else
-                        {
-                            model.IsUserDependant = false;
-                        }
-                    }
-                    gallery.Add(model);
-                }
-            
-            // TODO: number of pages in the _PageNavigatorPartial must be trunctated
+                result = new List<Presentation>();
+            }
+            var gallery = GenerateGallery(result);
             int pageSize = 6;
             int pageNumber = (page ?? 1);
             return View(gallery.ToPagedList(pageNumber, pageSize));           
         }
 
+        private IEnumerable<GalleryViewModel> GenerateGallery(IEnumerable<Presentation> result)
+        {
+            var gallery = new List<GalleryViewModel>();
+            foreach (var presentation in result)
+            {
+                var model = new GalleryViewModel
+                                {
+                                    Presentation = presentation,
+                                    Tags = presentation.Tags.Take(5).ToList(),
+                                    IsUserDependant = true
+                                };
+                if (Request.IsAuthenticated)
+                {
+                    if
+                        (Entities.UserOwnsPresentation(presentation.PresentationId, User.Identity.Name) ||
+                         Entities.IsLikedByUser(presentation, User.Identity.Name))
+                    {
+                        model.IsUserDependant = true;
+                    }
+                    else
+                    {
+                        model.IsUserDependant = false;
+                    }
+                }
+                gallery.Add(model);
+            }
+            return gallery;
+        }
 
         //
         // GET: /Gallery/Preview/1
