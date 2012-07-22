@@ -58,6 +58,11 @@ namespace WebPresentations.DatabaseEntities
 
         public void UpdatePresentationTags(Presentation presentation, string tagString)
         {
+            foreach(var tag in presentation.Tags.ToList())
+            {
+                DismissTag(tag);
+            }
+            Entities.SaveChanges();
             presentation.Tags = ParseTags(tagString);
             Entities.SaveChanges();
         }
@@ -72,17 +77,22 @@ namespace WebPresentations.DatabaseEntities
             var presentation = Entities.Presentations.Single(p => p.PresentationId == id);
             foreach (var tag in presentation.Tags.ToList())
             {
-                if (tag.Count > 1)
-                {
-                    tag.Count--;
-                }
-                else
-                {
-                    Entities.Tags.Remove(tag);
-                }
+                DismissTag(tag);
             }
             Entities.Presentations.Remove(presentation);
             Entities.SaveChanges();
+        }
+
+        public void DismissTag(Tag tag)
+        {
+            if (tag.Count > 1)
+            {
+                tag.Count--;
+            }
+            else
+            {
+                Entities.Tags.Remove(tag);
+            }
         }
 
         public IQueryable<Presentation> PresentationsWithTags()

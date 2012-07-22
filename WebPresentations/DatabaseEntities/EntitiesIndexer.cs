@@ -29,9 +29,15 @@ namespace WebPresentations.DatabaseEntities
             LuceneIndexer.AddDocument(document);
         }
 
+        public static void UpdatePresentationIndex(Presentation presentation)
+        {
+            LuceneIndexer.ClearIndexRecord(presentation.PresentationId);
+            AddPresentationToIndex(presentation);
+        }
+
         public static void RemovePresentationFromIndex(int id)
         {
-            LuceneIndexer.ClearLuceneIndexRecord(id);
+            LuceneIndexer.ClearIndexRecord(id);
         }
 
         private static List<String> ParseTextData(string data)

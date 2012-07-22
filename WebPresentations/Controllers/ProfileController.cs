@@ -108,7 +108,7 @@ namespace WebPresentations.Controllers
                             Entities.Update();
                             break;
                     }
-                    EntitiesIndexer.AddPresentationToIndex(presentation);
+                    EntitiesIndexer.UpdatePresentationIndex(presentation);
                     return Json("Success");
                 }
                 catch

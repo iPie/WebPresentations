@@ -407,12 +407,9 @@ $.extend(InlineEditor.prototype, {
 			return;
 		}
 		
-		this.showSaving(enteredText);
-		
-		if (this.settings.callback)
-			this.handleSubmitToCallback(enteredText);
-		else
-			this.handleSubmitToServer(enteredText);
+		//this.showSaving(enteredText);
+		this.handleSubmitToServer(enteredText);
+			
 	},
 	
 	didForgetRequiredText: function(enteredText) {
@@ -446,25 +443,25 @@ $.extend(InlineEditor.prototype, {
 	
 	handleSubmitToCallback: function(enteredText) {
 		// REFACT: consider to encode enteredText and originalHTML before giving it to the callback
-		this.enableOrDisableAnimationCallbacks(true, false);
-		var newHTML = this.triggerCallback(this.settings.callback, /* DEPRECATED in 2.1.0 */ this.id(), enteredText, this.originalValue, 
-			this.settings.params, this.savingAnimationCallbacks());
+		// this.enableOrDisableAnimationCallbacks(true, false);
+		// var newHTML = this.triggerCallback(this.settings.callback, /* DEPRECATED in 2.1.0 */ this.id(), enteredText, this.originalValue, 
+		// 	this.settings.params, this.savingAnimationCallbacks());
 		
-		if (this.settings.callback_skip_dom_reset)
-			; // do nothing
-		else if (undefined === newHTML) {
-			// failure; put original back
-			this.reportError("Error: Failed to save value: " + enteredText);
-			this.restoreOriginalValue();
-		}
-		else
-			// REFACT: use setClosedEditorContent
-			this.dom.html(newHTML);
+		// if (this.settings.callback_skip_dom_reset)
+		// 	; // do nothing
+		// else if (undefined === newHTML) {
+		// 	// failure; put original back
+		// 	this.reportError("Error: Failed to save value: " + enteredText);
+		// 	this.restoreOriginalValue();
+		// }
+		// else
+		// 	// REFACT: use setClosedEditorContent
+		// 	this.dom.html(newHTML);
 		
-		if (this.didCallNoCallbacks()) {
-			this.enableOrDisableAnimationCallbacks(false, false);
-			this.reinit();
-		}
+		// if (this.didCallNoCallbacks()) {
+		// 	this.enableOrDisableAnimationCallbacks(false, false);
+		// 	this.reinit();
+		// }
 	},
 	setText: function(text){
 		this.dom.html(text);
@@ -482,12 +479,12 @@ $.extend(InlineEditor.prototype, {
 
 	handleSubmitToServer: function(enteredText) {
 		//this.enableOrDisableAnimationCallbacks(true,true);
-		var oldText = $(this).val();
 		var id = this.dom.attr("data-submit-id");
 		var submitField = this.dom.attr("class");
 		var field = "";
 		var value = enteredText;
 	    var field = "";
+
 	    if (submitField == 'titleValue editInPlace-active') {
 	        field = "Title";
 	    } else if (submitField == 'tagsValue editInPlace-active') {
@@ -495,6 +492,7 @@ $.extend(InlineEditor.prototype, {
 	    } else {
 	        field = "Description";
 	    }
+	    this.showSaving();
 	    var that = this;
 	    $.post("/Profile/Update", { "id": id, "field": field, "value": value },
 	    function (data) {
@@ -503,49 +501,14 @@ $.extend(InlineEditor.prototype, {
 	        	that.initializeText(enteredText);
 	            handleRefresh(id);	            
 	        } else {
+	        	handleRefresh(id);	
+	        	that.initializeText("error!");
 	            $('#statusMessage').modal('show');
 	            $("#statusMessageHeader").html('<h3 style="color:red">Error!</h3>');
 	            $("#statusMessageText").html('<h5>Could not save presentation.</h5>');
-	            that.initializeText(oldText);
+	            
 	        }
-	    });  		
-		// var data = this.settings.update_value + '=' + encodeURIComponent(enteredText) 
-		// 	+ '&' + this.settings.element_id + '=' + this.dom.attr("id") 
-		// 	+ ((this.settings.params) ? '&' + this.settings.params : '')
-		// 	+ '&' + this.settings.original_html + '=' + encodeURIComponent(this.originalValue) /* DEPRECATED in 2.2.0 */
-		// 	+ '&' + this.settings.original_value + '=' + encodeURIComponent(this.originalValue);
-		
-		// this.enableOrDisableAnimationCallbacks(true, false);
-		// this.didStartSaving();
-		// var that = this;
-		// $.ajax({
-		// 	url: that.settings.url,
-		// 	type: "POST",
-		// 	data: data,
-		// 	dataType: "html",
-		// 	complete: function(request){
-		// 		that.didEndSaving();
-		// 	},
-		// 	success: function(html){
-		// 		var new_text = html || that.settings.default_text;
-				
-		// 		/* put the newly updated info into the original element */
-		// 		// FIXME: should be affected by the preferences switch
-		// 		that.dom.html(new_text);
-		// 		// REFACT: remove dom parameter, already in this, not documented, should be easy to remove
-		// 		// REFACT: callback should be able to override what gets put into the DOM
-		// 		that.triggerCallback(that.settings.success, html);
-		// 	},
-		// 	error: function(request) {
-		// 		that.dom.html(that.originalHTML); // REFACT: what about a restorePreEditingContent()
-		// 		if (that.settings.error)
-		// 			// REFACT: remove dom parameter, already in this, not documented, can remove without deprecation
-		// 			// REFACT: callback should be able to override what gets entered into the DOM
-		// 			that.triggerCallback(that.settings.error, request);
-		// 		else
-		// 			that.reportError("Failed to save value: " + request.responseText || 'Unspecified Error');
-		// 	}
-		// });
+	    });  				
 	},
 	
 	// Utilities .........................................................
@@ -629,20 +592,20 @@ $.extend(InlineEditor.prototype, {
 	},
 	
 	startSavingAnimation: function() {
-		var that = this;
-		this.dom
-			.animate({ backgroundColor: this.settings.saving_animation_color }, 400)
-			.animate({ backgroundColor: 'transparent'}, 400, 'swing', function(){
-				// In the tests animations are turned off - i.e they happen instantaneously.
-				// Hence we need to prevent this from becomming an unbounded recursion.
-				setTimeout(function(){ that.startSavingAnimation(); }, 10);
-			});
+		// var that = this;
+		// this.dom
+		// 	.animate({ backgroundColor: this.settings.saving_animation_color }, 400)
+		// 	.animate({ backgroundColor: 'transparent'}, 400, 'swing', function(){
+		// 		// In the tests animations are turned off - i.e they happen instantaneously.
+		// 		// Hence we need to prevent this from becomming an unbounded recursion.
+		// 		setTimeout(function(){ that.startSavingAnimation(); }, 10);
+		// 	});
 	},
 	
 	stopSavingAnimation: function() {
-		this.dom
-			.stop(true)
-			.css({backgroundColor: ''});
+		// this.dom
+		// 	.stop(true)
+		// 	.css({backgroundColor: ''});
 	},
 	
 	missingCommaErrorPreventer:''

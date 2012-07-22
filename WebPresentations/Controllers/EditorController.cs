@@ -56,8 +56,6 @@ namespace WebPresentations.Controllers
             return Json("Fail");
         }
 
-
-
         //
         // GET: /Editor/Preview/
 

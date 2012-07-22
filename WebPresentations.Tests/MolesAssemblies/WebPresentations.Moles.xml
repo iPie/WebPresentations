@@ -640,6 +640,10 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.#ctor(WebPresentations.Models.PresentationsEntities)"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.DismissTagTag">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.DismissTag(WebPresentations.Models.Tag)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.DisposeBoolean">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.Dispose(System.Boolean)"/>
             </summary>
@@ -709,6 +713,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.AddToPresentationsPresentation">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.AddToPresentations(WebPresentations.Models.Presentation)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.DismissTagTag">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.DismissTag(WebPresentations.Models.Tag)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.DisposeBoolean">
@@ -1002,6 +1010,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.RemovePresentationFromIndexInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.RemovePresentationFromIndex(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer.UpdatePresentationIndexPresentation">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.EntitiesIndexer.UpdatePresentationIndex(WebPresentations.Models.Presentation)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MEntitiesIndexer._FullTextSearchb__0Document">
@@ -1495,8 +1507,8 @@
         <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
-        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.ClearLuceneIndexRecordInt32">
-            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.ClearLuceneIndexRecord(System.Int32)"/>
+        <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.ClearIndexRecordInt32">
+            <summary>Sets the mole of <see cref="M:WebPresentations.SearchEngine.LuceneIndexer.ClearIndexRecord(System.Int32)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.SearchEngine.Moles.MLuceneIndexer.DirectoryGet">

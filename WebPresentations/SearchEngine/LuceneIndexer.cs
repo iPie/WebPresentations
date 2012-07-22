@@ -40,7 +40,7 @@ namespace WebPresentations.SearchEngine
             }
         }
 
-        public static void ClearLuceneIndexRecord(int id)
+        public static void ClearIndexRecord(int id)
         {
             var analyzer = new StandardAnalyzer(Version.LUCENE_29);
             using (var writer = new IndexWriter(Directory, analyzer, IndexWriter.MaxFieldLength.UNLIMITED))
