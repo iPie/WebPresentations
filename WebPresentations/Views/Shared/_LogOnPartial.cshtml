@@ -6,15 +6,15 @@
         @if (User.IsInRole("Administrator"))
         {
             
-            <li><a href="@Url.Action("Index", "AdministrativeTool")" style="color:red"><i class="icon-wrench"></i> <b>Administrative tool</b></a></li>
+            <li><a href="@Url.Action("Index", "AdministrativeTool")" style="color:red"><i class="icon-wrench"></i> <b>@ViewRes.SharedLayoutStrings.AdministrativeTool</b></a></li>
             <li class="divider"></li>            
         }
-        <li><a href="@Url.Action("Index", "Profile")"><i class="icon-briefcase"></i> Profile</a></li>
+        <li><a href="@Url.Action("Index", "Profile")"><i class="icon-briefcase"></i> @ViewRes.SharedLayoutStrings.Profile</a></li>
         <li class="divider"></li>
-        <li><a href="@Url.Action("LogOff", "Account")"><i class="icon-off"></i> Logout</a></li>
+        <li><a href="@Url.Action("LogOff", "Account")"><i class="icon-off"></i>@ViewRes.SharedLayoutStrings.LogOut</a></li>
     </ul>    
 }
 else
 {    
-    <a class="btn dropdown-toggle" href="@Url.Action("LogOn", "Account")"><i class="icon-lock"></i> Log On</a>
+    <a class="btn dropdown-toggle" href="@Url.Action("LogOn", "Account")"><i class="icon-lock"></i> @ViewRes.SharedLayoutStrings.LogOn</a>
 }

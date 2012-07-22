@@ -8,13 +8,13 @@
     <thead>
         <tr>
             <th>
-                Username
+                @ViewRes.SharedLayoutStrings.Username
             </th>
             <th>
-                Status
+                @ViewRes.SharedLayoutStrings.Status
             </th>
             <th>
-                Role
+                @ViewRes.SharedLayoutStrings.Role
             </th>
             <th>
             </th>
@@ -30,11 +30,11 @@
                 <td>
                     @if(!user.IsApproved)
                     {
-                        <h5 style="color:red">Disabled</h5>
+                        <h5 style="color:red">@ViewRes.SharedLayoutStrings.Disabled</h5>
                     }
                     else
                     {
-                        <h5 style="color:green">Active</h5>
+                        <h5 style="color:green">@ViewRes.SharedLayoutStrings.Active</h5>
                     }
                 </td>
                 <td>
@@ -44,7 +44,7 @@
                     }
                 </td>
                 <td>
-                    @Html.ActionLink("Manage account", "Edit", new { userName = user.UserName })
+                    @Html.ActionLink(@ViewRes.SharedLayoutStrings.ManageAccount, "Edit", new { userName = user.UserName })
                 </td>
             </tr>
         }

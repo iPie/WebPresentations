@@ -1,0 +1,6 @@
+﻿@{
+    ViewBag.Title = "CultureChooserPartial";
+}
+
+<a href="@Url.Action("ChangeCulture", "Account", new { lang = "en", returnUrl = this.Request.RawUrl }, null)"><img src="../../Content/images/en.png" /></a>
+<a href="@Url.Action("ChangeCulture", "Account", new { lang = "ru", returnUrl = this.Request.RawUrl }, null)"><img src="../../Content/images/ru.png" /></a>

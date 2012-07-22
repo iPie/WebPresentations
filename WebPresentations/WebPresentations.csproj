@@ -114,6 +114,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="DatabaseEntities\EntitiesIndexer.cs" />
+    <Compile Include="Resources\Views\SharedLayoutStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedLayoutStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\SharedLayoutStrings.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedLayoutStrings.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="SearchEngine\LuceneIndexer.cs" />
     <Compile Include="TagCloud\TagCloud.cs" />
     <Compile Include="ViewModels\AdministrativeToolViewModel.cs" />
@@ -141,6 +151,7 @@
     <Content Include="Content\mini-tag.css" />
     <Content Include="Content\preview\main.css" />
     <Content Include="Content\preview\web-fonts.css" />
+    <Content Include="Content\sharedLayout.css" />
     <Content Include="Content\tagcloud.css" />
     <Content Include="Content\editor\img\glyphicons-halflings-white.png" />
     <Content Include="Content\editor\img\glyphicons-halflings.png" />
@@ -918,12 +929,23 @@
     <Content Include="Views\Profile\Settings.cshtml" />
     <Content Include="Views\Profile\Presentations.cshtml" />
     <Content Include="Views\Editor\Edit.cshtml" />
+    <Content Include="Views\Shared\CultureChooserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\SharedLayoutStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedLayoutStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\SharedLayoutStrings.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedLayoutStrings.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

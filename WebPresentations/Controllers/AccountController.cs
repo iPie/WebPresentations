@@ -15,6 +15,12 @@ namespace WebPresentations.Controllers
     {
         public AccountController() : this(null, null) { }
 
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            Session["Culture"] = new CultureInfo(lang);
+            return Redirect(returnUrl);
+        }
+
         public AccountController(IFormsAuthentication formsAuth, IMembershipService service)
         {
             FormsAuth = formsAuth ?? new FormsAuthenticationService();

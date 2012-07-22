@@ -8,61 +8,60 @@
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">User info</a>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">@ViewRes.SharedLayoutStrings.UserInfo</a>
         </div>
         <div id="collapseOne" class="accordion-body in collapse" style="height: auto;">
             <div class="accordion-inner">
-                <h5>UserName: @Model.UserName</h5>
+                <h5>@ViewRes.SharedLayoutStrings.Username: @Model.UserName</h5>
                 <h5>Email: @Model.EmailAddress</h5>
                 @if (Model.IsApproved)
                 {
-                    <h5>Status: Active</h5>    
+                    <h5>@ViewRes.SharedLayoutStrings.Status: @ViewRes.SharedLayoutStrings.Active</h5>    
                 }
                 else
                 {
-                    <h5>Status: Disabled</h5>    
+                    <h5>@ViewRes.SharedLayoutStrings.Status: @ViewRes.SharedLayoutStrings.Disabled</h5>    
                 }
                 
-                <h5>Last active: @Model.LastActivityDate</h5>
+                <h5>@ViewRes.SharedLayoutStrings.LastActive: @Model.LastActivityDate</h5>
                 @if (Model.IsOnline)
                 {
-                    <h5 style="color:green">Online</h5>
+                    <h5 style="color:green">@ViewRes.SharedLayoutStrings.Online</h5>
                 }
                 else
                 {
-                    <h5 style="color:red">Offline</h5>
+                    <h5 style="color:red">@ViewRes.SharedLayoutStrings.Offline</h5>
                 }
             </div>
         </div>
     </div>
     <div class="accordion-group">
         <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Manage user account</a>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">@ViewRes.SharedLayoutStrings.ManageUserAccount</a>
         </div>
         <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
             <div class="accordion-inner">
                 @using (Html.BeginForm())
                 {
-                    <h5>Role </h5>
+                    <h5>@ViewRes.SharedLayoutStrings.Role </h5>
                     @Html.DropDownList("Role", new SelectList(Model.RolesList.Select(x => new {Value = x, Text = x}), "Value", "Text"))
-                    <h5>Enabled </h5>
+                    <h5>@ViewRes.SharedLayoutStrings.Enabled </h5>
                     @Html.DropDownList("IsApproved", new SelectList(new List<Boolean> { false, true }.Select(x => new { Value = x, Text = x }), "Value", "Text"))
-                    <p><button  class="btn btn-primary"  type="submit" value="Edit">Save</button></p>
+                    <p><button  class="btn btn-primary"  type="submit" value="Edit">@ViewRes.SharedLayoutStrings.Save</button></p>
                 }
             </div>
         </div>
     </div>
     <div class="accordion-group">
         <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Password reset</a>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">@ViewRes.SharedLayoutStrings.PasswordReset</a>
         </div>
         <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
             <div class="accordion-inner">
                 <div class="alert alert-error">
-                    Reset user's password. User will be notified with an e-mail containing
-                    the new password.
+                    @ViewRes.SharedLayoutStrings.ResetDetails
                 </div>
-                <p><button  class="btn btn-danger"  onclick="Reset()" value="Reset">Reset</button></p>
+                <p><button  class="btn btn-danger"  onclick="Reset()" value="Reset">@ViewRes.SharedLayoutStrings.Reset</button></p>
             </div>
         </div>
     </div>
@@ -96,4 +95,4 @@
         <a href="#" class="btn" data-dismiss="modal">OK</a>
     </div>
 </div>
-<a href ="@Url.Action("Index")" class="pull-right">Back</a>
+<a href ="@Url.Action("Index")" class="pull-right">@ViewRes.SharedLayoutStrings.Back</a>

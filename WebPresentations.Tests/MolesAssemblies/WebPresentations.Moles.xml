@@ -41,6 +41,10 @@
         <member name="P:WebPresentations.Controllers.Moles.MAccountController.Behavior">
             <summary>Assigns the behavior for all methods of the moled type</summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MAccountController.ChangeCultureStringString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.AccountController.ChangeCulture(System.String,System.String)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Controllers.Moles.MAccountController.ChangePassword">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.AccountController.ChangePassword"/>
             </summary>
@@ -131,6 +135,10 @@
         </member>
         <member name="T:WebPresentations.Controllers.Moles.MAccountController.AllInstances">
             <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MAccountController.AllInstances.ChangeCultureStringString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.AccountController.ChangeCulture(System.String,System.String)"/>
+            </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MAccountController.AllInstances.ChangePassword">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.AccountController.ChangePassword"/>
@@ -1655,6 +1663,10 @@
         <member name="M:WebPresentations.Moles.MMvcApplication.Bind(System.IDisposable)">
             <summary>Binds the members of the interface to the mole.</summary>
         </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.Application_AcquireRequestStateObjectEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.Application_AcquireRequestState(System.Object,System.EventArgs)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Moles.MMvcApplication.Application_Start">
             <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.Application_Start"/>
             </summary>
@@ -1676,6 +1688,10 @@
         </member>
         <member name="T:WebPresentations.Moles.MMvcApplication.AllInstances">
             <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.AllInstances.Application_AcquireRequestStateObjectEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.Application_AcquireRequestState(System.Object,System.EventArgs)"/>
+            </summary>
         </member>
         <member name="P:WebPresentations.Moles.MMvcApplication.AllInstances.Application_Start">
             <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.Application_Start"/>
