@@ -4,7 +4,6 @@ using System.Web.Security;
 
 namespace WebPresentations.MembershipLayer
 {
-
     public interface IFormsAuthentication
     {
         void SignIn(string userName, bool createPersistentCookie);

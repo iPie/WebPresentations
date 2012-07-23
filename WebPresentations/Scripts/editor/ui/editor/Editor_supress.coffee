@@ -4,7 +4,7 @@
 define(["vendor/amd/backbone",
 		"./SlideEditor",
 		"./transition_editor/TransitionEditor",
-		"./Templates",
+		"./Templates_suppress",
 		"ui/impress_renderer/ImpressRenderer",
 		"ui/widgets/RawTextImporter",
 		"ui/widgets/OpenDialog",
@@ -43,12 +43,11 @@ FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) ->
 			)
 		openRecent: (e) ->
 		save: (e) ->
-			fileName = @model.get("fileName")
-			if not fileName?
-				menuOptions.saveAs.call(@, e)
-			else
-				FileStorage.save(fileName, @model.toJSON(false, true))
-
+			$.post '/Editor/Update',
+				id: localStorage.getItem("updateId")
+				jsonString: escape(JSON.stringify(@model.toJSON(false, true)))
+				htmlContents: escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)))
+				(data) -> $('body').append "Successfully posted to the page."
 		saveAs: (e) ->
 			json = escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)))
 			localStorage.setItem("htmlContents", json)

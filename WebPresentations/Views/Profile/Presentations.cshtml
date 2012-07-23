@@ -3,12 +3,13 @@
     ViewBag.Title = "My Presentations";
 }
 <div class="page-header">
-    <h2>My Profile</h2>
+    <h2>@ViewRes.SharedLayoutStrings.MyProfile</h2>
 </div>
 <ul id="profileTab" class="nav nav-tabs">
     <li><a href="@Url.Action("Index")"><i class="icon-info-sign"></i> Profile</a></li>
     <li><a href="@Url.Action("Settings")"><i class="icon-wrench"></i> Settings</a></li>
     <li class="active"><a href="@Url.Action("Presentations")"><i class="icon-hdd"></i> My Presentations</a></li>
+    <li><a href="@Url.Action("Favourites")"><i class="icon-heart"></i> @ViewRes.SharedLayoutStrings.Favourites</a></li>
 </ul>
 <script src="../../Scripts/jquery.editinplace.js" type="text/javascript"></script>
 <script src="../../Scripts/views/profile-presentation.js" type="text/javascript"></script>
@@ -20,6 +21,7 @@
                     <th>
                         #
                     </th>
+                    <th>Likes</th>
                     <th>
                         Title
                     </th>
@@ -40,6 +42,7 @@
                         <td>
                             @{ ++counter; @counter }
                         </td>
+                        <td><span class="badge badge-info">@item.LikedUsers.Count</span></td>
                         <td><p class="titleValue" data-submit-id="@item.PresentationId">@item.Title</p>
                         </td>
                         <td><p class="descriptionValue" data-submit-id="@item.PresentationId">@item.Description</p>
@@ -54,9 +57,9 @@
                         </td>
 
                         <td>
-                            <a class="btn btn-mini btn-warning" href = "@Url.Action("Edit","Editor", new {id = item.PresentationId})" value="Reset">Edit</a>
-                            <button class="btn btn-mini btn-danger" onclick="Delete(@item.PresentationId)" value="Delete">Delete</button>
-                            <a class="btn btn-mini btn-success" href = "@Url.Action("Preview","Gallery", new {id = item.PresentationId})" value="Preview">Preview</a>
+                            <a class="btn btn-mini btn-warning" href = "@Url.Action("Edit","Editor", new {id = item.PresentationId})" value="Reset"><i class="icon-pencil icon-white"></i> Edit</a>
+                            <button class="btn btn-mini btn-danger" onclick="Delete(@item.PresentationId)" value="Delete"><i class="icon-trash icon-white"></i> Delete</button>
+                            <a class="btn btn-mini btn-success" href = "@Url.Action("Preview","Gallery", new {id = item.PresentationId})" value="Preview"><i class="icon-play-circle icon-white"></i> Preview</a>
                         </td>
                     </tr>
                 }

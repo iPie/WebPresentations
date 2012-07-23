@@ -9,6 +9,7 @@ using WebPresentations.Models;
 
 namespace WebPresentations.Controllers
 {
+    [HandleErrorWithELMAH]
     public class HomeController : Controller
     {
         public ActionResult Index()

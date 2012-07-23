@@ -10,7 +10,7 @@ using WebPresentations.Models;
 
 namespace WebPresentations.Controllers
 {
-    //[HandleErrorWithELMAH]
+    [HandleErrorWithELMAH]
     public class AccountController : Controller
     {
         public AccountController() : this(null, null) { }

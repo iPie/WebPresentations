@@ -1,5 +1,5 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Principal;
@@ -41,13 +41,23 @@ namespace WebPresentations.DatabaseEntities
 
         public Presentation GetPresentation(int id)
         {
-            return Entities.Presentations.Include("Tags").SingleOrDefault(g => g.PresentationId == id);
+            return Entities.Presentations.Include("Tags").Single(g => g.PresentationId == id);
         }
 
         public IQueryable<Presentation> GetUserPresentations(string userName)
         {
             return Entities.Presentations.Include("Tags")
                 .Where(p => p.UserName.Equals(userName));
+        }
+
+        public IQueryable<Presentation> GetPresentationsLikedByUser(string userName)
+        {
+            var user = Entities.LikedUsers.Include("Presentations").SingleOrDefault(u => u.UserName.Equals(userName));
+            if (user != null)
+            {
+                return user.Presentations.AsQueryable();
+            }
+            return new List<Presentation>().AsQueryable();
         }
 
         public void AddToPresentations(Presentation presentation)
@@ -58,7 +68,7 @@ namespace WebPresentations.DatabaseEntities
 
         public void UpdatePresentationTags(Presentation presentation, string tagString)
         {
-            foreach(var tag in presentation.Tags.ToList())
+            foreach (var tag in presentation.Tags.ToList())
             {
                 DismissTag(tag);
             }
@@ -116,9 +126,9 @@ namespace WebPresentations.DatabaseEntities
             return Entities.Tags.Any(g => g.Text == tagText);
         }
 
-        public int AddLike (Presentation presentation, string userName)
+        public int AddLike(Presentation presentation, string userName)
         {
-            if (!IsLikedByUser(presentation,userName))
+            if (!IsLikedByUser(presentation, userName))
             {
                 if (!UserOwnsPresentation(presentation.PresentationId, userName))
                 {
@@ -156,7 +166,7 @@ namespace WebPresentations.DatabaseEntities
             return tags;
         }
 
-        public bool IsLikedByUser (Presentation presentation, string userName)
+        public bool IsLikedByUser(Presentation presentation, string userName)
         {
             return presentation.LikedUsers.Any(l => l.UserName.Equals(userName));
         }

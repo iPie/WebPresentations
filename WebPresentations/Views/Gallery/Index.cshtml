@@ -6,6 +6,13 @@
 }
 <link href="../../Content/mini-tag.css" rel="stylesheet" type="text/css" />
 <script src="../../Scripts/views/gallery.js" type="text/javascript"></script>
+<script src="../../Scripts/bootstrap/bootstrap-tooltip.js" type="text/javascript"></script>
+<script src="../../Scripts/bootstrap/bootstrap-popover.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".showPopover").popover();
+    });
+</script>
 <div class="page-header">
     <h2>@ViewRes.SharedLayoutStrings.PresentationGallery</h2>
 </div>
@@ -17,20 +24,22 @@
             {
                 <li class="span4" >
                     <div class="thumbnail">
-                    <div class="row-fluid">
-                        <div class="span10">  <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="thumbnail">
-                            <img src="http://placehold.it/260x180" alt="" /></a> 
-                        </div> 
-                        <div class="span1">
-                            @foreach (var tag in item.Tags)
-                            {
-                                <a href="@Url.Action("Index","Gallery", new { search = tag.Text })" class="tag">@Html.Truncate(tag.Text, 6)</a>
-                            }
-                        </div>                                                                                                                                     
-                    </div>
+                        <div class="row-fluid">
+                            <div class="span10">  <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="thumbnail">
+                                                      <img src="http://placehold.it/260x180" alt="" /></a> 
+                            </div> 
+                            <div class="span1">
+                                @foreach (var tag in item.Tags)
+                                {
+                                    <a href="@Url.Action("Index","Gallery", new { search = tag.Text })" class="tag">@Html.Truncate(tag.Text, 6)</a>
+                                }
+                            </div>                                                                                                                                     
+                        </div>
+                        <div class="showPopover" data-content="@item.Presentation.Description." data-original-title="Presentation details" style="width: 50%; background: #f6f6f6">
                         <p><h5>@Html.Truncate(item.Presentation.Title, 30)</h5></p>
-                        <p>
-                            <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="btn btn-primary btn-small">
+                        </div>    
+                            <p>
+                            <a href = "@Url.Action("Preview", new { id = item.Presentation.PresentationId })" class="btn btn-primary btn-small" target="_blank">
                                 <i class="icon-play-circle icon-white"></i> @ViewRes.SharedLayoutStrings.Preview</a>
                             @if (Request.IsAuthenticated)
                             {

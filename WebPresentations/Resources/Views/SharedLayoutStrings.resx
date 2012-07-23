@@ -306,4 +306,7 @@
   <data name="UseFormToChangePassoword" xml:space="preserve">
     <value>Use form below to change your password.</value>
   </data>
+  <data name="Favourites" xml:space="preserve">
+    <value>Favourites</value>
+  </data>
 </root>

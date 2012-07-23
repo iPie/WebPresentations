@@ -6,7 +6,7 @@
 
 (function() {
 
-  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver", "css!./res/css/Editor.css"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) {
+  define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates_suppress", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "ui/widgets/OpenDialog", "ui/widgets/SaveAsDialog", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/common_application/AutoSaver", "model/presentation/Archiver", "css!./res/css/Editor.css"], function(Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, OpenDialog, SaveAsDialog, FileStorage, BackgroundPicker, AutoSaver, Archiver, empty) {
     var editorId, menuOptions;
     editorId = 0;
     menuOptions = {
@@ -39,13 +39,13 @@
       },
       openRecent: function(e) {},
       save: function(e) {
-        var fileName;
-        fileName = this.model.get("fileName");
-        if (!(fileName != null)) {
-          return menuOptions.saveAs.call(this, e);
-        } else {
-          return FileStorage.save(fileName, this.model.toJSON(false, true));
-        }
+        return $.post('/Editor/Update', {
+          id: localStorage.getItem("updateId"),
+          jsonString: escape(JSON.stringify(this.model.toJSON(false, true))),
+          htmlContents: escape(JSON.stringify(ImpressRenderer.render(this.model.attributes)))
+        }, function(data) {
+          return $('body').append("Successfully posted to the page.");
+        });
       },
       saveAs: function(e) {
         var json,

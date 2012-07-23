@@ -11,6 +11,7 @@ using WebPresentations.Models;
 namespace WebPresentations.Controllers
 {
     [Authorize]
+    [HandleErrorWithELMAH]
     public class ProfileController : EntityController
     {
         //
@@ -40,6 +41,15 @@ namespace WebPresentations.Controllers
         public ActionResult Presentations()
         {
             var presentations = Entities.GetUserPresentations(User.Identity.Name);
+            return View(presentations);
+        }
+
+        //
+        // GET: /Profile/Presentations
+
+        public ActionResult Favourites()
+        {
+            var presentations = Entities.GetPresentationsLikedByUser(User.Identity.Name);
             return View(presentations);
         }
 

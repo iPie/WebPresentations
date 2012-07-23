@@ -2,12 +2,13 @@
     ViewBag.Title = "Profile";
 }
 <div class="page-header">
-    <h2>My Profile</h2>
+    <h2>@ViewRes.SharedLayoutStrings.MyProfile</h2>
 </div>
 <ul id="profileTab" class="nav nav-tabs">
     <li class="active"><a href="@Url.Action("Index")"><i class="icon-info-sign"></i> @ViewRes.SharedLayoutStrings.Profile</a></li>
     <li><a href="@Url.Action("Settings")"><i class="icon-wrench"></i> @ViewRes.SharedLayoutStrings.Settings</a></li>
     <li><a href="@Url.Action("Presentations")"><i class="icon-hdd"></i> @ViewRes.SharedLayoutStrings.MyPresentations</a></li>
+    <li><a href="@Url.Action("Favourites")"><i class="icon-heart"></i> @ViewRes.SharedLayoutStrings.Favourites</a></li>
 </ul>
 <div id="profileTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="profile">

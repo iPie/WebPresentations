@@ -10,6 +10,7 @@ using WebPresentations.ViewModels;
 namespace WebPresentations.Controllers
 {
     [Authorize(Roles = "Administrator")]
+    [HandleErrorWithELMAH]
     public class AdministrativeToolController : Controller
     {
 

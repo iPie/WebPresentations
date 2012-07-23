@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
 using WebPresentations.Caching;
 using WebPresentations.DatabaseEntities;
 using WebPresentations.Models;
@@ -11,6 +12,7 @@ using WebPresentations.ViewModels;
 namespace WebPresentations.Controllers
 {
     [Authorize]
+    [HandleErrorWithELMAH]
     public class EditorController : EntityController
     {
 
@@ -69,6 +71,7 @@ namespace WebPresentations.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Id = id;
             var valid = Entities.UserOwnsPresentation(id, User.Identity.Name);
             return valid ? View(Entities.GetPresentation(id)) : View("Error");
         }
@@ -90,6 +93,35 @@ namespace WebPresentations.Controllers
                     return Json(new { message = "Fail" });
                 }
                 return Json(new { message = "Success" });
+            }
+            return Json(new { message = "Fail" });
+        }
+
+        //
+        // GET: /Editor/Update
+
+        public JsonResult Update(int id, string jsonString, string htmlContents)
+        {
+            var presentation = Entities.GetPresentation(id);
+            if (presentation != null)
+            {
+                if (Entities.UserOwnsPresentation(id, User.Identity.Name))
+                {
+                    try
+                    {
+                        presentation.Json = jsonString;
+                        presentation.HtmlContents = htmlContents;
+                        Entities.Update();
+                        EntitiesIndexer.UpdatePresentationIndex(presentation);
+                        var cm = new WebPresentationsCacheManager();
+                        cm.Flush();
+                    }
+                    catch
+                    {
+                        return Json(new {message = "Fail"});
+                    }
+                    return Json(new {message = "Success"});
+                }
             }
             return Json(new { message = "Fail" });
         }

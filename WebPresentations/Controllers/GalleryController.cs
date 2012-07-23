@@ -13,6 +13,7 @@ using WebPresentations.ViewModels;
 
 namespace WebPresentations.Controllers
 {
+    [HandleErrorWithELMAH]
     public class GalleryController : EntityController
     {
 

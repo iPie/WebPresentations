@@ -36,6 +36,7 @@
 
     <script type = "text/javascript">
         jQuery(document).ready(function ($) {
+            localStorage.setItem("updateId", @ViewBag.Id);
             localStorage.setItem("editablePresentation", unescape("@Html.Raw(Model.Json)"));
         });
         jQuery.fn.selectText = function () {

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebPresentations.Models.Presentation>
+@{
+    ViewBag.Title = "My Presentations";
+}
+<div class="page-header">
+    <h2>@ViewRes.SharedLayoutStrings.Favourites</h2>
+</div>
+<ul id="profileTab" class="nav nav-tabs">
+    <li><a href="@Url.Action("Index")"><i class="icon-info-sign"></i> Profile</a></li>
+    <li><a href="@Url.Action("Settings")"><i class="icon-wrench"></i> Settings</a></li>
+    <li><a href="@Url.Action("Presentations")"><i class="icon-hdd"></i> My Presentations</a></li>
+    <li class="active"><a href="@Url.Action("Favourites")"><i class="icon-heart"></i> @ViewRes.SharedLayoutStrings.Favourites</a></li>
+</ul>
+<script src="../../Scripts/jquery.editinplace.js" type="text/javascript"></script>
+<script src="../../Scripts/views/profile-presentation.js" type="text/javascript"></script>
+<div id="profileTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="presentations">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>Likes</th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Tags
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var counter = 0; }
+                @foreach (var item in Model)
+                {    
+                    <tr>
+                        <td>
+                            @{ ++counter; @counter }
+                        </td>
+                        <td><span class="badge badge-info">@item.LikedUsers.Count</span></td>
+                        <td><p>@item.Title</p>
+                        </td>
+                        <td><p>@item.Description</p>
+                        </td>
+                        <td>
+                            <p>
+                            @foreach( var tag in item.Tags)
+                            {
+                                @((tag.Text) + " ")
+                            }
+                            </p>
+                        </td>
+                        <td>
+                            <a class="btn btn-mini btn-success" href = "@Url.Action("Preview","Gallery", new {id = item.PresentationId})"><i class="icon-play-circle icon-white"></i> Preview</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

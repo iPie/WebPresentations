@@ -668,6 +668,10 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetPresentationsLikedByUserString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentationsLikedByUser(System.String)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.GetTagString">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetTag(System.String)"/>
             </summary>
@@ -741,6 +745,10 @@
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetPresentationInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentation(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetPresentationsLikedByUserString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.DatabaseEntities.DatabaseContext.GetPresentationsLikedByUser(System.String)"/>
             </summary>
         </member>
         <member name="P:WebPresentations.DatabaseEntities.Moles.MDatabaseContext.AllInstances.GetTagString">
@@ -848,6 +856,10 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Preview"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.UpdateInt32StringString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Update(System.Int32,System.String,System.String)"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MEditorController.AllInstances">
             <summary>Define moles for all instances members</summary>
         </member>
@@ -869,6 +881,10 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.Preview">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Preview"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MEditorController.AllInstances.UpdateInt32StringString">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.EditorController.Update(System.Int32,System.String,System.String)"/>
             </summary>
         </member>
         <member name="T:WebPresentations.ViewModels.Moles.MEditorViewModel">
@@ -1275,6 +1291,58 @@
             <summary>Sets the mole of <see cref="P:WebPresentations.ViewModels.GalleryViewModel.Tags"/>
             </summary>
         </member>
+        <member name="T:WebPresentations.Moles.MHandleErrorWithELMAHAttribute">
+            <summary>Mole type of <see cref="T:WebPresentations.HandleErrorWithELMAHAttribute"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.#ctor(WebPresentations.HandleErrorWithELMAHAttribute)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.Bind(System.Web.Mvc.IExceptionFilter)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.Bind(System.Web.Mvc.IMvcFilter)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.Constructor">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.IsFilteredExceptionContext">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.IsFiltered(System.Web.Mvc.ExceptionContext)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.LogExceptionException">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.LogException(System.Exception)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.OnExceptionExceptionContext">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.OnException(System.Web.Mvc.ExceptionContext)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.RaiseErrorSignalException">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.RaiseErrorSignal(System.Exception)"/>
+            </summary>
+        </member>
+        <member name="T:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MHandleErrorWithELMAHAttribute.AllInstances.OnExceptionExceptionContext">
+            <summary>Sets the mole of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.OnException(System.Web.Mvc.ExceptionContext)"/>
+            </summary>
+        </member>
         <member name="T:WebPresentations.Controllers.Moles.MHomeController">
             <summary>Mole type of <see cref="T:WebPresentations.Controllers.HomeController"/>
             .</summary>
@@ -1678,6 +1746,14 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.#ctor"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.ErrorLog_FilteringObjectExceptionFilterEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.ErrorLog_Filtering(System.Object,Elmah.ExceptionFilterEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.FilterError404ExceptionFilterEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.FilterError404(Elmah.ExceptionFilterEventArgs)"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Moles.MMvcApplication.RegisterGlobalFiltersGlobalFilterCollection">
             <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)"/>
             </summary>
@@ -1695,6 +1771,14 @@
         </member>
         <member name="P:WebPresentations.Moles.MMvcApplication.AllInstances.Application_Start">
             <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.Application_Start"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.AllInstances.ErrorLog_FilteringObjectExceptionFilterEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.ErrorLog_Filtering(System.Object,Elmah.ExceptionFilterEventArgs)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.MMvcApplication.AllInstances.FilterError404ExceptionFilterEventArgs">
+            <summary>Sets the mole of <see cref="M:WebPresentations.MvcApplication.FilterError404(Elmah.ExceptionFilterEventArgs)"/>
             </summary>
         </member>
         <member name="T:WebPresentations.Models.Moles.MPresentation">
@@ -1976,6 +2060,10 @@
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.#ctor"/>
             </summary>
         </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.Favourites">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Favourites"/>
+            </summary>
+        </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.Index">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Index"/>
             </summary>
@@ -2001,6 +2089,10 @@
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.AddLikeInt32">
             <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.AddLike(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.Favourites">
+            <summary>Sets the mole of <see cref="M:WebPresentations.Controllers.ProfileController.Favourites"/>
             </summary>
         </member>
         <member name="P:WebPresentations.Controllers.Moles.MProfileController.AllInstances.Index">
@@ -3827,6 +3919,30 @@
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:WebPresentations.ViewModels.Moles.SGalleryViewModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="T:WebPresentations.Moles.SHandleErrorWithELMAHAttribute">
+            <summary>Stub type of <see cref="T:WebPresentations.HandleErrorWithELMAHAttribute"/>
+            .</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.InitializeStub">
+            <summary>Initializes a new instance of type SHandleErrorWithELMAHAttribute</summary>
+        </member>
+        <member name="M:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.OnException(System.Web.Mvc.ExceptionContext)">
+            <summary>Sets the stub of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.OnException(System.Web.Mvc.ExceptionContext)"/>
+            </summary>
+        </member>
+        <member name="F:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.OnExceptionExceptionContext">
+            <summary>Sets the stub of <see cref="M:WebPresentations.HandleErrorWithELMAHAttribute.OnException(System.Web.Mvc.ExceptionContext)"/>
+            </summary>
+        </member>
+        <member name="P:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WebPresentations.Moles.SHandleErrorWithELMAHAttribute.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="T:WebPresentations.Controllers.Moles.SHomeController">

@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ELMAH-1.2.x86\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
@@ -93,6 +97,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HandleErrorWithELMAHAttribute.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="MembershipLayer\AdministrativeLayer.cs" />
     <Compile Include="MembershipLayer\MembershipServiceLayer.cs" />
@@ -125,6 +130,7 @@
       <DependentUpon>SharedLayoutStrings.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="SearchEngine\LuceneIndexer.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="TagCloud\TagCloud.cs" />
     <Compile Include="ViewModels\AdministrativeToolViewModel.cs" />
     <Compile Include="ViewModels\EditorViewModel.cs" />
@@ -930,6 +936,7 @@
     <Content Include="Views\Profile\Presentations.cshtml" />
     <Content Include="Views\Editor\Edit.cshtml" />
     <Content Include="Views\Shared\CultureChooserPartial.cshtml" />
+    <Content Include="Views\Profile\Favourites.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -941,6 +948,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedLayoutStrings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\SharedLayoutStrings.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

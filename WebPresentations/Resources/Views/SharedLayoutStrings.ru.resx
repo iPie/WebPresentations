@@ -306,4 +306,7 @@
   <data name="UseFormToChangePassoword" xml:space="preserve">
     <value>Используйте форму ниже, чтобы изменить пароль.</value>
   </data>
+  <data name="Favourites" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
 </root>
