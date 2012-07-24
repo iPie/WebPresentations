@@ -13,7 +13,7 @@ namespace WebPresentations.Tests.DatabaseEntities
     [TestClass]
     public class DatabaseContextTest
     {
-        private TransactionScope transactionScope;
+        private TransactionScope _transactionScope;
 
         private void InitializeConnection(string connectionPath)
         {
@@ -62,16 +62,16 @@ namespace WebPresentations.Tests.DatabaseEntities
             var str = AppDomain.CurrentDomain.BaseDirectory;
             var path = "data source=" + str + "\\WebPresentations.sdf";
             InitializeConnection(path);
-            transactionScope = new TransactionScope(TransactionScopeOption.Suppress);
+            _transactionScope = new TransactionScope(TransactionScopeOption.Suppress);
         }
 
         [TestCleanup]
         public void Cleanup()
         {
-            if (transactionScope != null)
+            if (_transactionScope != null)
             {
-                transactionScope.Dispose();
-                transactionScope = null;
+                _transactionScope.Dispose();
+                _transactionScope = null;
             }
         }
 

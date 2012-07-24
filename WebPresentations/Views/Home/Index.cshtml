@@ -8,38 +8,35 @@
 <link href="@Url.Content("~/Content/tagcloud.css")" rel="stylesheet">
 
 <script type="text/javascript">
-    //$(document).ready(GetTags());
     GetTags();
 </script>
 
 <div class="container" id="tagCloud">
+    <div class="hero-unit" style="background:white" >
+        <div id="tag_holder" class="container"></div>			
+         <div id="loading" style="display:none" align="center" valign="center">
+            <img src="../../Content/ajax-loader.gif" />
+        </div>
+    </div>
+    <div class="row">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit" style="background:white" >
-          <div id="tag_holder" class="container"></div>
-			
-
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
         <div class="span4">
-          <h2>@ViewRes.SharedLayoutStrings.Create</h2>
-           <p>@ViewRes.SharedLayoutStrings.CreateDetails </p>
-          <p><a class="btn" href="../Editor/Create" >@ViewRes.SharedLayoutStrings.Create »</a></p>
+            <h2>@ViewRes.SharedLayoutStrings.Create</h2>
+            <p>@ViewRes.SharedLayoutStrings.CreateDetails </p>
+            <p><a class="btn" href="../Editor/Create" >@ViewRes.SharedLayoutStrings.Create »</a></p>
         </div>
         <div class="span4">
-          <h2>@ViewRes.SharedLayoutStrings.Browse</h2>
-           <p>@ViewRes.SharedLayoutStrings.BrowseDetails </p>
-          <p><a class="btn" href="../Editor/../Gallery/Index">@ViewRes.SharedLayoutStrings.Browse »</a></p>
-       </div>
-        <div class="span4">
-          <h2>@ViewRes.SharedLayoutStrings.Find</h2>
-          <p>@ViewRes.SharedLayoutStrings.FindDetails </p>
-          <p><a class="btn" href="../Gallery/Index">@ViewRes.SharedLayoutStrings.Find »</a></p>
+            <h2>@ViewRes.SharedLayoutStrings.Browse</h2>
+            <p>@ViewRes.SharedLayoutStrings.BrowseDetails </p>
+            <p><a class="btn" href="../Editor/../Gallery/Index">@ViewRes.SharedLayoutStrings.Browse »</a></p>
         </div>
-      </div>
+        <div class="span4">
+            <h2>@ViewRes.SharedLayoutStrings.Find</h2>
+            <p>@ViewRes.SharedLayoutStrings.FindDetails </p>
+            <p><a class="btn" href="../Gallery/Index">@ViewRes.SharedLayoutStrings.Find »</a></p>
+        </div>
+    </div>
 
-      <hr>
+    <hr>
 
-</div> <!-- /container -->
+</div>

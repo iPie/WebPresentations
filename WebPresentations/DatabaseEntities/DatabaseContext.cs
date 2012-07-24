@@ -52,7 +52,7 @@ namespace WebPresentations.DatabaseEntities
 
         public IQueryable<Presentation> GetPresentationsLikedByUser(string userName)
         {
-            var user = Entities.LikedUsers.Include("Presentations").SingleOrDefault(u => u.UserName.Equals(userName));
+            var user = Entities.LikedUsers.Include("Presentations").FirstOrDefault(u => u.UserName.Equals(userName));
             if (user != null)
             {
                 return user.Presentations.AsQueryable();
